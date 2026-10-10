@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 # Despliegue completo de un entorno (lo usan las personas y GitHub Actions por igual):
-#   ./tools/deploy.sh dev        # o prod
+#   ./tools/deploy.sh dev           # o prod
+#   ./tools/deploy.sh dev --start   # además arranca la App al final
 # 1) genera app/app.yaml del entorno  2) compila la App  3) bundle deploy
-# 4) inyecta el id del dashboard (existe recién tras el 1er deploy)  5) arranca la App
+# 4) inyecta el id del dashboard (existe recién tras el 1er deploy)
+# En CI/CD la App se arranca DESPUÉS del pipeline SQL, para que sincronice el gold ya probado.
 set -euo pipefail
 TARGET="${1:-dev}"
+START="${2:-}"
 cd "$(dirname "$0")/.."
 
 dashboard_id() {
@@ -26,5 +29,7 @@ if ! grep -q "value: \"$NEW_ID\"" app/app.yaml; then
   databricks bundle deploy -t "$TARGET" --auto-approve
 fi
 
-echo "▶ [$TARGET] arrancando la App"
-databricks bundle run app_retencion -t "$TARGET"
+if [ "$START" = "--start" ]; then
+  echo "▶ [$TARGET] arrancando la App"
+  databricks bundle run app_retencion -t "$TARGET"
+fi

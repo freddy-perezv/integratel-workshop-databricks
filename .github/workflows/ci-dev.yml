@@ -44,6 +44,9 @@ jobs:
           set -o pipefail
           databricks bundle run pipeline_sql -t dev 2>&1 | tee run.log
 
+      - name: 4 · Arrancar la App (sincroniza el gold recién probado)
+        run: databricks bundle run app_retencion -t dev
+
       - name: Resumen
         if: always()
         run: |

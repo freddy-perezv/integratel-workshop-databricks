@@ -43,6 +43,9 @@ jobs:
       - name: 4 · Correr pipeline SQL + tests en PROD
         run: databricks bundle run pipeline_sql -t prod
 
+      - name: 5 · Arrancar la App
+        run: databricks bundle run app_retencion -t prod
+
       - name: Resumen
         if: always()
         run: |
