@@ -623,7 +623,12 @@ void (async () => {
     // authenticate()). Graceful: on any failure, fall back to the default init.
     let mlflowHost: string | undefined;
     let mlflowToken: string | undefined;
-    try {
+    // En la App desplegada el entorno ya trae OAuth M2M del service principal
+    // (DATABRICKS_CLIENT_ID/SECRET): pasar además un token provoca "more than one
+    // authorization method configured" y el token fijo vence en 1 h. El override
+    // explícito queda solo para desarrollo local.
+    const tieneOAuthM2M = Boolean(process.env.DATABRICKS_CLIENT_ID && process.env.DATABRICKS_CLIENT_SECRET);
+    if (!tieneOAuthM2M) try {
       const { client } = getExecutionContext();
       const h = new Headers();
       await client.config.authenticate(h);
