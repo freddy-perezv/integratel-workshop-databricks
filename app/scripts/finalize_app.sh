@@ -50,7 +50,7 @@ cd "$BUNDLE_DIR"
 #    match the renamed job name in databricks.yml (resources.jobs.<key>.name).
 SETUP_JOB_NAME_MATCH="LuxeBeauty Setup"
 if [[ -z "$JOB_ID" ]]; then
-    JOB_ID=$(databricks jobs list "${PROFILE_FLAG[@]}" -o json 2>/dev/null \
+    JOB_ID=$(databricks jobs list ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} -o json 2>/dev/null \
         | python3 -c "
 import sys, json
 d = json.load(sys.stdin)
@@ -63,7 +63,7 @@ fi
 echo "[finalize] setup job id: $JOB_ID"
 
 if [[ -z "$RUN_ID" ]]; then
-    RUN_ID=$(databricks jobs list-runs --job-id "$JOB_ID" --limit 1 "${PROFILE_FLAG[@]}" -o json 2>/dev/null \
+    RUN_ID=$(databricks jobs list-runs --job-id "$JOB_ID" --limit 1 ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} -o json 2>/dev/null \
         | python3 -c "
 import sys, json
 d = json.load(sys.stdin)
@@ -75,7 +75,7 @@ fi
 echo "[finalize] setup run id:  $RUN_ID"
 
 # ── 2. Find the export_resources task + read its exit JSON ─────────────────
-TASK_RUN_ID=$(databricks jobs get-run "$RUN_ID" "${PROFILE_FLAG[@]}" -o json 2>/dev/null \
+TASK_RUN_ID=$(databricks jobs get-run "$RUN_ID" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} -o json 2>/dev/null \
     | python3 -c "
 import sys,json
 d=json.load(sys.stdin)
@@ -85,7 +85,7 @@ for t in d.get('tasks',[]):
 ")
 [[ -n "$TASK_RUN_ID" ]] || { echo "[finalize] ERROR: export_resources task not found in run $RUN_ID." >&2; exit 1; }
 
-RESOURCES_JSON=$(databricks jobs get-run-output "$TASK_RUN_ID" "${PROFILE_FLAG[@]}" -o json 2>/dev/null \
+RESOURCES_JSON=$(databricks jobs get-run-output "$TASK_RUN_ID" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} -o json 2>/dev/null \
     | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('notebook_output',{}).get('result','') or '')")
 [[ -n "$RESOURCES_JSON" ]] || { echo "[finalize] ERROR: export_resources produced no exit JSON — did the task succeed?" >&2; exit 1; }
 
@@ -166,7 +166,7 @@ PYEOF
 # the bundle's synced source path (reuse the active deployment's path).
 APP_NAME=$(echo "$RESOURCES_JSON" | python3 -c "import sys,json; print(json.load(sys.stdin)['app_name'])")
 
-SRC_PATH=$(databricks apps get "$APP_NAME" "${PROFILE_FLAG[@]}" -o json 2>/dev/null | python3 -c "
+SRC_PATH=$(databricks apps get "$APP_NAME" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} -o json 2>/dev/null | python3 -c "
 import sys,json
 d=json.load(sys.stdin)
 ad=d.get('active_deployment') or {}
@@ -179,9 +179,9 @@ echo "[finalize] app source path: $SRC_PATH"
 # deployment picks it up.
 echo "[finalize] uploading rendered app.yaml → $SRC_PATH/app.yaml"
 databricks workspace import "$SRC_PATH/app.yaml" \
-    --file "$APP_YAML" --format AUTO --overwrite "${PROFILE_FLAG[@]}" 2>&1 | tail -2 || true
+    --file "$APP_YAML" --format AUTO --overwrite ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} 2>&1 | tail -2 || true
 
 echo "[finalize] deploying app: $APP_NAME"
-databricks apps deploy "$APP_NAME" --source-code-path "$SRC_PATH" "${PROFILE_FLAG[@]}" 2>&1 | tail -5
+databricks apps deploy "$APP_NAME" --source-code-path "$SRC_PATH" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} 2>&1 | tail -5
 
 echo "[finalize] done — app should boot with full env."
