@@ -81,6 +81,7 @@ base AS (
          s.plan_hogar, s.renta_hogar, s.nodo_hogar, s.renta_mensual,
          CASE WHEN s.renta_mensual >= 150 THEN 'Oro' WHEN s.renta_mensual >= 80 THEN 'Plata' ELSE 'Bronce' END AS segmento_valor,
          f.arpu_6m, coalesce(f.dias_atraso_actual, 0) AS dias_atraso,
+         fx.monto AS monto_ultima_factura,
          coalesce(f.dias_atraso_actual, 0) > 60 AS deuda_vencida_60d,
          coalesce(t.tickets_30d, 0) AS tickets_30d, coalesce(t.fallas_red_30d, 0) AS fallas_red_30d,
          coalesce(t.tickets_abiertos, 0) AS tickets_abiertos,
@@ -96,6 +97,7 @@ base AS (
   FROM silver.clientes c
   LEFT JOIN serv s USING (cliente_id)
   LEFT JOIN fact f USING (cliente_id)
+  LEFT JOIN silver.facturacion fx USING (cliente_id)  -- NUEVO: monto de la última factura
   LEFT JOIN tck t USING (cliente_id)
   LEFT JOIN rcl r USING (cliente_id)
   LEFT JOIN por p USING (cliente_id)
