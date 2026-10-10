@@ -19,6 +19,7 @@ y **Carla** (ejecutiva de retención) actúa desde una Databricks App con un cop
 | `agents/` | Scripts de Agent Bricks (Knowledge Assistant y Supervisor) |
 | `app/` | Databricks App "Centro de Retención 360" (AppKit + Lakebase + agente) |
 | `.github/workflows/` | CI (PR → dev + tests) y CD (main → aprobación → prod) |
+| `docs/GUIA_PARTICIPANTES.md` | **Empieza aquí:** prerrequisitos, orden de ejecución y paso a paso del workshop |
 | `data/landing/` | CSVs sintéticos (generados por `tools/generar_datos.py`, semilla 42) |
 
 ## Flujo de CI/CD
