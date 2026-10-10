@@ -35,9 +35,20 @@ variables:
   cicd_sp:
     description: Application ID del service principal de CI/CD (sp-integratel-cicd)
     default: e596241d-5638-4822-af09-1adae5b2fc62
+  lakebase_branch:
+    description: Rama de Lakebase de la App (cada entorno tiene su propia rama de base de datos)
+    default: dev
   notificaciones:
     description: Correo que recibe fallas del pipeline y alertas
     default: freddyalan.perezvelazquez@databricks.com
+
+# Quién administra lo que despliega el Bundle (en ambos entornos). La App, el dashboard y
+# Genie agregan además permisos de uso para todos los usuarios.
+permissions:
+  - service_principal_name: ${var.cicd_sp}
+    level: CAN_MANAGE
+  - user_name: freddyalan.perezvelazquez@databricks.com
+    level: CAN_MANAGE
 
 targets:
   dev:
@@ -59,11 +70,7 @@ targets:
       root_path: /Workspace/Shared/integratel-workshop/.bundle/${bundle.target}
     variables:
       catalog: integratel_prod
+      lakebase_branch: production
     presets:
       tags:
         entorno: prod
-    permissions:
-      - service_principal_name: ${var.cicd_sp}
-        level: CAN_MANAGE
-      - group_name: users
-        level: CAN_VIEW

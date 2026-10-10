@@ -6,17 +6,10 @@
  * mojibake to the user. Re-encode before forwarding deltas.
  */
 export function fixMojibake(s: string): string {
-  if (!s) return s;
-  try {
-    return Buffer.from(s, 'latin1').toString('utf8');
-  } catch {
-    /* fall through */
-  }
-  return s.replace(/[-ÿ]+/g, (seg) => {
-    try {
-      return Buffer.from(seg, 'latin1').toString('utf8');
-    } catch {
-      return seg;
-    }
-  });
+  // Solo re-decodifica si el texto TIENE la firma del mojibake (Ã, Â, â€ seguidos de un byte
+  // de continuación). Con modelos que ya entregan UTF-8 correcto (Claude vía Chat
+  // Completions) re-decodificar siempre convertía "ó" en "�".
+  if (!s || !/[ÃÂâ][\u0080-\u00BF]/.test(s)) return s;
+  const fixed = Buffer.from(s, 'latin1').toString('utf8');
+  return fixed.includes('\uFFFD') ? s : fixed;
 }

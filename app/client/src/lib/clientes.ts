@@ -19,6 +19,8 @@ export type Cliente = {
   tickets30d: number | null;
   fallasRed30d: number | null;
   reclamosAbiertos: number | null;
+  reclamoAbiertoId: string | null;
+  reclamoAbiertoDetalle: string | null;
   consultaPortabilidad30d: boolean | null;
   fechaUltimaConsultaPortabilidad: string | null;
   operadorConsultado: string | null;

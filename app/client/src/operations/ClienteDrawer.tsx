@@ -104,6 +104,11 @@ export function ClienteDrawer({ id, onClose }: { id: string | null; onClose: () 
                   <Item k="Antigüedad" v={`${cliente.antiguedadAnios ?? '—'} años`} />
                   <Item k="Tickets 30 d" v={`${cliente.tickets30d} (${cliente.fallasRed30d} de red)`} />
                   <Item k="Reclamos abiertos" v={cliente.reclamosAbiertos} />
+                  {cliente.reclamoAbiertoId && (
+                    <div className="col-span-2">
+                      <Item k={`Reclamo ${cliente.reclamoAbiertoId}`} v={cliente.reclamoAbiertoDetalle} />
+                    </div>
+                  )}
                   <Item k="Incidencia masiva" v={cliente.afectadoIncidenciaMasiva ? cliente.incidenciaMasivaId : 'No'} />
                   <Item
                     k="Consulta de portabilidad"

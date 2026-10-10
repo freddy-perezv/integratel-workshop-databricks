@@ -9,7 +9,7 @@ import os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ENTORNOS = {
-    "dev": {"DEMO_CATALOG": "integratel_dev", "DASHBOARD_ID": "01f1c4242ec9191fbec80fed77227449"},
+    "dev": {"DEMO_CATALOG": "integratel_dev"},
     "prod": {"DEMO_CATALOG": "integratel_prod"},
 }
 COMUNES = {

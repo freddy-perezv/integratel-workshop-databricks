@@ -7,6 +7,9 @@ resources:
       description: Pregunta en español sobre riesgo de fuga, churn, tickets, reclamos y salud de red. Usa las métricas gobernadas (metric views) de Unity Catalog.
       warehouse_id: ${var.warehouse_id}
       parent_path: /Workspace/Shared/integratel-workshop
+      permissions:
+        - group_name: users
+          level: CAN_RUN
       serialized_space:
         version: 2
         config:

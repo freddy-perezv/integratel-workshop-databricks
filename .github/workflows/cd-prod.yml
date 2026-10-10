@@ -19,14 +19,17 @@ env:
 jobs:
   desplegar-prod:
     name: Desplegar a PROD (requiere aprobación)
-    runs-on: ubuntu-latest
+    # Runner self-hosted dentro de la red permitida por el IP Access List del workspace
+    # (los runners hosteados de GitHub cambian de IP y quedan bloqueados).
+    runs-on: [self-hosted, integratel]
     timeout-minutes: 30
     environment:
       name: produccion
     steps:
       - uses: actions/checkout@v4
 
-      - uses: databricks/setup-cli@main
+      - name: Herramientas del runner
+        run: databricks --version && node --version && python3 --version
 
       - name: 1 · Validar el Bundle (prod)
         run: databricks bundle validate -t prod
@@ -34,11 +37,14 @@ jobs:
       - name: 2 · Ver qué va a cambiar
         run: databricks bundle plan -t prod || true
 
-      - name: 3 · Desplegar a PROD
-        run: databricks bundle deploy -t prod --auto-approve
+      - name: 3 · Desplegar a PROD (Bundle + App)
+        run: ./tools/deploy.sh prod
 
       - name: 4 · Correr pipeline SQL + tests en PROD
         run: databricks bundle run pipeline_sql -t prod
+
+      - name: 5 · Arrancar la App
+        run: databricks bundle run app_retencion -t prod
 
       - name: Resumen
         if: always()
