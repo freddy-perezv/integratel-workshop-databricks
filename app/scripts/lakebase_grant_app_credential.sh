@@ -63,7 +63,7 @@ BRANCH_PATH="projects/$PROJECT_ID/branches/$BRANCH_ID"
 # field contains. Match by app name so we don't grant to the wrong app
 # when several apps share the same project/branch.
 APP_SP_UUID="$(
-    databricks apps get "$APP_NAME" "${PROFILE_FLAG[@]}" -o json 2>/dev/null \
+    databricks apps get "$APP_NAME" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} -o json 2>/dev/null \
     | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('service_principal_client_id',''))"
 )"
 [[ -z "$APP_SP_UUID" ]] && {
@@ -75,7 +75,7 @@ echo "[grant] target: $BRANCH_PATH database=$DB_NAME app=$APP_NAME (sp=$APP_SP_U
 
 # Find the Postgres role whose postgres_role matches this app's SP UUID.
 SP_ROLE="$(
-    databricks postgres list-roles "$BRANCH_PATH" "${PROFILE_FLAG[@]}" -o json \
+    databricks postgres list-roles "$BRANCH_PATH" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} -o json \
     | python3 -c "
 import sys, json
 sp = '$APP_SP_UUID'
@@ -150,14 +150,14 @@ fi
 # Auth as the current Databricks user (the DB owner from setup) to run the
 # GRANTs. Token is short-lived; no plumbing needed beyond this call.
 PG_HOST="$(
-    databricks postgres get-endpoint "$BRANCH_PATH/endpoints/primary" "${PROFILE_FLAG[@]}" -o json \
+    databricks postgres get-endpoint "$BRANCH_PATH/endpoints/primary" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} -o json \
     | python3 -c "import sys,json; print(json.load(sys.stdin)['status']['hosts']['host'])"
 )"
 PG_TOKEN="$(
-    databricks postgres generate-database-credential "$BRANCH_PATH/endpoints/primary" "${PROFILE_FLAG[@]}" -o json \
+    databricks postgres generate-database-credential "$BRANCH_PATH/endpoints/primary" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} -o json \
     | python3 -c "import sys,json; print(json.load(sys.stdin)['token'])"
 )"
-PG_USER="$(databricks current-user me "${PROFILE_FLAG[@]}" -o json \
+PG_USER="$(databricks current-user me ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} -o json \
     | python3 -c "import sys,json; print(json.load(sys.stdin)['userName'])")"
 
 PGPASSWORD="$PG_TOKEN" psql -h "$PG_HOST" -p 5432 -U "$PG_USER" \

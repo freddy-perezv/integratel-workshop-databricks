@@ -70,10 +70,10 @@ DB_ID="db-${DB_NAME//_/-}"
 # ── Helpers ────────────────────────────────────────────────────────────────
 ensure_project() {
     local p="$1"
-    if databricks postgres get-project "projects/$p" "${PROFILE_FLAG[@]}" > /dev/null 2>&1; then
+    if databricks postgres get-project "projects/$p" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} > /dev/null 2>&1; then
         return 0
     fi
-    if databricks postgres create-project "$p" "${PROFILE_FLAG[@]}" \
+    if databricks postgres create-project "$p" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} \
         --json "{\"spec\":{\"display_name\":\"$p\",\"pg_version\":17}}" > /dev/null 2>&1; then
         return 0
     fi
@@ -83,12 +83,12 @@ ensure_project() {
 ensure_branch_and_endpoint() {
     local proj="$1"
     local branch_path="projects/$proj/branches/$BRANCH_ID"
-    if ! databricks postgres get-branch "$branch_path" "${PROFILE_FLAG[@]}" > /dev/null 2>&1; then
-        databricks postgres create-branch "projects/$proj" "$BRANCH_ID" "${PROFILE_FLAG[@]}" \
+    if ! databricks postgres get-branch "$branch_path" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} > /dev/null 2>&1; then
+        databricks postgres create-branch "projects/$proj" "$BRANCH_ID" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} \
             --json '{"spec":{"no_expiry":true}}' > /dev/null
     fi
-    if ! databricks postgres get-endpoint "$branch_path/endpoints/primary" "${PROFILE_FLAG[@]}" > /dev/null 2>&1; then
-        databricks postgres create-endpoint "$branch_path" primary "${PROFILE_FLAG[@]}" \
+    if ! databricks postgres get-endpoint "$branch_path/endpoints/primary" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} > /dev/null 2>&1; then
+        databricks postgres create-endpoint "$branch_path" primary ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} \
             --json '{"spec":{"endpoint_type":"ENDPOINT_TYPE_READ_WRITE","autoscaling_limit_min_cu":0.5,"autoscaling_limit_max_cu":2}}' > /dev/null
     fi
 }
@@ -97,17 +97,17 @@ ensure_branch_and_endpoint() {
 try_create_database() {
     local proj="$1"
     local branch_path="projects/$proj/branches/$BRANCH_ID"
-    if databricks postgres get-database "$branch_path/databases/$DB_ID" "${PROFILE_FLAG[@]}" > /dev/null 2>&1; then
+    if databricks postgres get-database "$branch_path/databases/$DB_ID" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} > /dev/null 2>&1; then
         echo "exists"
         return 0
     fi
     local owner_role
     owner_role="$(
-        databricks postgres list-roles "$branch_path" "${PROFILE_FLAG[@]}" -o json 2>/dev/null \
+        databricks postgres list-roles "$branch_path" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} -o json 2>/dev/null \
         | python3 -c "import sys,json; rs=json.load(sys.stdin); print(rs[0]['name']) if rs else ''"
     )"
     [[ -z "$owner_role" ]] && return 1
-    if databricks postgres create-database "$branch_path" "${PROFILE_FLAG[@]}" \
+    if databricks postgres create-database "$branch_path" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} \
         --database-id "$DB_ID" \
         --json "{\"spec\":{\"postgres_database\":\"$DB_NAME\",\"role\":\"$owner_role\"}}" > /dev/null 2>&1; then
         echo "created"
@@ -155,7 +155,7 @@ echo "[setup-db] database '$DB_NAME' (id=$DB_ID): $result"
 
 # ── Print connection details for .env / app config ─────────────────────────
 PG_HOST="$(
-    databricks postgres get-endpoint "$BRANCH_PATH/endpoints/primary" "${PROFILE_FLAG[@]}" -o json \
+    databricks postgres get-endpoint "$BRANCH_PATH/endpoints/primary" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} -o json \
     | python3 -c "import sys,json; print(json.load(sys.stdin)['status']['hosts']['host'])"
 )"
 

@@ -26,6 +26,9 @@ resources:
         - task_key: metric_views
           depends_on: [ { task_key: gold } ]
           sql_task: { warehouse_id: "${var.warehouse_id}", file: { path: ../sql/30_metric_views.sql } }
+        - task_key: permisos
+          depends_on: [ { task_key: metric_views } ]
+          sql_task: { warehouse_id: "${var.warehouse_id}", file: { path: ../sql/40_permisos.sql } }
         - task_key: test_01_unicidad_cliente_360
           depends_on: [ { task_key: metric_views } ]
           sql_task: { warehouse_id: "${var.warehouse_id}", file: { path: ../tests/test_01_unicidad_cliente_360.sql } }
