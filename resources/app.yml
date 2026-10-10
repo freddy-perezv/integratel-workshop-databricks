@@ -1,6 +1,7 @@
 # Databricks App "Centro de Retención 360" como código. Los bindings (resources) otorgan
 # al service principal de la App los permisos mínimos: usar el warehouse, leer las tablas
-# gold, consultar el Supervisor Agent y el modelo, y conectarse a su base Lakebase.
+# gold y conectarse a su base Lakebase. El modelo y el Supervisor se invocan con el token
+# de cada usuario (OBO, ver user_api_scopes), así que no necesitan binding.
 # El app.yaml se genera por entorno con tools/render_app_yaml.py antes de desplegar.
 resources:
   apps:
@@ -28,10 +29,6 @@ resources:
           uc_securable: { securable_type: TABLE, securable_full_name: "${var.catalog}.gold.cliente_360", permission: SELECT }
         - name: tickets
           uc_securable: { securable_type: TABLE, securable_full_name: "${var.catalog}.gold.tickets_enriquecidos", permission: SELECT }
-        - name: supervisor
-          serving_endpoint: { name: mas-9a907f04-endpoint, permission: CAN_QUERY }
-        - name: modelo
-          serving_endpoint: { name: databricks-claude-sonnet-5-5, permission: CAN_QUERY }
       permissions:
         - group_name: users
           level: CAN_USE
