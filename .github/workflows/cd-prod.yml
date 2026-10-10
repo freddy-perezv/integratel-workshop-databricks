@@ -19,18 +19,17 @@ env:
 jobs:
   desplegar-prod:
     name: Desplegar a PROD (requiere aprobación)
-    runs-on: ubuntu-latest
+    # Runner self-hosted dentro de la red permitida por el IP Access List del workspace
+    # (los runners hosteados de GitHub cambian de IP y quedan bloqueados).
+    runs-on: [self-hosted, integratel]
     timeout-minutes: 30
     environment:
       name: produccion
     steps:
       - uses: actions/checkout@v4
 
-      - uses: databricks/setup-cli@main
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
+      - name: Herramientas del runner
+        run: databricks --version && node --version && python3 --version
 
       - name: 1 · Validar el Bundle (prod)
         run: databricks bundle validate -t prod

@@ -20,16 +20,17 @@ env:
 jobs:
   validar-desplegar-probar:
     name: Validar → desplegar → probar (dev)
-    runs-on: ubuntu-latest
+    # Nunca ejecutar en el runner self-hosted código de PRs que vienen de forks.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    # Runner self-hosted dentro de la red permitida por el IP Access List del workspace
+    # (los runners hosteados de GitHub cambian de IP y quedan bloqueados).
+    runs-on: [self-hosted, integratel]
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
-      - uses: databricks/setup-cli@main
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
+      - name: Herramientas del runner
+        run: databricks --version && node --version && python3 --version
 
       - name: 1 · Validar el Bundle
         run: databricks bundle validate -t dev
