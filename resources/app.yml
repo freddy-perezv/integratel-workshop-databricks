@@ -1,0 +1,37 @@
+# Databricks App "Centro de Retención 360" como código. Los bindings (resources) otorgan
+# al service principal de la App los permisos mínimos: usar el warehouse, leer las tablas
+# gold, consultar el Supervisor Agent y el modelo, y conectarse a su base Lakebase.
+# El app.yaml se genera por entorno con tools/render_app_yaml.py antes de desplegar.
+resources:
+  apps:
+    app_retencion:
+      name: integratel-retencion-${bundle.target}
+      description: Centro de Retención 360 · Integratel — copiloto de retención con Agent Bricks + Lakebase
+      source_code_path: ../app
+      # Scopes del token on-behalf-of (OBO): la App actúa con la identidad de cada usuario.
+      user_api_scopes:
+        - model-serving
+        - sql
+        - postgres
+        - catalog.catalogs:read
+        - catalog.schemas:read
+        - catalog.tables:read
+      resources:
+        - name: sql-warehouse
+          sql_warehouse: { id: "${var.warehouse_id}", permission: CAN_USE }
+        - name: postgres
+          postgres:
+            branch: projects/integratel-retencion/branches/production
+            database: projects/integratel-retencion/branches/production/databases/db-integratel-retencion
+            permission: CAN_CONNECT_AND_CREATE
+        - name: cliente-360
+          uc_securable: { securable_type: TABLE, securable_full_name: "${var.catalog}.gold.cliente_360", permission: SELECT }
+        - name: tickets
+          uc_securable: { securable_type: TABLE, securable_full_name: "${var.catalog}.gold.tickets_enriquecidos", permission: SELECT }
+        - name: supervisor
+          serving_endpoint: { name: mas-9a907f04-endpoint, permission: CAN_QUERY }
+        - name: modelo
+          serving_endpoint: { name: databricks-claude-sonnet-5-5, permission: CAN_QUERY }
+      permissions:
+        - group_name: users
+          level: CAN_USE

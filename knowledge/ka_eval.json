@@ -1,0 +1,142 @@
+[
+  {
+    "question": "¿Qué debo hacer si veo el LED LOS de mi ONT en rojo?",
+    "guidelines": [
+      "Indica que hay pérdida de señal óptica (Loss of Signal)",
+      "Primer paso: verificar si hay incidencia masiva en el nodo",
+      "Si hay ≥10 tickets F-101 del mismo nodo en 24 h → incidencia masiva, NO agendar visita",
+      "Si no hay incidencia masiva → agendar visita técnica con SLA 24 h (Lima) o 48 h (regiones)"
+    ],
+    "source_doc": "01_manual_troubleshooting_fibra_hfc_movil.pdf"
+  },
+  {
+    "question": "Un cliente tiene FIB-400 y sufrió 3 días de interrupción por una falla en nuestro nodo. ¿Cuánto le corresponde de compensación?",
+    "guidelines": [
+      "Plan FIB-400 cuesta S/109",
+      "Fórmula: (S/109 × 3 días) / 30 = S/10.90",
+      "La compensación es automática en su próxima factura",
+      "No requiere que el cliente la solicite"
+    ],
+    "source_doc": "02_guia_reclamos_y_compensaciones.pdf"
+  },
+  {
+    "question": "¿Cuál es el plazo para responder a un reclamo por interrupción del servicio?",
+    "guidelines": [
+      "Plazo: 5 días hábiles",
+      "Tipo de reclamo: interrupción de servicio / calidad",
+      "Si Integratel no responde en el plazo → silencio positivo a favor del cliente",
+      "Código de reclamo debe ser comunicado al cliente en primer contacto (formato RCL-AAAA-NNNNN)"
+    ],
+    "source_doc": "02_guia_reclamos_y_compensaciones.pdf"
+  },
+  {
+    "question": "¿Puedo ofrecer un descuento del 30% a un cliente Oro sin consultar al Supervisor de Retención?",
+    "guidelines": [
+      "No, descuentos > 25% requieren aprobación del Supervisor de Retención",
+      "Descuentos ≤ 25% son aprobados automáticamente",
+      "R1 aplica a clientes Oro o Plata con riesgo Crítico/Alto",
+      "Máximo para Plata: 20% sin aprobación"
+    ],
+    "source_doc": "03_politica_comercial_retencion_2026.pdf"
+  },
+  {
+    "question": "¿Cuántos beneficios comerciales (R1-R4) puede recibir un cliente al mismo tiempo?",
+    "guidelines": [
+      "Máximo 2 beneficios comerciales simultáneos",
+      "La compensación regulatoria por interrupción NO cuenta como beneficio comercial",
+      "Ejemplos permitidos: R2 + R1, o R3 + R4",
+      "Después de 6 meses: cliente puede recibir otra retención"
+    ],
+    "source_doc": "03_politica_comercial_retencion_2026.pdf"
+  },
+  {
+    "question": "¿Cuál es el precio del plan FIB-600 y qué incluye?",
+    "guidelines": [
+      "Precio: S/129.00 mensuales",
+      "Velocidad: 600 Mbps",
+      "Incluye: ONT, router Wi-Fi 6, 2 TB de almacenamiento nube por 12 meses"
+    ],
+    "source_doc": "04_catalogo_planes_tarifas_2026.pdf"
+  },
+  {
+    "question": "¿Cuál es el precio del plan MOV-ILI-79 y qué descuento aplica si tiene dúo con fibra?",
+    "guidelines": [
+      "Precio: S/79.90",
+      "Datos: Ilimitado (120 GB a alta velocidad)",
+      "Con Dúo: 15% descuento, pagando S/67.92",
+      "Dúo requiere hogar (Fibra o HFC) + móvil del mismo titular"
+    ],
+    "source_doc": "04_catalogo_planes_tarifas_2026.pdf"
+  },
+  {
+    "question": "¿Qué dice la política sobre condicionar la portabilidad a cambios de plan o pagos?",
+    "guidelines": [
+      "Está PROHIBIDO condicionar la portabilidad",
+      "No permitido: demorar, obstaculizar, o exigir acciones previas",
+      "Permitido: contactar ≤24 h y presentar oferta de retención voluntaria",
+      "Si cliente rechaza retención → proceder portabilidad sin obstáculos"
+    ],
+    "source_doc": "05_procedimiento_portabilidad_numerica.pdf"
+  },
+  {
+    "question": "¿En cuánto tiempo debo contactar a un cliente si registra una consulta de portabilidad?",
+    "guidelines": [
+      "Plazo CRÍTICO: ≤ 24 horas desde registro de consulta",
+      "Objetivo: presentar oferta de retención",
+      "Si no contacta en 24 h → reintento en 24 h adicionales",
+      "Registrar todo en CRM con fecha/hora de contactos"
+    ],
+    "source_doc": "05_procedimiento_portabilidad_numerica.pdf"
+  },
+  {
+    "question": "Un cliente cancela su servicio. ¿Qué equipamiento debe devolver y qué pasa si no lo devuelve?",
+    "guidelines": [
+      "Debe devolver: ONT/Módem, router, y cableado en buen estado",
+      "Si no devuelve equipamiento: se cobra S/100 en factura final",
+      "Garantía: 24 meses. Dentro de garantía: reemplazo gratis por falla. Por daño físico: S/45"
+    ],
+    "source_doc": "06_condiciones_contrato_y_faq.pdf"
+  },
+  {
+    "question": "¿Hay permanencia forzada en los contratos de Integratel?",
+    "guidelines": [
+      "No, no hay permanencia forzada",
+      "Cliente puede cambiar o cancelar en cualquier momento",
+      "Notificar con 5 días de anticipación",
+      "Última factura incluye prorrateo de días utilizados"
+    ],
+    "source_doc": "06_condiciones_contrato_y_faq.pdf"
+  },
+  {
+    "question": "¿Cuántos clientes fueron afectados por la incidencia INC-AQP-2026-0412 y cuál fue la causa?",
+    "guidelines": [
+      "1,184 clientes afectados",
+      "Nodo: AQP-CAY-03 (Cayma, Arequipa)",
+      "Causa: Tarjeta PON degradada en equipo OLT",
+      "Duración: 9 días (2026-10-02 08:15 a 2026-10-11 18:40)"
+    ],
+    "source_doc": "07_comunicado_incidencia_inc_aqp_2026_0412.pdf"
+  },
+  {
+    "question": "Cliente Oro de Cayma afectado por la incidencia INC-AQP-2026-0412, con FIB-400 y 3 días sin servicio, que consultó portabilidad. ¿Qué ofrezco y cuánto le compenso?",
+    "guidelines": [
+      "Compensación automática: (S/109 × 3) / 30 = S/10.90",
+      "Ofrecer R2 pre-aprobado: upgrade FIB-400 → FIB-600 por 12 meses (sin costo)",
+      "Ofrecer R1: descuento hasta 25% en fijo hogar por 6 meses (sin aprobación adicional)",
+      "Máximo 2 beneficios: R2 + R1 permitido",
+      "Contactar ≤24 h, sin condicionar portabilidad"
+    ],
+    "source_doc": "07_comunicado_incidencia_inc_aqp_2026_0412.pdf, 02_guia_reclamos_y_compensaciones.pdf, 03_politica_comercial_retencion_2026.pdf"
+  },
+  {
+    "question": "¿Bajo qué condiciones un cliente NO es elegible para retención comercial?",
+    "guidelines": [
+      "Deuda vencida > 60 días → NO aplica retención",
+      "Cliente recibió retención hace < 6 meses → máximo 1 por semestre",
+      "En segunda instancia de reclamo → NO aplica retención",
+      "Cliente en caso de portabilidad con obstaculización previa → No condicionar retención",
+      "Solucionar primero: deuda, reclamo, después retención"
+    ],
+    "source_doc": "03_politica_comercial_retencion_2026.pdf, 02_guia_reclamos_y_compensaciones.pdf"
+  }
+]

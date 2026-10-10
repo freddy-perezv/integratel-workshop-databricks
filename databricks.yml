@@ -1,0 +1,69 @@
+# ============================================================================
+# Integratel · Workshop "Retener sin multas"
+# Declarative Automation Bundle: TODO el proyecto como código, desplegable a dev y prod.
+#   databricks bundle validate -t dev
+#   databricks bundle deploy   -t dev
+#   databricks bundle run pipeline_sql -t dev
+# En CI/CD (GitHub Actions) los mismos comandos corren como service principal.
+# ============================================================================
+bundle:
+  name: integratel-retencion
+
+include:
+  - resources/*.yml
+
+# La App se compila antes de desplegar (app/dist y app/client/dist están en .gitignore
+# pero SÍ deben subirse al workspace).
+sync:
+  include:
+    - app/dist/**
+    - app/client/dist/**
+    - app/app.yaml
+  exclude:
+    - app/node_modules/**
+    - app/.env
+    - knowledge/src/**
+    - .venv/**
+
+variables:
+  catalog:
+    description: Catálogo de Unity Catalog del entorno (integratel_dev | integratel_prod)
+  warehouse_id:
+    description: SQL Warehouse que ejecuta el pipeline, el dashboard y la alerta
+    lookup:
+      warehouse: Serverless Starter Warehouse
+  cicd_sp:
+    description: Application ID del service principal de CI/CD (sp-integratel-cicd)
+    default: e596241d-5638-4822-af09-1adae5b2fc62
+  notificaciones:
+    description: Correo que recibe fallas del pipeline y alertas
+    default: freddyalan.perezvelazquez@databricks.com
+
+targets:
+  dev:
+    default: true
+    workspace:
+      host: https://adb-7405608876622599.19.azuredatabricks.net
+      root_path: /Workspace/Shared/integratel-workshop/.bundle/${bundle.target}
+    variables:
+      catalog: integratel_dev
+    presets:
+      name_prefix: "[dev] "
+      tags:
+        entorno: dev
+
+  prod:
+    mode: production
+    workspace:
+      host: https://adb-7405608876622599.19.azuredatabricks.net
+      root_path: /Workspace/Shared/integratel-workshop/.bundle/${bundle.target}
+    variables:
+      catalog: integratel_prod
+    presets:
+      tags:
+        entorno: prod
+    permissions:
+      - service_principal_name: ${var.cicd_sp}
+        level: CAN_MANAGE
+      - group_name: users
+        level: CAN_VIEW

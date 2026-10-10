@@ -1,0 +1,22 @@
+nodo_id,region,provincia,distrito,tecnologia,lat,lng
+LIM-MIR-01,Lima,Lima,Miraflores,FTTH,-12.1211,-77.0297
+LIM-SIS-02,Lima,Lima,San Isidro,FTTH,-12.0977,-77.0365
+LIM-SUR-02,Lima,Lima,Santiago de Surco,FTTH,-12.1459,-76.9917
+LIM-SJL-04,Lima,Lima,San Juan de Lurigancho,FTTH,-11.9816,-77.0067
+LIM-COM-05,Lima,Lima,Comas,FTTH,-11.9447,-77.0623
+LIM-ATE-03,Lima,Lima,Ate,HFC,-12.0262,-76.918
+LIM-CAL-01,Lima,Callao,Callao,HFC,-12.0566,-77.1181
+AQP-CAY-03,Arequipa,Arequipa,Cayma,FTTH,-16.3826,-71.5467
+AQP-CER-01,Arequipa,Arequipa,Cerro Colorado,FTTH,-16.3721,-71.5591
+AQP-JLB-04,Arequipa,Arequipa,José Luis Bustamante y Rivero,FTTH,-16.4285,-71.5225
+AQP-YAN-02,Arequipa,Arequipa,Yanahuara,HFC,-16.3887,-71.544
+TRU-VIC-01,La Libertad,Trujillo,Víctor Larco Herrera,FTTH,-8.134,-79.045
+TRU-CEN-02,La Libertad,Trujillo,Trujillo,HFC,-8.1116,-79.0288
+PIU-CAS-01,Piura,Piura,Castilla,FTTH,-5.196,-80.626
+PIU-CEN-02,Piura,Piura,Piura,HFC,-5.1945,-80.6328
+CIX-CEN-01,Lambayeque,Chiclayo,Chiclayo,FTTH,-6.7714,-79.8409
+CIX-LVI-02,Lambayeque,Chiclayo,La Victoria,HFC,-6.79,-79.838
+CUS-WAN-01,Cusco,Cusco,Wanchaq,FTTH,-13.525,-71.96
+CUS-SSE-02,Cusco,Cusco,San Sebastián,FTTH,-13.532,-71.933
+HYO-TAM-01,Junín,Huancayo,El Tambo,FTTH,-12.056,-75.214
+HYO-CEN-02,Junín,Huancayo,Huancayo,HFC,-12.0651,-75.2049

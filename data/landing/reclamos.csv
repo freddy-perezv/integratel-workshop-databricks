@@ -1,0 +1,478 @@
+reclamo_id,cliente_id,servicio_id,ticket_id,fecha_registro,tipo,estado,fecha_respuesta,dias_habiles_respuesta,monto_compensado,incidencia_id,descripcion
+RCL-2026-07001,CLI-104989,SRV-007252,TCK-0002466,2026-07-02 06:13,Facturación,Resuelto no favorable,2026-07-24,16,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07002,CLI-106039,SRV-008788,TCK-0002987,2026-07-05 06:44,Facturación,Resuelto favorable,2026-07-11,4,5.32,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07003,CLI-101223,SRV-001783,TCK-0000590,2026-07-04 03:21,Interrupción,Resuelto favorable,2026-07-07,2,11.87,,Solicita compensación por días sin servicio.
+RCL-2026-07004,CLI-108059,SRV-011699,TCK-0003979,2026-07-05 09:38,Interrupción,Resuelto favorable,2026-07-06,1,7.9,,Solicita compensación por días sin servicio.
+RCL-2026-07005,CLI-102998,SRV-004367,TCK-0001492,2026-07-08 00:15,Facturación,Resuelto no favorable,2026-07-11,2,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07006,CLI-111724,SRV-017004,TCK-0005698,2026-07-07 12:17,Facturación,Resuelto favorable,2026-07-25,13,9.5,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07007,CLI-103745,SRV-005469,TCK-0001861,2026-07-08 20:18,Interrupción,Resuelto favorable,2026-07-15,5,3.17,,Solicita compensación por días sin servicio.
+RCL-2026-07008,CLI-100903,SRV-001333,TCK-0000440,2026-07-11 14:03,Facturación,Resuelto favorable,2026-07-19,6,5.33,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07009,CLI-109037,SRV-013109,TCK-0004454,2026-07-10 17:28,Interrupción,Resuelto favorable,2026-07-11,1,10.9,,Solicita compensación por días sin servicio.
+RCL-2026-07010,CLI-106278,SRV-009137,TCK-0003113,2026-07-12 02:12,Interrupción,Resuelto favorable,2026-07-20,6,2.66,,Solicita compensación por días sin servicio.
+RCL-2026-07011,CLI-100559,SRV-000822,TCK-0000272,2026-07-10 20:13,Interrupción,Resuelto no favorable,2026-07-20,7,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07012,CLI-106167,SRV-008967,TCK-0003055,2026-07-12 15:23,Interrupción,Resuelto favorable,2026-07-16,3,2.63,,Solicita compensación por días sin servicio.
+RCL-2026-07013,CLI-109546,SRV-013858,TCK-0004687,2026-07-12 05:57,Interrupción,Resuelto favorable,2026-07-18,4,6.33,,Solicita compensación por días sin servicio.
+RCL-2026-07014,CLI-109031,SRV-013100,TCK-0004447,2026-07-12 09:55,Facturación,Resuelto favorable,2026-07-18,4,3.17,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07015,CLI-109087,SRV-013181,TCK-0004475,2026-07-12 13:12,Interrupción,Resuelto favorable,2026-07-18,4,5.93,,Solicita compensación por días sin servicio.
+RCL-2026-07016,CLI-111903,SRV-017261,TCK-0005779,2026-07-14 02:14,Interrupción,Resuelto no favorable,2026-07-24,7,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07017,CLI-100701,SRV-001029,TCK-0000355,2026-07-12 22:20,Interrupción,Resuelto favorable,2026-07-22,7,12.67,,Solicita compensación por días sin servicio.
+RCL-2026-07018,CLI-106517,SRV-009494,TCK-0003245,2026-07-14 02:25,Facturación,Resuelto favorable,2026-08-08,18,2.63,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07019,CLI-105386,SRV-007834,TCK-0002651,2026-07-15 21:20,Interrupción,Resuelto no favorable,2026-07-21,4,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07020,CLI-100983,SRV-001447,TCK-0000479,2026-07-14 20:52,Facturación,Resuelto no favorable,2026-07-20,4,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07021,CLI-108918,SRV-012942,TCK-0004388,2026-07-15 15:39,Interrupción,Resuelto favorable,2026-07-16,1,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07022,CLI-108437,SRV-012269,TCK-0004158,2026-07-16 06:29,Interrupción,Resuelto no favorable,2026-07-23,5,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07023,CLI-110627,SRV-015426,TCK-0005213,2026-07-16 21:49,Interrupción,Apelado,2026-07-23,5,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07024,CLI-106696,SRV-009758,TCK-0003321,2026-07-17 10:43,Interrupción,Resuelto favorable,2026-07-28,8,1.33,,Solicita compensación por días sin servicio.
+RCL-2026-07025,CLI-110628,SRV-015428,TCK-0005215,2026-07-17 00:12,Interrupción,Resuelto favorable,2026-07-28,8,10.65,,Solicita compensación por días sin servicio.
+RCL-2026-07026,CLI-100717,SRV-001055,TCK-0000365,2026-07-17 05:42,Facturación,Resuelto favorable,2026-07-20,2,7.9,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07027,CLI-107723,SRV-011222,TCK-0003825,2026-07-17 06:04,Facturación,Resuelto favorable,2026-08-11,18,2.66,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07028,CLI-107744,SRV-011249,TCK-0003837,2026-07-17 19:07,Facturación,Resuelto favorable,2026-08-11,18,3.99,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07029,CLI-104321,SRV-006305,TCK-0002170,2026-07-17 22:16,Facturación,Resuelto favorable,2026-08-01,11,7.99,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07030,CLI-105019,SRV-007294,TCK-0002486,2026-07-16 20:13,Interrupción,Resuelto favorable,2026-07-24,6,8.9,,Solicita compensación por días sin servicio.
+RCL-2026-07031,CLI-105744,SRV-008355,TCK-0002836,2026-07-19 18:27,Facturación,Resuelto favorable,2026-08-01,9,8.9,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07032,CLI-105982,SRV-008707,TCK-0002960,2026-07-19 01:34,Facturación,Apelado,2026-07-26,5,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07033,CLI-102780,SRV-004049,TCK-0001372,2026-07-19 03:20,Interrupción,Resuelto favorable,2026-07-25,4,3.17,,Solicita compensación por días sin servicio.
+RCL-2026-07034,CLI-103729,SRV-005446,TCK-0001853,2026-07-23 01:55,Interrupción,Resuelto favorable,2026-08-03,8,5.32,,Solicita compensación por días sin servicio.
+RCL-2026-07035,CLI-101866,SRV-002727,TCK-0000928,2026-07-21 16:52,Facturación,Resuelto favorable,2026-07-24,2,5.93,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07036,CLI-107525,SRV-010936,TCK-0003733,2026-07-23 06:13,Interrupción,Resuelto favorable,2026-07-24,1,2.66,,Solicita compensación por días sin servicio.
+RCL-2026-07037,CLI-100958,SRV-001412,TCK-0000469,2026-07-22 22:22,Interrupción,Apelado,2026-07-23,1,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07038,CLI-103545,SRV-005175,TCK-0001759,2026-07-21 21:22,Interrupción,Resuelto favorable,2026-08-01,8,7.99,,Solicita compensación por días sin servicio.
+RCL-2026-07039,CLI-107321,SRV-010650,TCK-0003644,2026-07-22 09:16,Interrupción,Resuelto favorable,2026-08-01,7,10.53,,Solicita compensación por días sin servicio.
+RCL-2026-07040,CLI-107810,SRV-011345,TCK-0003866,2026-07-24 02:30,Interrupción,Resuelto favorable,2026-07-25,1,5.27,,Solicita compensación por días sin servicio.
+RCL-2026-07041,CLI-110616,SRV-015411,TCK-0005202,2026-07-25 11:48,Interrupción,Resuelto no favorable,2026-07-28,2,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07042,CLI-103266,SRV-004765,TCK-0001635,2026-07-23 03:00,Interrupción,Resuelto favorable,2026-07-30,5,2.66,,Solicita compensación por días sin servicio.
+RCL-2026-07043,CLI-111099,SRV-016100,TCK-0005439,2026-07-25 00:39,Facturación,Resuelto favorable,2026-07-31,4,3.99,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07044,CLI-109209,SRV-013357,TCK-0004530,2026-07-25 09:47,Facturación,Resuelto favorable,2026-08-19,18,7.27,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07045,CLI-106207,SRV-009031,TCK-0003077,2026-07-24 13:32,Facturación,Resuelto no favorable,2026-08-07,10,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07046,CLI-104498,SRV-006556,TCK-0002250,2026-07-25 22:33,Facturación,Resuelto no favorable,2026-08-02,6,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07047,CLI-100631,SRV-000926,TCK-0000316,2026-07-24 17:00,Interrupción,Resuelto no favorable,2026-07-25,1,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07048,CLI-108405,SRV-012221,TCK-0004145,2026-07-26 14:23,Facturación,Resuelto favorable,2026-08-01,4,10.9,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07049,CLI-106121,SRV-008906,TCK-0003035,2026-07-24 22:36,Interrupción,Apelado,2026-07-31,5,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07050,CLI-100770,SRV-001135,TCK-0000389,2026-07-25 02:20,Interrupción,Resuelto favorable,2026-07-29,3,3.17,,Solicita compensación por días sin servicio.
+RCL-2026-07051,CLI-103882,SRV-005666,TCK-0001941,2026-07-28 08:44,Interrupción,Resuelto favorable,2026-07-29,1,9.5,,Solicita compensación por días sin servicio.
+RCL-2026-07052,CLI-102481,SRV-003626,TCK-0001225,2026-07-26 01:41,Interrupción,Resuelto favorable,2026-07-30,3,6.33,,Solicita compensación por días sin servicio.
+RCL-2026-07053,CLI-101785,SRV-002606,TCK-0000892,2026-07-29 09:00,Facturación,Resuelto favorable,2026-08-11,9,10.53,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07054,CLI-101028,SRV-001511,TCK-0000496,2026-07-29 15:35,Interrupción,Resuelto favorable,2026-08-02,3,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07055,CLI-102940,SRV-004273,TCK-0001452,2026-07-29 17:32,Facturación,Resuelto no favorable,2026-08-09,8,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07056,CLI-108115,SRV-011784,TCK-0004008,2026-07-30 00:29,Facturación,Resuelto no favorable,2026-08-20,15,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07057,CLI-102691,SRV-003930,TCK-0001332,2026-07-29 06:16,Interrupción,Apelado,2026-08-01,2,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07058,CLI-103909,SRV-005705,TCK-0007664,2026-07-31 00:39,Interrupción,Resuelto no favorable,2026-08-04,3,0.0,INC-CUS-2026-0360,Solicita compensación por días sin servicio.
+RCL-2026-07059,CLI-107407,SRV-010766,TCK-0003674,2026-07-31 17:23,Facturación,Resuelto favorable,2026-08-17,12,7.99,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07060,CLI-103554,SRV-005186,TCK-0001764,2026-07-31 11:55,Interrupción,Resuelto no favorable,2026-08-06,4,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07061,CLI-109155,SRV-013282,TCK-0004503,2026-07-31 21:15,Facturación,Resuelto favorable,2026-08-13,9,5.93,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07062,CLI-107064,SRV-010284,TCK-0003511,2026-08-03 08:09,Interrupción,Resuelto favorable,2026-08-10,5,5.93,,Solicita compensación por días sin servicio.
+RCL-2026-07063,CLI-104318,SRV-006301,TCK-0002168,2026-08-03 15:36,Facturación,Resuelto favorable,2026-08-11,6,7.99,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07064,CLI-109952,SRV-014465,TCK-0004891,2026-08-02 04:26,Facturación,Resuelto no favorable,2026-08-10,6,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07065,CLI-100929,SRV-001370,TCK-0000455,2026-08-05 00:54,Interrupción,Resuelto no favorable,2026-08-15,7,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07066,CLI-110578,SRV-015359,TCK-0005182,2026-08-04 22:16,Interrupción,Resuelto favorable,2026-08-07,2,2.0,,Solicita compensación por días sin servicio.
+RCL-2026-07067,CLI-108604,SRV-012494,TCK-0004245,2026-08-04 17:33,Facturación,Resuelto favorable,2026-08-25,15,9.5,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07068,CLI-102611,SRV-003822,TCK-0001296,2026-08-05 19:09,Facturación,Resuelto favorable,2026-08-26,15,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07069,CLI-100496,SRV-000730,TCK-0000247,2026-08-05 00:27,Interrupción,Resuelto no favorable,2026-08-12,5,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07070,CLI-110618,SRV-015414,TCK-0005204,2026-08-07 07:12,Interrupción,Resuelto no favorable,2026-08-14,5,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07071,CLI-105077,SRV-007385,TCK-0002514,2026-08-05 18:29,Interrupción,Resuelto no favorable,2026-08-11,4,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07072,CLI-105620,SRV-008183,TCK-0002774,2026-08-06 06:44,Interrupción,Resuelto favorable,2026-08-13,5,12.67,,Solicita compensación por días sin servicio.
+RCL-2026-07073,CLI-108761,SRV-012720,TCK-0004326,2026-08-06 04:52,Interrupción,Resuelto no favorable,2026-08-16,7,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07074,CLI-107565,SRV-010990,TCK-0003755,2026-08-07 17:54,Facturación,Resuelto favorable,2026-08-20,9,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07075,CLI-100704,SRV-001034,TCK-0000357,2026-08-07 22:43,Interrupción,Resuelto no favorable,2026-08-14,5,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07076,CLI-101719,SRV-002507,TCK-0000851,2026-08-08 04:47,Interrupción,Resuelto favorable,2026-08-14,4,3.17,,Solicita compensación por días sin servicio.
+RCL-2026-07077,CLI-106418,SRV-009344,TCK-0003200,2026-08-09 21:17,Facturación,Resuelto no favorable,2026-08-10,1,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07078,CLI-110194,SRV-014801,TCK-0004985,2026-08-09 19:10,Facturación,Resuelto no favorable,2026-09-02,17,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07079,CLI-104957,SRV-007206,TCK-0002458,2026-08-10 22:00,Interrupción,Resuelto no favorable,2026-08-20,7,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07080,CLI-102170,SRV-003185,TCK-0001088,2026-08-11 12:47,Interrupción,Apelado,2026-08-17,4,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07081,CLI-109274,SRV-013458,TCK-0004563,2026-08-11 12:46,Facturación,Resuelto no favorable,2026-09-02,16,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07082,CLI-104877,SRV-007092,TCK-0002424,2026-08-09 14:12,Facturación,Resuelto favorable,2026-08-16,5,7.9,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07083,CLI-111945,SRV-017321,TCK-0005793,2026-08-12 16:38,Facturación,Resuelto favorable,2026-08-15,2,9.5,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07084,CLI-106475,SRV-009431,TCK-0003222,2026-08-13 23:19,Facturación,Resuelto favorable,2026-08-19,4,7.99,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07085,CLI-104606,SRV-006702,TCK-0002293,2026-08-11 23:09,Facturación,Resuelto favorable,2026-08-19,6,5.27,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07086,CLI-110867,SRV-015776,TCK-0005324,2026-08-14 05:14,Facturación,Resuelto favorable,2026-09-04,15,2.66,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07087,CLI-111671,SRV-016928,TCK-0005681,2026-08-13 18:39,Interrupción,Resuelto favorable,2026-08-21,6,7.99,,Solicita compensación por días sin servicio.
+RCL-2026-07088,CLI-108738,SRV-012687,TCK-0004309,2026-08-15 01:22,Interrupción,Resuelto no favorable,2026-08-16,1,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07089,CLI-110665,SRV-015486,TCK-0005237,2026-08-14 10:51,Facturación,Resuelto no favorable,2026-09-07,17,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07090,CLI-103812,SRV-005563,TCK-0001899,2026-08-14 18:45,Interrupción,Resuelto favorable,2026-08-24,7,2.63,,Solicita compensación por días sin servicio.
+RCL-2026-07091,CLI-110680,SRV-015507,TCK-0005244,2026-08-16 02:41,Interrupción,Resuelto no favorable,2026-08-19,2,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07092,CLI-108057,SRV-011697,TCK-0003978,2026-08-16 21:58,Facturación,Resuelto favorable,2026-09-05,14,10.65,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07093,CLI-107447,SRV-010826,TCK-0003700,2026-08-17 01:52,Facturación,Resuelto favorable,2026-09-08,16,5.33,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07094,CLI-110592,SRV-015377,TCK-0005191,2026-08-16 14:09,Facturación,Apelado,2026-08-23,5,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07095,CLI-102621,SRV-003836,TCK-0001301,2026-08-17 22:32,Interrupción,Resuelto no favorable,2026-08-24,5,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07096,CLI-101632,SRV-002379,TCK-0000809,2026-08-19 02:32,Interrupción,Apelado,2026-08-23,3,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07097,CLI-108779,SRV-012747,TCK-0004333,2026-08-19 05:16,Interrupción,Resuelto favorable,2026-08-20,1,10.65,,Solicita compensación por días sin servicio.
+RCL-2026-07098,CLI-104119,SRV-006010,TCK-0002071,2026-08-18 03:46,Interrupción,Resuelto no favorable,2026-08-26,6,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07099,CLI-109253,SRV-013425,TCK-0004551,2026-08-19 11:52,Interrupción,Resuelto favorable,2026-08-25,4,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07100,CLI-110481,SRV-015218,TCK-0007580,2026-08-20 20:33,Interrupción,Resuelto favorable,2026-08-24,3,2.63,INC-TRU-2026-0379,Solicita compensación por días sin servicio.
+RCL-2026-07101,CLI-103223,SRV-004704,TCK-0007602,2026-08-19 03:50,Interrupción,Apelado,2026-08-27,6,0.0,INC-TRU-2026-0379,Solicita compensación por días sin servicio.
+RCL-2026-07102,CLI-101588,SRV-002311,TCK-0007574,2026-08-20 04:11,Interrupción,Resuelto favorable,2026-08-23,2,6.33,INC-TRU-2026-0379,Solicita compensación por días sin servicio.
+RCL-2026-07103,CLI-103585,SRV-005230,TCK-0001782,2026-08-21 08:59,Interrupción,Resuelto favorable,2026-09-01,8,7.9,,Solicita compensación por días sin servicio.
+RCL-2026-07104,CLI-104004,SRV-005847,TCK-0002023,2026-08-21 02:45,Facturación,Resuelto no favorable,2026-08-24,2,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07105,CLI-109250,SRV-013420,TCK-0004549,2026-08-21 06:07,Facturación,Resuelto favorable,2026-09-01,8,12.9,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07106,CLI-109001,SRV-013056,TCK-0004424,2026-08-21 17:23,Facturación,Resuelto favorable,2026-09-11,15,5.27,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07107,CLI-106326,SRV-009211,TCK-0003145,2026-08-20 10:12,Facturación,Resuelto no favorable,2026-08-30,7,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07108,CLI-103859,SRV-005630,TCK-0001926,2026-08-19 23:03,Interrupción,Resuelto no favorable,2026-08-25,4,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07109,CLI-110286,SRV-014936,TCK-0005031,2026-08-22 08:11,Interrupción,Resuelto favorable,2026-08-25,2,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07110,CLI-100108,SRV-000156,TCK-0000068,2026-08-21 08:01,Facturación,Resuelto favorable,2026-09-15,18,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07111,CLI-106200,SRV-009019,TCK-0003073,2026-08-23 11:50,Facturación,Resuelto favorable,2026-09-16,17,3.99,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07112,CLI-102692,SRV-003932,TCK-0001333,2026-08-21 23:56,Interrupción,Resuelto no favorable,2026-08-27,4,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07113,CLI-106698,SRV-009760,TCK-0003324,2026-08-22 05:12,Interrupción,Resuelto favorable,2026-08-23,1,2.66,,Solicita compensación por días sin servicio.
+RCL-2026-07114,CLI-105692,SRV-008282,TCK-0002810,2026-08-23 04:50,Interrupción,Apelado,2026-08-27,3,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07115,CLI-102759,SRV-004023,TCK-0001360,2026-08-24 06:48,Interrupción,Resuelto favorable,2026-09-03,7,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07116,CLI-105885,SRV-008566,TCK-0002915,2026-08-24 07:10,Facturación,Apelado,2026-08-31,5,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07117,CLI-110667,SRV-015488,TCK-0005239,2026-08-24 15:16,Interrupción,Resuelto no favorable,2026-09-03,7,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07118,CLI-110630,SRV-015431,TCK-0005216,2026-08-23 14:51,Facturación,Resuelto favorable,2026-08-26,2,5.27,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07119,CLI-102224,SRV-003256,TCK-0001105,2026-08-25 14:59,Interrupción,Resuelto favorable,2026-09-01,5,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07120,CLI-104070,SRV-005937,TCK-0002048,2026-08-26 18:29,Facturación,Resuelto favorable,2026-09-13,13,5.27,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07121,CLI-107739,SRV-011244,TCK-0003834,2026-08-26 20:40,Facturación,Resuelto favorable,2026-09-09,10,2.66,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07122,CLI-107576,SRV-011008,TCK-0003761,2026-08-26 18:48,Interrupción,Resuelto favorable,2026-09-03,6,7.99,,Solicita compensación por días sin servicio.
+RCL-2026-07123,CLI-103873,SRV-005653,TCK-0001933,2026-08-28 04:37,Interrupción,Resuelto favorable,2026-09-07,7,7.99,,Solicita compensación por días sin servicio.
+RCL-2026-07124,CLI-105885,SRV-008565,TCK-0002914,2026-08-26 23:22,Interrupción,Resuelto no favorable,2026-08-30,3,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07125,CLI-107212,SRV-010493,TCK-0003580,2026-08-29 08:01,Interrupción,Resuelto favorable,2026-09-08,7,8.6,,Solicita compensación por días sin servicio.
+RCL-2026-07126,CLI-103820,SRV-005577,TCK-0001908,2026-08-29 08:16,Facturación,Resuelto favorable,2026-09-08,7,7.99,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07127,CLI-107313,SRV-010638,TCK-0003637,2026-09-01 04:25,Interrupción,Resuelto favorable,2026-09-12,8,9.5,,Solicita compensación por días sin servicio.
+RCL-2026-07128,CLI-107430,SRV-010802,TCK-0003694,2026-08-30 14:35,Interrupción,Resuelto favorable,2026-09-07,6,12.67,,Solicita compensación por días sin servicio.
+RCL-2026-07129,CLI-108620,SRV-012516,TCK-0004258,2026-09-01 01:18,Interrupción,Resuelto favorable,2026-09-04,2,7.27,,Solicita compensación por días sin servicio.
+RCL-2026-07130,CLI-107716,SRV-011213,TCK-0003822,2026-08-31 08:05,Interrupción,Resuelto favorable,2026-09-10,7,10.65,,Solicita compensación por días sin servicio.
+RCL-2026-07131,CLI-100118,SRV-000171,TCK-0000073,2026-08-31 19:20,Facturación,Resuelto favorable,2026-09-07,5,8.9,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07132,CLI-109598,SRV-013944,TCK-0004719,2026-09-02 07:48,Facturación,Resuelto favorable,2026-09-08,4,9.5,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07133,CLI-107128,SRV-010373,TCK-0003535,2026-09-03 14:20,Interrupción,Resuelto no favorable,2026-09-14,8,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07134,CLI-111058,SRV-016047,TCK-0005416,2026-09-04 09:24,Facturación,Resuelto no favorable,2026-09-10,4,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07135,CLI-103781,SRV-005519,TCK-0001876,2026-09-03 15:19,Interrupción,Apelado,2026-09-14,8,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07136,CLI-101286,SRV-001884,TCK-0000620,2026-09-03 08:34,Interrupción,Resuelto favorable,2026-09-07,3,7.33,,Solicita compensación por días sin servicio.
+RCL-2026-07137,CLI-102468,SRV-003609,TCK-0001219,2026-09-03 01:46,Facturación,Resuelto no favorable,2026-09-06,2,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07138,CLI-107755,SRV-011262,TCK-0003840,2026-09-03 02:51,Interrupción,Resuelto favorable,2026-09-10,5,7.27,,Solicita compensación por días sin servicio.
+RCL-2026-07139,CLI-108835,SRV-012823,TCK-0004357,2026-09-03 21:58,Facturación,Resuelto favorable,2026-09-09,4,14.53,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07140,CLI-106926,SRV-010091,TCK-0003444,2026-09-07 08:18,Interrupción,Resuelto favorable,2026-09-14,5,3.99,,Solicita compensación por días sin servicio.
+RCL-2026-07141,CLI-111494,SRV-016664,TCK-0005609,2026-09-07 01:58,Facturación,Resuelto favorable,2026-09-13,4,5.32,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07142,CLI-108939,SRV-012970,TCK-0004402,2026-09-09 16:17,Facturación,Resuelto no favorable,2026-09-12,2,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07143,CLI-105231,SRV-007601,TCK-0002584,2026-09-08 04:26,Interrupción,Resuelto favorable,2026-09-16,6,7.99,,Solicita compensación por días sin servicio.
+RCL-2026-07144,CLI-106389,SRV-009303,TCK-0003182,2026-09-08 17:25,Interrupción,Resuelto no favorable,2026-09-16,6,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07145,CLI-103296,SRV-004805,TCK-0001646,2026-09-11 05:01,Interrupción,Resuelto favorable,2026-09-18,5,3.99,,Solicita compensación por días sin servicio.
+RCL-2026-07146,CLI-107330,SRV-010660,TCK-0003647,2026-09-12 04:03,Interrupción,Resuelto favorable,2026-09-15,2,5.27,,Solicita compensación por días sin servicio.
+RCL-2026-07147,CLI-102580,SRV-003777,TCK-0001282,2026-09-11 05:23,Facturación,Resuelto favorable,2026-09-22,8,5.99,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07148,CLI-104425,SRV-006449,TCK-0002213,2026-09-13 08:12,Facturación,Resuelto favorable,2026-09-23,7,3.99,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07149,CLI-103969,SRV-005798,TCK-0002002,2026-09-12 07:46,Facturación,Resuelto favorable,2026-09-22,7,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07150,CLI-100854,SRV-001255,TCK-0000418,2026-09-12 14:00,Facturación,Resuelto favorable,2026-09-16,3,7.99,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07151,CLI-101115,SRV-001631,TCK-0000541,2026-09-13 00:45,Interrupción,Resuelto favorable,2026-09-16,2,6.33,,Solicita compensación por días sin servicio.
+RCL-2026-07152,CLI-105346,SRV-007773,TCK-0002635,2026-09-14 19:22,Facturación,Resuelto favorable,2026-09-20,4,12.67,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07153,CLI-102362,SRV-003452,TCK-0001165,2026-09-15 03:00,Interrupción,Resuelto no favorable,2026-09-26,8,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07154,CLI-108180,SRV-011879,TCK-0004036,2026-09-13 17:05,Facturación,Resuelto favorable,2026-10-03,14,5.27,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07155,CLI-106364,SRV-009267,TCK-0007454,2026-09-13 03:28,Interrupción,Resuelto favorable,2026-09-17,3,10.9,INC-LIM-2026-0398,Solicita compensación por días sin servicio.
+RCL-2026-07156,CLI-107604,SRV-011051,TCK-0007482,2026-09-15 06:06,Interrupción,Resuelto favorable,2026-09-21,4,3.63,INC-LIM-2026-0398,Solicita compensación por días sin servicio.
+RCL-2026-07157,CLI-103486,SRV-005082,TCK-0007388,2026-09-14 22:32,Interrupción,Resuelto favorable,2026-09-18,3,14.53,INC-LIM-2026-0398,Solicita compensación por días sin servicio.
+RCL-2026-07158,CLI-108865,SRV-012868,TCK-0007464,2026-09-13 20:02,Interrupción,Resuelto favorable,2026-09-14,1,8.6,INC-LIM-2026-0398,Solicita compensación por días sin servicio.
+RCL-2026-07159,CLI-108327,SRV-012101,TCK-0007496,2026-09-14 19:14,Interrupción,Resuelto no favorable,2026-09-15,1,0.0,INC-LIM-2026-0398,Solicita compensación por días sin servicio.
+RCL-2026-07160,CLI-108426,SRV-012254,TCK-0007424,2026-09-13 12:42,Interrupción,Resuelto favorable,2026-09-16,2,17.2,INC-LIM-2026-0398,Solicita compensación por días sin servicio.
+RCL-2026-07161,CLI-106853,SRV-009982,TCK-0003408,2026-09-15 22:54,Interrupción,Resuelto favorable,2026-09-22,5,12.67,,Solicita compensación por días sin servicio.
+RCL-2026-07162,CLI-104110,SRV-005996,TCK-0002064,2026-09-16 15:41,Facturación,Apelado,2026-09-17,1,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07163,CLI-108736,SRV-012684,TCK-0004308,2026-09-18 13:39,Facturación,Resuelto no favorable,2026-09-24,4,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07164,CLI-102334,SRV-003410,TCK-0001149,2026-09-17 23:49,Facturación,Apelado,2026-10-02,11,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07165,CLI-111343,SRV-016450,TCK-0005542,2026-09-18 06:12,Interrupción,Resuelto favorable,2026-09-28,7,3.99,,Solicita compensación por días sin servicio.
+RCL-2026-07166,CLI-100236,SRV-000345,TCK-0000130,2026-09-18 20:25,Facturación,Resuelto favorable,2026-10-10,16,5.27,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07167,CLI-110906,SRV-015829,TCK-0005346,2026-09-18 20:02,Interrupción,Resuelto no favorable,2026-09-29,8,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07168,CLI-107408,SRV-010768,TCK-0003675,2026-09-19 13:27,Interrupción,Resuelto favorable,2026-09-26,5,14.65,,Solicita compensación por días sin servicio.
+RCL-2026-07169,CLI-104920,SRV-007153,TCK-0002442,2026-09-19 22:51,Interrupción,Resuelto favorable,2026-09-23,3,2.63,,Solicita compensación por días sin servicio.
+RCL-2026-07170,CLI-104543,SRV-006615,TCK-0002268,2026-09-21 13:33,Facturación,Resuelto favorable,2026-10-12,15,10.65,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07171,CLI-103781,SRV-005519,TCK-0001877,2026-09-20 14:24,Interrupción,Resuelto favorable,2026-09-23,2,1.33,,Solicita compensación por días sin servicio.
+RCL-2026-07172,CLI-101536,SRV-002240,TCK-0000771,2026-09-21 09:13,Interrupción,Apelado,2026-09-27,4,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07173,CLI-105858,SRV-008525,TCK-0002901,2026-09-21 15:35,Facturación,Resuelto no favorable,2026-09-29,6,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07174,CLI-111664,SRV-016916,TCK-0005677,2026-09-22 03:36,Interrupción,Resuelto favorable,2026-09-30,6,10.53,,Solicita compensación por días sin servicio.
+RCL-2026-07175,CLI-103869,SRV-005647,TCK-0001929,2026-09-21 06:11,Facturación,Resuelto favorable,2026-10-01,7,3.99,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07176,CLI-111756,SRV-017048,TCK-0005712,2026-09-22 20:18,Facturación,Abierto,,,,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07177,CLI-101390,SRV-002034,TCK-0000677,2026-09-21 02:50,Interrupción,Resuelto no favorable,2026-09-28,5,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07178,CLI-101629,SRV-002373,TCK-0000805,2026-09-25 06:31,Interrupción,Resuelto favorable,2026-09-26,1,14.53,,Solicita compensación por días sin servicio.
+RCL-2026-07179,CLI-110588,SRV-015373,TCK-0005187,2026-09-24 20:58,Interrupción,Resuelto favorable,2026-09-28,3,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07180,CLI-100596,SRV-000878,TCK-0000298,2026-09-25 22:04,Interrupción,Resuelto favorable,2026-09-28,2,5.99,,Solicita compensación por días sin servicio.
+RCL-2026-07181,CLI-109499,SRV-013795,TCK-0004674,2026-09-24 02:51,Interrupción,Resuelto favorable,2026-10-05,8,9.5,,Solicita compensación por días sin servicio.
+RCL-2026-07182,CLI-108824,SRV-012809,TCK-0004350,2026-09-24 21:45,Facturación,Resuelto no favorable,2026-10-08,10,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07183,CLI-108309,SRV-012074,TCK-0004090,2026-09-28 09:42,Interrupción,Resuelto no favorable,2026-10-08,7,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07184,CLI-106309,SRV-009183,TCK-0003136,2026-09-26 05:04,Facturación,Resuelto favorable,2026-10-07,8,3.17,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07185,CLI-111988,SRV-017392,TCK-0005813,2026-09-26 06:41,Interrupción,Resuelto favorable,2026-10-04,6,12.67,,Solicita compensación por días sin servicio.
+RCL-2026-07186,CLI-103608,SRV-005265,TCK-0001798,2026-09-29 05:05,Interrupción,Resuelto favorable,2026-10-05,4,7.33,,Solicita compensación por días sin servicio.
+RCL-2026-07187,CLI-101902,SRV-002781,TCK-0000946,2026-09-29 13:10,Interrupción,Resuelto favorable,2026-10-07,6,5.99,,Solicita compensación por días sin servicio.
+RCL-2026-07188,CLI-102761,SRV-004026,TCK-0001361,2026-09-29 10:34,Interrupción,Resuelto favorable,2026-10-03,3,3.99,,Solicita compensación por días sin servicio.
+RCL-2026-07189,CLI-106069,SRV-008830,TCK-0007541,2026-09-29 14:47,Interrupción,Resuelto favorable,2026-10-03,3,5.93,INC-PIU-2026-0405,Solicita compensación por días sin servicio.
+RCL-2026-07190,CLI-111084,SRV-016080,TCK-0007553,2026-09-29 02:59,Interrupción,Resuelto favorable,2026-10-07,6,7.27,INC-PIU-2026-0405,Solicita compensación por días sin servicio.
+RCL-2026-07191,CLI-103385,SRV-004934,TCK-0001680,2026-09-28 19:48,Interrupción,Resuelto favorable,2026-10-01,2,10.53,,Solicita compensación por días sin servicio.
+RCL-2026-07192,CLI-109376,SRV-013610,TCK-0007545,2026-09-28 13:00,Interrupción,Resuelto favorable,2026-10-05,5,12.9,INC-PIU-2026-0405,Solicita compensación por días sin servicio.
+RCL-2026-07193,CLI-111582,SRV-016788,TCK-0005643,2026-09-30 10:05,Interrupción,Resuelto favorable,2026-10-11,8,10.53,,Solicita compensación por días sin servicio.
+RCL-2026-07194,CLI-102539,SRV-003712,TCK-0007527,2026-09-29 04:16,Interrupción,Resuelto favorable,2026-10-05,4,16.9,INC-PIU-2026-0405,Solicita compensación por días sin servicio.
+RCL-2026-07195,CLI-102744,SRV-004004,TCK-0007531,2026-09-29 08:57,Interrupción,Resuelto no favorable,2026-10-03,3,0.0,INC-PIU-2026-0405,Solicita compensación por días sin servicio.
+RCL-2026-07196,CLI-102468,SRV-003609,TCK-0007515,2026-09-28 19:01,Interrupción,Resuelto favorable,2026-10-04,4,14.53,INC-PIU-2026-0405,Solicita compensación por días sin servicio.
+RCL-2026-07197,CLI-105573,SRV-008112,TCK-0007555,2026-09-28 01:18,Interrupción,Apelado,2026-09-29,1,0.0,INC-PIU-2026-0405,Solicita compensación por días sin servicio.
+RCL-2026-07198,CLI-110685,SRV-015517,TCK-0005248,2026-09-29 07:12,Interrupción,Apelado,2026-10-07,6,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07199,CLI-109706,SRV-014104,TCK-0004766,2026-10-01 22:14,Interrupción,Resuelto favorable,2026-10-09,6,10.53,,Solicita compensación por días sin servicio.
+RCL-2026-07200,CLI-106698,SRV-009760,TCK-0003323,2026-10-03 10:19,Interrupción,Resuelto favorable,2026-10-04,1,5.32,,Solicita compensación por días sin servicio.
+RCL-2026-07201,CLI-105048,SRV-007341,TCK-0002500,2026-10-02 06:46,Interrupción,Resuelto no favorable,2026-10-06,3,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07202,CLI-101918,SRV-002804,TCK-0000953,2026-10-03 03:07,Interrupción,Resuelto favorable,2026-10-04,1,14.53,,Solicita compensación por días sin servicio.
+RCL-2026-07203,CLI-110188,SRV-014793,TCK-0004981,2026-10-03 14:21,Facturación,Resuelto no favorable,2026-10-04,1,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07204,CLI-104420,SRV-006441,TCK-0002210,2026-10-03 20:32,Facturación,Resuelto no favorable,2026-10-10,5,0.0,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07205,CLI-102590,SRV-003793,TCK-0006166,2026-10-04 11:50,Interrupción,Resuelto favorable,2026-10-05,1,7.27,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07206,CLI-105505,SRV-008011,TCK-0006543,2026-10-02 21:19,Interrupción,Resuelto favorable,2026-10-03,1,8.6,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07207,CLI-104266,SRV-006230,TCK-0006364,2026-10-03 01:35,Interrupción,Resuelto favorable,2026-10-07,3,14.53,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07208,CLI-110684,SRV-015514,TCK-0007209,2026-10-03 04:06,Interrupción,Resuelto favorable,2026-10-09,4,2.97,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07209,CLI-109350,SRV-013574,TCK-0007037,2026-10-04 23:26,Interrupción,Apelado,2026-10-11,5,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07210,CLI-105525,SRV-008039,TCK-0006547,2026-10-05 01:40,Interrupción,Resuelto favorable,2026-10-13,6,10.9,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07211,CLI-102401,SRV-003509,TCK-0001181,2026-10-05 05:53,Facturación,Abierto,,,,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07212,CLI-106867,SRV-010004,TCK-0006721,2026-10-03 19:57,Interrupción,Resuelto no favorable,2026-10-07,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07213,CLI-100408,SRV-000596,TCK-0005868,2026-10-04 04:21,Interrupción,Resuelto no favorable,2026-10-05,1,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07214,CLI-109817,SRV-014272,TCK-0007100,2026-10-03 09:50,Interrupción,Resuelto favorable,2026-10-04,1,11.87,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07215,CLI-105099,SRV-007414,TCK-0002530,2026-10-03 11:49,Facturación,Abierto,,,,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07216,CLI-108268,SRV-012015,TCK-0006908,2026-10-04 01:11,Interrupción,Resuelto no favorable,2026-10-08,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07217,CLI-111302,SRV-016394,TCK-0007290,2026-10-05 07:40,Interrupción,Resuelto favorable,2026-10-11,4,12.9,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07218,CLI-110878,SRV-015791,TCK-0007237,2026-10-05 14:43,Interrupción,Resuelto favorable,2026-10-06,1,22.53,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07219,CLI-103678,SRV-005373,TCK-0006283,2026-10-05 19:03,Interrupción,Resuelto favorable,2026-10-08,2,3.63,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07220,CLI-100408,SRV-000596,TCK-0005870,2026-10-04 10:51,Interrupción,Resuelto favorable,2026-10-10,4,8.6,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07221,CLI-111128,SRV-016141,TCK-0007258,2026-10-03 10:15,Interrupción,Resuelto favorable,2026-10-11,6,5.93,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07222,CLI-110877,SRV-015789,TCK-0007235,2026-10-03 18:45,Interrupción,Resuelto favorable,2026-10-11,6,11.27,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07223,CLI-108736,SRV-012684,TCK-0006977,2026-10-05 06:28,Interrupción,Resuelto favorable,2026-10-09,3,12.9,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07224,CLI-106745,SRV-009830,TCK-0006704,2026-10-03 15:55,Interrupción,Resuelto no favorable,2026-10-04,1,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07225,CLI-106675,SRV-009728,TCK-0006691,2026-10-06 01:16,Interrupción,Resuelto no favorable,2026-10-12,4,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07226,CLI-110119,SRV-014695,TCK-0007130,2026-10-03 18:35,Interrupción,Resuelto no favorable,2026-10-13,7,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07227,CLI-103841,SRV-005604,TCK-0006302,2026-10-05 21:55,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07228,CLI-109319,SRV-013525,TCK-0007033,2026-10-05 12:28,Interrupción,Apelado,2026-10-08,2,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07229,CLI-110166,SRV-014761,TCK-0007137,2026-10-06 06:09,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07230,CLI-107673,SRV-011152,TCK-0006847,2026-10-04 17:33,Interrupción,Resuelto no favorable,2026-10-07,2,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07231,CLI-111329,SRV-016431,TCK-0007295,2026-10-05 06:36,Interrupción,Resuelto favorable,2026-10-13,6,11.87,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07232,CLI-102152,SRV-003154,TCK-0006111,2026-10-03 23:58,Interrupción,Resuelto no favorable,2026-10-11,6,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07233,CLI-105534,SRV-008052,TCK-0006552,2026-10-05 08:33,Interrupción,Resuelto favorable,2026-10-15,7,14.53,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07234,CLI-111098,SRV-016097,TCK-0007256,2026-10-03 23:46,Interrupción,Resuelto favorable,2026-10-10,5,7.27,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07235,CLI-100538,SRV-000787,TCK-0005881,2026-10-05 13:00,Interrupción,Resuelto favorable,2026-10-09,3,5.93,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07236,CLI-101337,SRV-001955,TCK-0005997,2026-10-03 21:38,Interrupción,Resuelto no favorable,2026-10-13,7,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07237,CLI-102823,SRV-004114,TCK-0006194,2026-10-04 15:15,Interrupción,Apelado,2026-10-15,8,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07238,CLI-100828,SRV-001222,TCK-0005912,2026-10-05 18:28,Interrupción,Apelado,2026-10-06,1,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07239,CLI-107274,SRV-010581,TCK-0006770,2026-10-03 22:01,Interrupción,Resuelto no favorable,2026-10-11,6,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07240,CLI-100490,SRV-000722,TCK-0005876,2026-10-05 12:03,Interrupción,Resuelto favorable,2026-10-11,4,22.53,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07241,CLI-101729,SRV-002522,TCK-0006065,2026-10-04 08:52,Interrupción,Resuelto no favorable,2026-10-11,5,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07242,CLI-111576,SRV-016778,TCK-0007334,2026-10-04 01:58,Interrupción,Resuelto favorable,2026-10-15,8,11.87,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07243,CLI-108199,SRV-011906,TCK-0006900,2026-10-05 00:38,Interrupción,Apelado,2026-10-06,1,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07244,CLI-100173,SRV-000252,TCK-0005839,2026-10-03 21:42,Interrupción,Resuelto favorable,2026-10-04,1,12.9,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07245,CLI-101669,SRV-002430,TCK-0006056,2026-10-04 05:08,Interrupción,Resuelto no favorable,2026-10-08,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07246,CLI-111959,SRV-017347,TCK-0007373,2026-10-05 14:55,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07247,CLI-104566,SRV-006648,TCK-0006403,2026-10-05 04:58,Interrupción,Resuelto favorable,2026-10-11,4,7.27,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07248,CLI-103319,SRV-004837,TCK-0006240,2026-10-05 18:07,Interrupción,Resuelto no favorable,2026-10-11,4,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07249,CLI-104322,SRV-006306,TCK-0006369,2026-10-05 21:03,Interrupción,Resuelto favorable,2026-10-11,4,8.6,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07250,CLI-111154,SRV-016175,TCK-0007262,2026-10-06 02:09,Interrupción,Resuelto favorable,2026-10-10,3,17.2,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07251,CLI-107393,SRV-010747,TCK-0006801,2026-10-04 13:44,Interrupción,Apelado,2026-10-14,7,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07252,CLI-104948,SRV-007192,TCK-0006455,2026-10-05 17:35,Interrupción,Apelado,2026-10-12,5,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07253,CLI-106461,SRV-009409,TCK-0006663,2026-10-04 21:34,Interrupción,Resuelto favorable,2026-10-08,3,8.6,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07254,CLI-100984,SRV-001448,TCK-0005937,2026-10-06 13:43,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07255,CLI-111608,SRV-016827,TCK-0007341,2026-10-06 14:52,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07256,CLI-109531,SRV-013838,TCK-0007053,2026-10-05 21:57,Interrupción,Resuelto favorable,2026-10-12,5,2.97,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07257,CLI-102587,SRV-003788,TCK-0006165,2026-10-05 17:14,Interrupción,Resuelto favorable,2026-10-08,2,11.87,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07258,CLI-105087,SRV-007397,TCK-0006488,2026-10-06 00:35,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07259,CLI-108207,SRV-011919,TCK-0006904,2026-10-06 01:24,Interrupción,Resuelto favorable,2026-10-13,5,17.2,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07260,CLI-109167,SRV-013299,TCK-0007010,2026-10-06 02:05,Interrupción,Resuelto favorable,2026-10-14,6,22.53,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07261,CLI-101994,SRV-002920,TCK-0001002,2026-10-05 04:14,Interrupción,Resuelto no favorable,2026-10-12,5,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07262,CLI-104777,SRV-006953,TCK-0006422,2026-10-06 09:54,Interrupción,Resuelto no favorable,2026-10-07,1,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07263,CLI-109955,SRV-014469,TCK-0007117,2026-10-05 08:40,Interrupción,Resuelto favorable,2026-10-15,7,11.87,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07264,CLI-104322,SRV-006306,TCK-0006370,2026-10-06 02:09,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07265,CLI-108593,SRV-012479,TCK-0006952,2026-10-07 06:17,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07266,CLI-108736,SRV-012684,TCK-0006976,2026-10-05 10:57,Interrupción,Resuelto favorable,2026-10-13,6,8.6,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07267,CLI-107345,SRV-010680,TCK-0006792,2026-10-06 11:05,Interrupción,Resuelto favorable,2026-10-12,4,3.63,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07268,CLI-109767,SRV-014195,TCK-0007089,2026-10-05 23:08,Interrupción,Resuelto favorable,2026-10-12,5,14.53,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07269,CLI-111713,SRV-016989,TCK-0005696,2026-10-06 08:33,Facturación,Abierto,,,,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07270,CLI-101296,SRV-001898,TCK-0005996,2026-10-05 14:50,Interrupción,Resuelto no favorable,2026-10-11,4,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07271,CLI-108706,SRV-012635,TCK-0006971,2026-10-07 01:06,Interrupción,Resuelto favorable,2026-10-14,5,10.9,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07272,CLI-105723,SRV-008328,TCK-0006576,2026-10-04 22:35,Interrupción,Resuelto favorable,2026-10-10,4,10.9,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07273,CLI-107899,SRV-011474,TCK-0003899,2026-10-06 13:43,Facturación,Abierto,,,,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07274,CLI-102540,SRV-003714,TCK-0006161,2026-10-06 12:07,Interrupción,Resuelto favorable,2026-10-07,1,8.9,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07275,CLI-102397,SRV-003502,TCK-0006149,2026-10-05 12:37,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07276,CLI-109128,SRV-013240,TCK-0007005,2026-10-07 18:12,Interrupción,Resuelto no favorable,2026-10-08,1,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07277,CLI-111226,SRV-016284,TCK-0007277,2026-10-06 19:33,Interrupción,Resuelto favorable,2026-10-12,4,16.9,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07278,CLI-109855,SRV-014327,TCK-0007106,2026-10-06 21:02,Interrupción,Resuelto favorable,2026-10-10,3,11.87,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07279,CLI-103306,SRV-004819,TCK-0006237,2026-10-06 15:09,Interrupción,Resuelto no favorable,2026-10-09,2,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07280,CLI-109341,SRV-013558,TCK-0007036,2026-10-07 06:44,Interrupción,Resuelto no favorable,2026-10-11,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07281,CLI-105525,SRV-008039,TCK-0006548,2026-10-05 06:19,Interrupción,Resuelto no favorable,2026-10-12,5,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07282,CLI-111277,SRV-016361,TCK-0007286,2026-10-06 03:27,Interrupción,Resuelto favorable,2026-10-09,2,14.53,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07283,CLI-106735,SRV-009815,TCK-0006703,2026-10-06 06:13,Interrupción,Resuelto favorable,2026-10-07,1,11.87,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07284,CLI-107217,SRV-010499,TCK-0006768,2026-10-07 00:27,Interrupción,Resuelto no favorable,2026-10-11,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07285,CLI-103658,SRV-005345,TCK-0006282,2026-10-07 12:38,Interrupción,Resuelto no favorable,2026-10-08,1,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07286,CLI-109754,SRV-014174,TCK-0007085,2026-10-07 10:04,Interrupción,Resuelto no favorable,2026-10-13,4,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07287,CLI-109577,SRV-013906,TCK-0007060,2026-10-05 09:37,Interrupción,Resuelto no favorable,2026-10-09,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07288,CLI-101414,SRV-002065,TCK-0006011,2026-10-06 20:41,Interrupción,Resuelto favorable,2026-10-07,1,12.9,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07289,CLI-102152,SRV-003154,TCK-0006110,2026-10-07 07:02,Interrupción,Resuelto no favorable,2026-10-11,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07290,CLI-110844,SRV-015742,TCK-0007230,2026-10-08 06:59,Interrupción,Resuelto no favorable,2026-10-15,5,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07291,CLI-103841,SRV-005604,TCK-0006303,2026-10-06 10:11,Interrupción,Apelado,2026-10-14,6,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07292,CLI-101068,SRV-001563,TCK-0005953,2026-10-08 00:26,Interrupción,Resuelto no favorable,2026-10-12,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07293,CLI-106529,SRV-009511,TCK-0006673,2026-10-06 07:27,Interrupción,Apelado,2026-10-07,1,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07294,CLI-111536,SRV-016722,TCK-0007328,2026-10-07 17:12,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07295,CLI-107688,SRV-011174,TCK-0006848,2026-10-08 02:19,Interrupción,Resuelto no favorable,2026-10-12,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07296,CLI-106713,SRV-009780,TCK-0006700,2026-10-07 22:29,Interrupción,Resuelto favorable,2026-10-10,2,14.53,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07297,CLI-107599,SRV-011042,TCK-0006834,2026-10-06 09:14,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07298,CLI-109476,SRV-013763,TCK-0004663,2026-10-06 22:01,Interrupción,Resuelto favorable,2026-10-13,5,5.33,,Solicita compensación por días sin servicio.
+RCL-2026-07299,CLI-109267,SRV-013446,TCK-0007023,2026-10-06 09:37,Interrupción,Apelado,2026-10-12,4,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07300,CLI-100613,SRV-000900,TCK-0005889,2026-10-07 00:24,Interrupción,Resuelto favorable,2026-10-15,6,5.93,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07301,CLI-109643,SRV-014011,TCK-0007069,2026-10-07 12:34,Interrupción,Resuelto no favorable,2026-10-08,1,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07302,CLI-105912,SRV-008606,TCK-0006611,2026-10-06 08:24,Interrupción,Resuelto favorable,2026-10-07,1,8.9,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07303,CLI-110188,SRV-014793,TCK-0007140,2026-10-08 12:29,Interrupción,Apelado,2026-10-15,5,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07304,CLI-100661,SRV-000972,TCK-0000335,2026-10-06 14:32,Interrupción,Abierto,,,,,Solicita compensación por días sin servicio.
+RCL-2026-07305,CLI-103477,SRV-005070,TCK-0006257,2026-10-06 08:39,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07306,CLI-109859,SRV-014332,TCK-0007107,2026-10-05 23:51,Interrupción,Resuelto no favorable,2026-10-11,4,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07307,CLI-100538,SRV-000787,TCK-0005880,2026-10-07 18:25,Interrupción,Resuelto no favorable,2026-10-10,2,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07308,CLI-109420,SRV-013676,TCK-0007046,2026-10-07 19:27,Interrupción,Resuelto favorable,2026-10-08,1,11.87,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07309,CLI-107498,SRV-010895,TCK-0006814,2026-10-07 15:29,Interrupción,Resuelto no favorable,2026-10-13,4,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07310,CLI-110881,SRV-015796,TCK-0007239,2026-10-08 18:13,Interrupción,Resuelto favorable,2026-10-14,4,7.27,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07311,CLI-102482,SRV-003628,TCK-0006156,2026-10-07 00:32,Interrupción,Resuelto no favorable,2026-10-13,4,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07312,CLI-102645,SRV-003868,TCK-0006173,2026-10-07 18:40,Interrupción,Resuelto favorable,2026-10-13,4,7.27,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07313,CLI-104293,SRV-006268,TCK-0006367,2026-10-07 06:39,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07314,CLI-111246,SRV-016314,TCK-0007283,2026-10-08 21:55,Interrupción,Resuelto favorable,2026-10-09,1,14.53,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07315,CLI-105726,SRV-008332,TCK-0006579,2026-10-07 05:04,Interrupción,Resuelto no favorable,2026-10-11,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07316,CLI-101226,SRV-001786,TCK-0005980,2026-10-06 17:21,Interrupción,Resuelto no favorable,2026-10-12,4,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07317,CLI-111099,SRV-016099,TCK-0007257,2026-10-06 12:42,Interrupción,Resuelto favorable,2026-10-14,6,11.87,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07318,CLI-101704,SRV-002484,TCK-0006061,2026-10-09 02:41,Interrupción,Resuelto no favorable,2026-10-13,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07319,CLI-104211,SRV-006146,TCK-0006357,2026-10-07 10:43,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07320,CLI-104440,SRV-006473,TCK-0006390,2026-10-08 05:27,Interrupción,Resuelto no favorable,2026-10-14,4,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07321,CLI-105534,SRV-008052,TCK-0006551,2026-10-07 00:47,Interrupción,Resuelto favorable,2026-10-13,4,7.27,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07322,CLI-105528,SRV-008043,TCK-0006550,2026-10-07 12:30,Interrupción,Resuelto favorable,2026-10-11,3,7.27,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07323,CLI-107408,SRV-010768,TCK-0003676,2026-10-08 21:40,Facturación,Abierto,,,,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07324,CLI-100669,SRV-000981,TCK-0005895,2026-10-08 18:55,Interrupción,Resuelto no favorable,2026-10-12,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07325,CLI-110712,SRV-015556,TCK-0007217,2026-10-09 01:27,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07326,CLI-111572,SRV-016771,TCK-0005639,2026-10-08 05:30,Interrupción,Resuelto no favorable,2026-10-11,2,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07327,CLI-108822,SRV-012806,TCK-0006983,2026-10-08 11:03,Interrupción,Resuelto favorable,2026-10-11,2,7.27,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07328,CLI-109737,SRV-014148,TCK-0007081,2026-10-09 01:19,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07329,CLI-110828,SRV-015716,TCK-0007227,2026-10-07 09:20,Interrupción,Resuelto no favorable,2026-10-11,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07330,CLI-106525,SRV-009506,TCK-0006672,2026-10-08 05:02,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07331,CLI-106342,SRV-009232,TCK-0006655,2026-10-09 15:38,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07332,CLI-107095,SRV-010327,TCK-0006745,2026-10-07 23:18,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07333,CLI-103218,SRV-004696,TCK-0001607,2026-10-09 09:46,Interrupción,Abierto,,,,,Solicita compensación por días sin servicio.
+RCL-2026-07334,CLI-109799,SRV-014240,TCK-0007094,2026-10-09 15:06,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07335,CLI-100197,SRV-000292,TCK-0005842,2026-10-09 09:52,Interrupción,Resuelto favorable,2026-10-12,2,3.63,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07336,CLI-100607,SRV-000893,TCK-0005886,2026-10-09 11:30,Interrupción,Resuelto favorable,2026-10-15,4,17.2,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07337,CLI-111219,SRV-016273,TCK-0007271,2026-10-10 01:34,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07338,CLI-101731,SRV-002525,TCK-0006067,2026-10-07 23:32,Interrupción,Resuelto favorable,2026-10-13,4,8.6,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07339,CLI-107473,SRV-010861,TCK-0006806,2026-10-07 11:59,Interrupción,Resuelto no favorable,2026-10-15,6,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07340,CLI-105984,SRV-008709,TCK-0006614,2026-10-09 09:49,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07341,CLI-108161,SRV-011850,TCK-0006895,2026-10-08 01:45,Interrupción,Resuelto favorable,2026-10-14,4,11.27,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07342,CLI-104746,SRV-006907,TCK-0006420,2026-10-09 21:49,Interrupción,Resuelto favorable,2026-10-15,4,14.53,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07343,CLI-103997,SRV-005836,TCK-0006323,2026-10-08 15:12,Interrupción,Apelado,2026-10-12,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07344,CLI-105042,SRV-007331,TCK-0006480,2026-10-07 15:29,Interrupción,Apelado,2026-10-11,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07345,CLI-103456,SRV-005040,TCK-0006254,2026-10-09 20:42,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07346,CLI-110068,SRV-014624,TCK-0007122,2026-10-10 03:54,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07347,CLI-111162,SRV-016188,TCK-0007263,2026-10-09 05:41,Interrupción,Resuelto favorable,2026-10-12,2,10.9,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07348,CLI-102983,SRV-004342,TCK-0006207,2026-10-09 20:21,Interrupción,Resuelto favorable,2026-10-12,2,11.87,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07349,CLI-102996,SRV-004363,TCK-0006210,2026-10-09 20:24,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07350,CLI-110585,SRV-015367,TCK-0007194,2026-10-09 08:33,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07351,CLI-106862,SRV-009995,TCK-0006718,2026-10-09 14:18,Interrupción,Resuelto favorable,2026-10-15,4,2.97,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07352,CLI-109773,SRV-014204,TCK-0007091,2026-10-09 20:21,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07353,CLI-102557,SRV-003742,TCK-0001261,2026-10-08 11:54,Interrupción,Resuelto favorable,2026-10-15,5,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07354,CLI-111025,SRV-015998,TCK-0007249,2026-10-08 13:04,Interrupción,Resuelto no favorable,2026-10-14,4,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07355,CLI-104948,SRV-007192,TCK-0006454,2026-10-08 20:51,Interrupción,Resuelto favorable,2026-10-15,5,5.93,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07356,CLI-100784,SRV-001155,TCK-0005906,2026-10-09 01:30,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07357,CLI-104187,SRV-006113,TCK-0006350,2026-10-08 17:35,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07358,CLI-103306,SRV-004819,TCK-0006239,2026-10-08 19:20,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07359,CLI-108129,SRV-011805,TCK-0004012,2026-10-10 00:56,Interrupción,Abierto,,,,,Solicita compensación por días sin servicio.
+RCL-2026-07360,CLI-110342,SRV-015016,TCK-0007156,2026-10-08 14:05,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07361,CLI-107862,SRV-011423,TCK-0006859,2026-10-08 14:10,Interrupción,Resuelto favorable,2026-10-15,5,7.27,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07362,CLI-111777,SRV-017076,TCK-0007355,2026-10-10 23:13,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07363,CLI-108294,SRV-012049,TCK-0006917,2026-10-09 14:17,Interrupción,Resuelto no favorable,2026-10-15,4,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07364,CLI-103129,SRV-004562,TCK-0006227,2026-10-10 18:36,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07365,CLI-104983,SRV-007241,TCK-0006462,2026-10-09 22:47,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07366,CLI-104667,SRV-006792,TCK-0006411,2026-10-10 18:27,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07367,CLI-109770,SRV-014199,TCK-0007090,2026-10-08 19:24,Interrupción,Resuelto favorable,2026-10-11,2,7.27,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07368,CLI-104050,SRV-005909,TCK-0006329,2026-10-08 19:03,Interrupción,Resuelto favorable,2026-10-11,2,7.27,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07369,CLI-104266,SRV-006230,TCK-0006363,2026-10-09 00:15,Interrupción,Resuelto no favorable,2026-10-15,4,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07370,CLI-104402,SRV-006416,TCK-0006384,2026-10-09 08:18,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07371,CLI-107100,SRV-010336,TCK-0006746,2026-10-08 18:03,Interrupción,Resuelto favorable,2026-10-09,1,11.87,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07372,CLI-107518,SRV-010924,TCK-0006818,2026-10-09 03:21,Interrupción,Resuelto favorable,2026-10-12,2,14.53,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07373,CLI-100173,SRV-000252,TCK-0005838,2026-10-10 18:05,Interrupción,Resuelto no favorable,2026-10-13,2,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07374,CLI-108388,SRV-012195,TCK-0004137,2026-10-09 13:17,Interrupción,Abierto,,,,,Solicita compensación por días sin servicio.
+RCL-2026-07375,CLI-110323,SRV-014990,TCK-0007153,2026-10-09 18:47,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07376,CLI-102287,SRV-003345,TCK-0006127,2026-10-10 03:07,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07377,CLI-102087,SRV-003057,TCK-0006096,2026-10-09 18:00,Interrupción,Resuelto favorable,2026-10-10,1,2.97,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07378,CLI-106904,SRV-010062,TCK-0003436,2026-10-09 03:30,Interrupción,Resuelto favorable,2026-10-12,2,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07379,CLI-111387,SRV-016510,TCK-0007299,2026-10-11 08:59,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07380,CLI-108756,SRV-012713,TCK-0006980,2026-10-11 06:00,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07381,CLI-107641,SRV-011107,TCK-0006843,2026-10-10 14:20,Interrupción,Apelado,2026-10-14,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07382,CLI-101651,SRV-002404,TCK-0006049,2026-10-09 00:43,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07383,CLI-107276,SRV-010585,TCK-0006773,2026-10-09 23:18,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07384,CLI-100998,SRV-001466,TCK-0005939,2026-10-10 19:04,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07385,CLI-102924,SRV-004250,TCK-0006203,2026-10-11 11:43,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07386,CLI-106675,SRV-009728,TCK-0006690,2026-10-11 01:43,Interrupción,Resuelto no favorable,2026-10-12,1,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07387,CLI-104897,SRV-007118,TCK-0006446,2026-10-09 16:42,Interrupción,Resuelto no favorable,2026-10-13,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07388,CLI-101408,SRV-002057,TCK-0006009,2026-10-09 06:30,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07389,CLI-104728,SRV-006882,TCK-0006417,2026-10-09 05:43,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07390,CLI-100834,SRV-001228,TCK-0005914,2026-10-10 12:47,Interrupción,Resuelto favorable,2026-10-11,1,4.3,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07391,CLI-104201,SRV-006130,TCK-0006355,2026-10-09 18:20,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07392,CLI-107207,SRV-010486,TCK-0006762,2026-10-09 16:37,Interrupción,Apelado,2026-10-10,1,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07393,CLI-107023,SRV-010225,TCK-0006737,2026-10-09 16:45,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07394,CLI-107039,SRV-010246,TCK-0006738,2026-10-10 18:16,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07395,CLI-102969,SRV-004321,TCK-0006206,2026-10-10 23:23,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07396,CLI-108577,SRV-012456,TCK-0006950,2026-10-10 08:43,Interrupción,Resuelto favorable,2026-10-11,1,12.9,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07397,CLI-107446,SRV-010824,TCK-0006805,2026-10-09 20:35,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07398,CLI-102119,SRV-003104,TCK-0006102,2026-10-11 05:45,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07399,CLI-110844,SRV-015742,TCK-0007229,2026-10-10 12:31,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07400,CLI-110079,SRV-014641,TCK-0007123,2026-10-10 02:01,Interrupción,Resuelto favorable,2026-10-11,1,17.2,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07401,CLI-105711,SRV-008310,TCK-0006573,2026-10-10 12:06,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07402,CLI-101718,SRV-002506,TCK-0006064,2026-10-12 06:11,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07403,CLI-103678,SRV-005373,TCK-0006284,2026-10-09 19:16,Interrupción,Resuelto favorable,2026-10-12,2,14.53,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07404,CLI-103181,SRV-004642,TCK-0006230,2026-10-10 01:46,Interrupción,Apelado,2026-10-14,3,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07405,CLI-106020,SRV-008760,TCK-0006619,2026-10-10 05:01,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07406,CLI-104511,SRV-006571,TCK-0006398,2026-10-09 20:07,Interrupción,Apelado,2026-10-12,2,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07407,CLI-107059,SRV-010275,TCK-0003505,2026-10-10 19:30,Facturación,Abierto,,,,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07408,CLI-111412,SRV-016543,TCK-0007305,2026-10-10 18:06,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07409,CLI-101060,SRV-001552,TCK-0005949,2026-10-11 20:09,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07410,CLI-101124,SRV-001646,TCK-0005966,2026-10-11 17:42,Interrupción,Resuelto favorable,2026-10-12,1,11.27,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07411,CLI-108282,SRV-012033,TCK-0006910,2026-10-11 15:58,Interrupción,Resuelto no favorable,2026-10-12,1,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07412,CLI-104873,SRV-007087,TCK-0006438,2026-10-11 21:30,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07413,CLI-105689,SRV-008277,TCK-0006570,2026-10-12 12:02,Interrupción,Resuelto favorable,2026-10-15,2,11.87,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07414,CLI-103490,SRV-005089,TCK-0006259,2026-10-11 02:13,Interrupción,Resuelto favorable,2026-10-12,1,11.87,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07415,CLI-104109,SRV-005993,TCK-0006336,2026-10-11 05:14,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07416,CLI-107152,SRV-010409,TCK-0006752,2026-10-10 22:14,Interrupción,Resuelto favorable,2026-10-14,3,3.63,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07417,CLI-105821,SRV-008468,TCK-0006596,2026-10-11 12:34,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07418,CLI-101221,SRV-001780,TCK-0005977,2026-10-10 07:54,Interrupción,Resuelto favorable,2026-10-13,2,8.9,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07419,CLI-103077,SRV-004486,TCK-0006223,2026-10-12 16:06,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07420,CLI-107333,SRV-010664,TCK-0006789,2026-10-12 16:51,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07421,CLI-110922,SRV-015853,TCK-0007245,2026-10-11 14:22,Interrupción,Resuelto favorable,2026-10-15,3,10.9,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07422,CLI-106453,SRV-009397,TCK-0006662,2026-10-12 16:24,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07423,CLI-103182,SRV-004644,TCK-0006232,2026-10-10 19:13,Interrupción,Resuelto no favorable,2026-10-13,2,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07424,CLI-106023,SRV-008763,TCK-0006621,2026-10-12 11:05,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07425,CLI-106990,SRV-010183,TCK-0006733,2026-10-10 11:32,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07426,CLI-100829,SRV-001223,TCK-0005913,2026-10-10 06:12,Interrupción,Resuelto favorable,2026-10-13,2,4.3,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07427,CLI-111162,SRV-016188,TCK-0007264,2026-10-11 23:20,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07428,CLI-110881,SRV-015796,TCK-0007238,2026-10-12 23:44,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07429,CLI-108160,SRV-011848,TCK-0006894,2026-10-11 19:14,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07430,CLI-107618,SRV-011071,TCK-0006838,2026-10-11 15:57,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07431,CLI-111981,SRV-017384,TCK-0007376,2026-10-12 19:27,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07432,CLI-110457,SRV-015182,TCK-0007182,2026-10-10 09:52,Interrupción,Resuelto favorable,2026-10-11,1,14.53,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07433,CLI-109925,SRV-014426,TCK-0007111,2026-10-10 14:58,Interrupción,Resuelto favorable,2026-10-11,1,2.97,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07434,CLI-105213,SRV-007576,TCK-0006508,2026-10-10 17:36,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07435,CLI-100649,SRV-000953,TCK-0005894,2026-10-11 15:38,Interrupción,Resuelto favorable,2026-10-12,1,22.53,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07436,CLI-109754,SRV-014174,TCK-0007084,2026-10-10 23:38,Interrupción,Resuelto no favorable,2026-10-13,2,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07437,CLI-110237,SRV-014862,TCK-0007146,2026-10-12 09:40,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07438,CLI-102152,SRV-003154,TCK-0006109,2026-10-10 13:04,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07439,CLI-109313,SRV-013515,TCK-0007029,2026-10-11 15:06,Interrupción,Resuelto favorable,2026-10-12,1,17.2,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07440,CLI-105617,SRV-008178,TCK-0006565,2026-10-11 16:11,Interrupción,Resuelto favorable,2026-10-14,2,5.93,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07441,CLI-109265,SRV-013443,TCK-0007021,2026-10-11 04:43,Interrupción,Resuelto no favorable,2026-10-14,2,0.0,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07442,CLI-107112,SRV-010351,TCK-0006750,2026-10-13 04:46,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07443,CLI-102142,SRV-003137,TCK-0006106,2026-10-12 12:42,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07444,CLI-110143,SRV-014729,TCK-0007136,2026-10-11 19:47,Interrupción,Resuelto favorable,2026-10-14,2,2.97,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07445,CLI-102065,SRV-003025,TCK-0001038,2026-10-12 20:59,Facturación,Abierto,,,,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07446,CLI-105702,SRV-008296,TCK-0006571,2026-10-11 20:28,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07447,CLI-105137,SRV-007467,TCK-0006495,2026-10-11 13:56,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07448,CLI-103885,SRV-005671,TCK-0006311,2026-10-12 23:24,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07449,CLI-110975,SRV-015925,TCK-0007248,2026-10-12 05:26,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07450,CLI-107585,SRV-011020,TCK-0006828,2026-10-13 12:40,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07451,CLI-108415,SRV-012237,TCK-0006935,2026-10-13 03:56,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07452,CLI-104388,SRV-006397,TCK-0006382,2026-10-11 03:12,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07453,CLI-102101,SRV-003079,TCK-0006097,2026-10-11 05:31,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07454,CLI-108012,SRV-011630,TCK-0006877,2026-10-12 02:41,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07455,CLI-104849,SRV-007055,TCK-0006427,2026-10-11 05:56,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07456,CLI-109590,SRV-013930,TCK-0004715,2026-10-12 04:53,Interrupción,Abierto,,,,,Solicita compensación por días sin servicio.
+RCL-2026-07457,CLI-101445,SRV-002108,TCK-0006017,2026-10-13 03:04,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07458,CLI-101479,SRV-002157,TCK-0006028,2026-10-12 18:33,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07459,CLI-107200,SRV-010474,TCK-0006761,2026-10-12 02:43,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07460,CLI-105450,SRV-007929,TCK-0006536,2026-10-12 03:32,Interrupción,Resuelto favorable,2026-10-15,2,7.27,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07461,CLI-100056,SRV-000078,TCK-0005827,2026-10-13 11:15,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07462,CLI-104849,SRV-007055,TCK-0006428,2026-10-13 18:45,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07463,CLI-105398,SRV-007851,TCK-0006533,2026-10-13 21:47,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07464,CLI-101109,SRV-001621,TCK-0005960,2026-10-13 00:06,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07465,CLI-106673,SRV-009724,TCK-0006689,2026-10-13 07:03,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07466,CLI-107320,SRV-010649,TCK-0006787,2026-10-13 05:19,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07467,CLI-110079,SRV-014641,TCK-0007124,2026-10-12 14:18,Interrupción,Abierto,,,,INC-AQP-2026-0412,Solicita compensación por días sin servicio.
+RCL-2026-07468,CLI-104459,SRV-006502,TCK-0002235,2026-10-12 11:16,Interrupción,Resuelto no favorable,2026-10-15,2,0.0,,Solicita compensación por días sin servicio.
+RCL-2026-07469,CLI-111190,SRV-016233,TCK-0005485,2026-10-12 21:40,Facturación,Abierto,,,,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07470,CLI-105570,SRV-008108,TCK-0002753,2026-10-13 03:42,Facturación,Abierto,,,,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07471,CLI-107277,SRV-010586,TCK-0003614,2026-10-15 06:12,Facturación,Abierto,,,,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07472,CLI-109620,SRV-013978,TCK-0004728,2026-10-14 21:33,Interrupción,Abierto,,,,,Solicita compensación por días sin servicio.
+RCL-2026-07473,CLI-111655,SRV-016902,TCK-0005671,2026-10-15 01:34,Facturación,Abierto,,,,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-07474,CLI-105012,SRV-007281,TCK-0002480,2026-10-13 16:02,Interrupción,Abierto,,,,,Solicita compensación por días sin servicio.
+RCL-2026-07475,CLI-109921,SRV-014420,TCK-0004874,2026-10-15 11:58,Interrupción,Abierto,,,,,Solicita compensación por días sin servicio.
+RCL-2026-07476,CLI-105539,SRV-008062,TCK-0002738,2026-10-15 22:19,Facturación,Abierto,,,,,Solicita la anulación de un cargo que no reconoce.
+RCL-2026-08812,CLI-104217,SRV-008345,TCK-0007381,2026-10-09 10:27,Interrupción,Abierto,,,,INC-AQP-2026-0412,Cliente reclama 3 días sin servicio de fibra por cortes reiterados (LOS) y solicita compensación.

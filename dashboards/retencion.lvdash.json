@@ -1,0 +1,913 @@
+{
+  "datasets": [
+    {
+      "name": "kpi_riesgo",
+      "displayName": "kpi_riesgo",
+      "queryLines": [
+        "SELECT MEASURE(clientes_riesgo_alto) AS clientes_riesgo_alto,\n",
+        "       MEASURE(renta_en_riesgo) AS renta_en_riesgo,\n",
+        "       MEASURE(consultas_portabilidad) AS consultas_portabilidad,\n",
+        "       MEASURE(clientes) AS clientes_activos\n",
+        "FROM gold.mv_riesgo_clientes\n"
+      ]
+    },
+    {
+      "name": "kpi_churn",
+      "displayName": "kpi_churn",
+      "queryLines": [
+        "SELECT MEASURE(tasa_churn) AS tasa_churn_sep, MEASURE(bajas_portabilidad) AS bajas_portabilidad_sep\n",
+        "FROM gold.mv_churn WHERE mes = DATE'2026-09-01'\n"
+      ]
+    },
+    {
+      "name": "riesgo_zona",
+      "displayName": "riesgo_zona",
+      "queryLines": [
+        "SELECT concat(region, ' · ', distrito) AS zona, nivel_riesgo, MEASURE(clientes) AS clientes\n",
+        "FROM gold.mv_riesgo_clientes WHERE nivel_riesgo <> 'Bajo' GROUP BY ALL\n"
+      ]
+    },
+    {
+      "name": "riesgo_nivel",
+      "displayName": "riesgo_nivel",
+      "queryLines": [
+        "SELECT nivel_riesgo, MEASURE(clientes) AS clientes FROM gold.mv_riesgo_clientes\n",
+        "WHERE nivel_riesgo <> 'Bajo' GROUP BY ALL\n"
+      ]
+    },
+    {
+      "name": "fallas_diarias",
+      "displayName": "fallas_diarias",
+      "queryLines": [
+        "SELECT fecha, region, MEASURE(fallas_red) AS fallas_red\n",
+        "FROM gold.mv_soporte WHERE fecha >= DATE'2026-09-01' GROUP BY ALL ORDER BY fecha\n"
+      ]
+    },
+    {
+      "name": "churn_mes",
+      "displayName": "churn_mes",
+      "queryLines": [
+        "SELECT mes, region, MEASURE(tasa_churn) AS tasa_churn\n",
+        "FROM gold.mv_churn WHERE mes < DATE'2026-10-01' GROUP BY ALL ORDER BY mes\n"
+      ]
+    },
+    {
+      "name": "reclamos_mes",
+      "displayName": "reclamos_mes",
+      "queryLines": [
+        "SELECT mes, tipo, MEASURE(reclamos) AS reclamos FROM gold.mv_reclamos GROUP BY ALL ORDER BY mes\n"
+      ]
+    },
+    {
+      "name": "nodos",
+      "displayName": "nodos",
+      "queryLines": [
+        "SELECT nodo_id, region, distrito, tecnologia, estado_salud, fallas_red_7d, fallas_red_30d,\n",
+        "       ultima_incidencia, clientes_riesgo_alto, renta_en_riesgo\n",
+        "FROM gold.nodos_salud ORDER BY fallas_red_30d DESC\n"
+      ]
+    },
+    {
+      "name": "top_clientes",
+      "displayName": "top_clientes",
+      "queryLines": [
+        "SELECT cliente_id, nombre_completo, distrito, segmento_valor, plan_hogar, renta_mensual,\n",
+        "       score_riesgo, nivel_riesgo, consulta_portabilidad_30d, reclamos_abiertos\n",
+        "FROM gold.cliente_360 WHERE estado = 'Activo' AND nivel_riesgo IN ('Crítico', 'Alto')\n",
+        "ORDER BY score_riesgo DESC, renta_mensual DESC LIMIT 25\n"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "riesgo",
+      "displayName": "Riesgo de fuga",
+      "layout": [
+        {
+          "widget": {
+            "name": "t1",
+            "multilineTextboxSpec": {
+              "lines": [
+                "# Retención · Riesgo de fuga\nCartera activa al **15-oct-2026**. Métricas gobernadas desde las *metric views* de Unity Catalog."
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "k1",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "kpi_riesgo",
+                  "fields": [
+                    {
+                      "name": "clientes_riesgo_alto",
+                      "expression": "`clientes_riesgo_alto`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "frame": {
+                "showTitle": true,
+                "title": "Clientes en riesgo crítico/alto"
+              },
+              "encodings": {
+                "value": {
+                  "fieldName": "clientes_riesgo_alto",
+                  "displayName": "Clientes en riesgo crítico/alto"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 2,
+            "height": 3
+          }
+        },
+        {
+          "widget": {
+            "name": "k2",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "kpi_riesgo",
+                  "fields": [
+                    {
+                      "name": "renta_en_riesgo",
+                      "expression": "`renta_en_riesgo`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "frame": {
+                "showTitle": true,
+                "title": "Renta mensual en riesgo (S/)"
+              },
+              "encodings": {
+                "value": {
+                  "fieldName": "renta_en_riesgo",
+                  "displayName": "Renta mensual en riesgo (S/)",
+                  "format": {
+                    "type": "number-currency",
+                    "currencyCode": "PEN",
+                    "abbreviation": "compact"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 2,
+            "y": 2,
+            "width": 2,
+            "height": 3
+          }
+        },
+        {
+          "widget": {
+            "name": "k3",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "kpi_riesgo",
+                  "fields": [
+                    {
+                      "name": "consultas_portabilidad",
+                      "expression": "`consultas_portabilidad`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "frame": {
+                "showTitle": true,
+                "title": "Consultas de portabilidad (30 d)"
+              },
+              "encodings": {
+                "value": {
+                  "fieldName": "consultas_portabilidad",
+                  "displayName": "Consultas de portabilidad (30 d)"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 2,
+            "width": 2,
+            "height": 3
+          }
+        },
+        {
+          "widget": {
+            "name": "c1",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "riesgo_zona",
+                  "fields": [
+                    {
+                      "name": "zona",
+                      "expression": "`zona`"
+                    },
+                    {
+                      "name": "clientes",
+                      "expression": "`clientes`"
+                    },
+                    {
+                      "name": "nivel_riesgo",
+                      "expression": "`nivel_riesgo`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "frame": {
+                "showTitle": true,
+                "title": "Clientes en riesgo (medio, alto, crítico) por zona"
+              },
+              "encodings": {
+                "x": {
+                  "fieldName": "zona",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "zona"
+                },
+                "y": {
+                  "fieldName": "clientes",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "clientes"
+                },
+                "color": {
+                  "fieldName": "nivel_riesgo",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "nivel_riesgo"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 5,
+            "width": 4,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "c2",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "riesgo_nivel",
+                  "fields": [
+                    {
+                      "name": "nivel_riesgo",
+                      "expression": "`nivel_riesgo`"
+                    },
+                    {
+                      "name": "clientes",
+                      "expression": "`clientes`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "pie",
+              "frame": {
+                "showTitle": true,
+                "title": "Distribución por nivel (sin 'Bajo')"
+              },
+              "encodings": {
+                "angle": {
+                  "fieldName": "clientes",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "clientes"
+                },
+                "color": {
+                  "fieldName": "nivel_riesgo",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "nivel_riesgo"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 5,
+            "width": 2,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "tb1",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "top_clientes",
+                  "fields": [
+                    {
+                      "name": "cliente_id",
+                      "expression": "`cliente_id`"
+                    },
+                    {
+                      "name": "nombre_completo",
+                      "expression": "`nombre_completo`"
+                    },
+                    {
+                      "name": "distrito",
+                      "expression": "`distrito`"
+                    },
+                    {
+                      "name": "segmento_valor",
+                      "expression": "`segmento_valor`"
+                    },
+                    {
+                      "name": "plan_hogar",
+                      "expression": "`plan_hogar`"
+                    },
+                    {
+                      "name": "renta_mensual",
+                      "expression": "`renta_mensual`"
+                    },
+                    {
+                      "name": "score_riesgo",
+                      "expression": "`score_riesgo`"
+                    },
+                    {
+                      "name": "nivel_riesgo",
+                      "expression": "`nivel_riesgo`"
+                    },
+                    {
+                      "name": "consulta_portabilidad_30d",
+                      "expression": "`consulta_portabilidad_30d`"
+                    },
+                    {
+                      "name": "reclamos_abiertos",
+                      "expression": "`reclamos_abiertos`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 1,
+              "widgetType": "table",
+              "frame": {
+                "showTitle": true,
+                "title": "Clientes prioritarios para retención"
+              },
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "cliente_id",
+                    "displayName": "cliente_id"
+                  },
+                  {
+                    "fieldName": "nombre_completo",
+                    "displayName": "nombre_completo"
+                  },
+                  {
+                    "fieldName": "distrito",
+                    "displayName": "distrito"
+                  },
+                  {
+                    "fieldName": "segmento_valor",
+                    "displayName": "segmento_valor"
+                  },
+                  {
+                    "fieldName": "plan_hogar",
+                    "displayName": "plan_hogar"
+                  },
+                  {
+                    "fieldName": "renta_mensual",
+                    "displayName": "renta_mensual"
+                  },
+                  {
+                    "fieldName": "score_riesgo",
+                    "displayName": "score_riesgo"
+                  },
+                  {
+                    "fieldName": "nivel_riesgo",
+                    "displayName": "nivel_riesgo"
+                  },
+                  {
+                    "fieldName": "consulta_portabilidad_30d",
+                    "displayName": "consulta_portabilidad_30d"
+                  },
+                  {
+                    "fieldName": "reclamos_abiertos",
+                    "displayName": "reclamos_abiertos"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 11,
+            "width": 6,
+            "height": 7
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "red",
+      "displayName": "Soporte y red",
+      "layout": [
+        {
+          "widget": {
+            "name": "t2",
+            "multilineTextboxSpec": {
+              "lines": [
+                "# Soporte y red\nFallas de red diarias y salud de nodos. El pico de Arequipa corresponde a la incidencia **INC-AQP-2026-0412** (nodo AQP-CAY-03)."
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "c3",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "fallas_diarias",
+                  "fields": [
+                    {
+                      "name": "fecha",
+                      "expression": "`fecha`"
+                    },
+                    {
+                      "name": "fallas_red",
+                      "expression": "`fallas_red`"
+                    },
+                    {
+                      "name": "region",
+                      "expression": "`region`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "frame": {
+                "showTitle": true,
+                "title": "Fallas de red por día y región"
+              },
+              "encodings": {
+                "x": {
+                  "fieldName": "fecha",
+                  "scale": {
+                    "type": "temporal"
+                  },
+                  "displayName": "fecha"
+                },
+                "y": {
+                  "fieldName": "fallas_red",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "fallas_red"
+                },
+                "color": {
+                  "fieldName": "region",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "region"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "c4",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "reclamos_mes",
+                  "fields": [
+                    {
+                      "name": "mes",
+                      "expression": "`mes`"
+                    },
+                    {
+                      "name": "reclamos",
+                      "expression": "`reclamos`"
+                    },
+                    {
+                      "name": "tipo",
+                      "expression": "`tipo`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "frame": {
+                "showTitle": true,
+                "title": "Reclamos por mes y tipo"
+              },
+              "encodings": {
+                "x": {
+                  "fieldName": "mes",
+                  "scale": {
+                    "type": "temporal"
+                  },
+                  "displayName": "mes"
+                },
+                "y": {
+                  "fieldName": "reclamos",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "reclamos"
+                },
+                "color": {
+                  "fieldName": "tipo",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "tipo"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 8,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "tb2",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "nodos",
+                  "fields": [
+                    {
+                      "name": "nodo_id",
+                      "expression": "`nodo_id`"
+                    },
+                    {
+                      "name": "region",
+                      "expression": "`region`"
+                    },
+                    {
+                      "name": "distrito",
+                      "expression": "`distrito`"
+                    },
+                    {
+                      "name": "tecnologia",
+                      "expression": "`tecnologia`"
+                    },
+                    {
+                      "name": "estado_salud",
+                      "expression": "`estado_salud`"
+                    },
+                    {
+                      "name": "fallas_red_7d",
+                      "expression": "`fallas_red_7d`"
+                    },
+                    {
+                      "name": "fallas_red_30d",
+                      "expression": "`fallas_red_30d`"
+                    },
+                    {
+                      "name": "ultima_incidencia",
+                      "expression": "`ultima_incidencia`"
+                    },
+                    {
+                      "name": "clientes_riesgo_alto",
+                      "expression": "`clientes_riesgo_alto`"
+                    },
+                    {
+                      "name": "renta_en_riesgo",
+                      "expression": "`renta_en_riesgo`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 1,
+              "widgetType": "table",
+              "frame": {
+                "showTitle": true,
+                "title": "Salud de nodos"
+              },
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "nodo_id",
+                    "displayName": "nodo_id"
+                  },
+                  {
+                    "fieldName": "region",
+                    "displayName": "region"
+                  },
+                  {
+                    "fieldName": "distrito",
+                    "displayName": "distrito"
+                  },
+                  {
+                    "fieldName": "tecnologia",
+                    "displayName": "tecnologia"
+                  },
+                  {
+                    "fieldName": "estado_salud",
+                    "displayName": "estado_salud"
+                  },
+                  {
+                    "fieldName": "fallas_red_7d",
+                    "displayName": "fallas_red_7d"
+                  },
+                  {
+                    "fieldName": "fallas_red_30d",
+                    "displayName": "fallas_red_30d"
+                  },
+                  {
+                    "fieldName": "ultima_incidencia",
+                    "displayName": "ultima_incidencia"
+                  },
+                  {
+                    "fieldName": "clientes_riesgo_alto",
+                    "displayName": "clientes_riesgo_alto"
+                  },
+                  {
+                    "fieldName": "renta_en_riesgo",
+                    "displayName": "renta_en_riesgo"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 8,
+            "width": 3,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "churn",
+      "displayName": "Churn",
+      "layout": [
+        {
+          "widget": {
+            "name": "t3",
+            "multilineTextboxSpec": {
+              "lines": [
+                "# Churn\nTasa de churn = bajas del mes / clientes activos al inicio del mes (definición única en `gold.mv_churn`)."
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "k4",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "kpi_churn",
+                  "fields": [
+                    {
+                      "name": "tasa_churn_sep",
+                      "expression": "`tasa_churn_sep`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "frame": {
+                "showTitle": true,
+                "title": "Churn septiembre 2026"
+              },
+              "encodings": {
+                "value": {
+                  "fieldName": "tasa_churn_sep",
+                  "displayName": "Churn septiembre 2026",
+                  "format": {
+                    "type": "number-percent",
+                    "decimalPlaces": {
+                      "type": "max",
+                      "places": 1
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 3,
+            "height": 3
+          }
+        },
+        {
+          "widget": {
+            "name": "k5",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "kpi_churn",
+                  "fields": [
+                    {
+                      "name": "bajas_portabilidad_sep",
+                      "expression": "`bajas_portabilidad_sep`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "frame": {
+                "showTitle": true,
+                "title": "Bajas por portabilidad (sep)"
+              },
+              "encodings": {
+                "value": {
+                  "fieldName": "bajas_portabilidad_sep",
+                  "displayName": "Bajas por portabilidad (sep)"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 2,
+            "width": 3,
+            "height": 3
+          }
+        },
+        {
+          "widget": {
+            "name": "c5",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "churn_mes",
+                  "fields": [
+                    {
+                      "name": "mes",
+                      "expression": "`mes`"
+                    },
+                    {
+                      "name": "tasa_churn",
+                      "expression": "`tasa_churn`"
+                    },
+                    {
+                      "name": "region",
+                      "expression": "`region`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "frame": {
+                "showTitle": true,
+                "title": "Tasa de churn mensual por región"
+              },
+              "encodings": {
+                "x": {
+                  "fieldName": "mes",
+                  "scale": {
+                    "type": "temporal"
+                  },
+                  "displayName": "mes"
+                },
+                "y": {
+                  "fieldName": "tasa_churn",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "tasa_churn",
+                  "format": {
+                    "type": "number-percent",
+                    "decimalPlaces": {
+                      "type": "max",
+                      "places": 1
+                    }
+                  }
+                },
+                "color": {
+                  "fieldName": "region",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "region"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 5,
+            "width": 6,
+            "height": 7
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    }
+  ]
+}

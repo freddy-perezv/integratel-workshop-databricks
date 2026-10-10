@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Troubleshooting - Fibra, HFC, Móvil</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @page { size: A4; margin: 20mm 15mm; }
+        @media print {
+            body { margin: 0; padding: 0; }
+            .page-break { page-break-after: always; }
+            .footer { position: fixed; bottom: 15mm; left: 15mm; right: 15mm; }
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .wordmark {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0066cc;
+            letter-spacing: 1px;
+        }
+        .doc-info {
+            text-align: right;
+            font-size: 11px;
+            color: #666;
+        }
+        .doc-info div { margin: 2px 0; }
+        h1 {
+            font-size: 24px;
+            color: #0066cc;
+            margin: 20px 0 10px 0;
+            border-left: 4px solid #0066cc;
+            padding-left: 10px;
+        }
+        h2 {
+            font-size: 16px;
+            color: #0066cc;
+            margin: 18px 0 10px 0;
+            border-left: 3px solid #0066cc;
+            padding-left: 10px;
+            counter-increment: section;
+        }
+        h3 {
+            font-size: 14px;
+            color: #333;
+            margin: 12px 0 8px 0;
+        }
+        section { margin-bottom: 20px; }
+        .section-num {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 12px;
+        }
+        table th {
+            background: #0066cc;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #0066cc;
+        }
+        table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        table tr:nth-child(even) { background: #f5f5f5; }
+        .callout {
+            background: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        .callout.warning {
+            background: #fff3cd;
+            border-left-color: #ff9800;
+        }
+        .callout.success {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            font-size: 10px;
+            color: #999;
+            text-align: center;
+        }
+        .procedure {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 13px;
+        }
+        .procedure ol { margin-left: 20px; }
+        .procedure li { margin: 6px 0; }
+        .led-table { font-size: 12px; }
+        .led-table td { padding: 8px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="wordmark">INTEGRATEL</div>
+        <div class="doc-info">
+            <div><strong>MAN-TEC-007</strong></div>
+            <div>v3.2</div>
+            <div>2026-10-15</div>
+        </div>
+    </div>
+
+    <h1>Manual de Troubleshooting: Fibra, HFC y Móvil</h1>
+
+    <section>
+        <h2><span class="section-num">1</span>Introducción</h2>
+        <p>Este manual proporciona procedimientos técnicos para diagnosticar y resolver incidencias en servicios de Fibra (FTTH), HFC (cable) y Móvil (4G/5G) de Integratel Perú. Está dirigido al personal de soporte técnico y debe aplicarse de manera sistemática para garantizar una respuesta consistente y eficiente.</p>
+        <div class="callout">
+            <strong>Nota:</strong> Todos los procedimientos respetan los SLAs definidos por región. Ante cualquier duda, escale a NOC (Centro de Operaciones de Red).
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">2</span>Códigos de Falla y Diagnóstico</h2>
+        <p>Los siguientes códigos de falla permiten categorizar y priorizar las incidencias en el sistema de tickets:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>F-101</strong></td>
+                    <td>ONT con LED <strong>LOS rojo</strong> — pérdida de señal óptica</td>
+                    <td>Verificar si hay incidencia masiva en el nodo. Si hay ≥ 10 tickets F-101 del mismo nodo en 24 h → vincular a incidencia masiva, NO agendar visita individual. Si no: visita técnica (SLA 24 h Lima / 48 h regiones).</td>
+                </tr>
+                <tr>
+                    <td><strong>F-102</strong></td>
+                    <td>LED PON parpadeando — sin registro en OLT</td>
+                    <td>Reinicio remoto de ONT, re-provisionar. Si persiste → visita.</td>
+                </tr>
+                <tr>
+                    <td><strong>F-201</strong></td>
+                    <td>Lentitud / WiFi deficiente</td>
+                    <td>Test de velocidad remoto, cambio de canal WiFi, sugerir mesh. Si persiste → visita.</td>
+                </tr>
+                <tr>
+                    <td><strong>F-301</strong></td>
+                    <td>HFC sin sincronía de módem</td>
+                    <td>Revisar niveles RF, reinicio, visita si persiste.</td>
+                </tr>
+                <tr>
+                    <td><strong>M-401</strong></td>
+                    <td>Móvil sin cobertura / caída de datos</td>
+                    <td>Verificar celda, reset de red, escalar a NOC.</td>
+                </tr>
+                <tr>
+                    <td><strong>B-501</strong></td>
+                    <td>Facturación / cobro indebido</td>
+                    <td>Derivar a reclamos (código RCL).</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2><span class="section-num">3</span>LEDs del ONT (Fibra FTTH)</h2>
+        <p>El ONT (Optical Network Terminal) dispone de los siguientes indicadores LED:</p>
+
+        <table class="led-table">
+            <thead>
+                <tr>
+                    <th>LED</th>
+                    <th>Estado Normal</th>
+                    <th>Estado de Falla</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>POWER</strong></td>
+                    <td>Verde (fijo)</td>
+                    <td>Rojo o apagado</td>
+                    <td>Verificar alimentación, reiniciar ONT.</td>
+                </tr>
+                <tr>
+                    <td><strong>PON</strong></td>
+                    <td>Verde (fijo)</td>
+                    <td>Parpadeando o rojo</td>
+                    <td>Problema de sincronización. Re-provisionar desde OLT.</td>
+                </tr>
+                <tr>
+                    <td><strong>LOS</strong></td>
+                    <td>Apagado</td>
+                    <td>Rojo (fijo)</td>
+                    <td>Loss of Signal. Verificar fibra, conectores. Si nodo está en incidencia masiva → vincular. Visita técnica si no hay incidencia.</td>
+                </tr>
+                <tr>
+                    <td><strong>LAN</strong></td>
+                    <td>Verde (parpadea)</td>
+                    <td>Rojo o apagado</td>
+                    <td>Problema en segmento LAN. Reiniciar ONT y router.</td>
+                </tr>
+                <tr>
+                    <td><strong>WiFi</strong></td>
+                    <td>Verde (parpadea)</td>
+                    <td>Rojo o apagado</td>
+                    <td>WiFi deshabilitado o router con falla. Revisar configuración.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout warning">
+            <strong>Atención:</strong> El LED LOS en rojo indica pérdida de señal óptica. Este es el problema más crítico en incidencias de Fibra. Si hay múltiples reportes (≥ 10 en el mismo nodo en 24 h), se trata de una incidencia masiva.
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">4</span>Rangos de Potencia Óptica</h2>
+        <p>La potencia óptica recibida en el ONT debe encontrarse dentro del rango normal para garantizar funcionamiento óptimo:</p>
+
+        <div class="callout success">
+            <strong>Rango normal:</strong> −8 a −27 dBm
+        </div>
+
+        <h3>Interpretación:</h3>
+        <ul>
+            <li><strong>−8 a −20 dBm:</strong> Óptimo. Sin acción requerida.</li>
+            <li><strong>−20 a −27 dBm:</strong> Aceptable. Monitorear.</li>
+            <li><strong>&gt; −27 dBm:</strong> Débil. Revisar fibra, conectores, atenuadores.</li>
+            <li><strong>&lt; −8 dBm:</strong> Excesivo. Posible mala terminación o atenuador fuera de especificación.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><span class="section-num">5</span>Procedimiento Decisión: Incidencia Masiva vs Visita Individual</h2>
+
+        <p><strong>Situación:</strong> Se recibe un ticket F-101 (LED LOS rojo) de un cliente FTTH.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Pregunta</th>
+                    <th>Sí</th>
+                    <th>No</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>¿Hay ≥ 10 tickets F-101 del mismo nodo en las últimas 24 h?</td>
+                    <td><strong>→ Incidencia masiva.</strong> Vincular a incidencia existente. NO agendar visita individual. Aplicar protocolo de incidencia masiva (compensación automática si es ≥ 4 h).</td>
+                    <td>→ Continúa.</td>
+                </tr>
+                <tr>
+                    <td>¿Cuál es la región del cliente?</td>
+                    <td colspan="2">Lima: SLA 24 h / Regiones: SLA 48 h</td>
+                </tr>
+                <tr>
+                    <td>¿Tiene el cliente deuda vencida &gt; 60 días?</td>
+                    <td>→ Restringir retención. Foco en reclamos.</td>
+                    <td>→ Proceder con retención si aplica.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="procedure">
+            <h3>Procedimiento paso a paso:</h3>
+            <ol>
+                <li>Abrir ticket en el sistema con código de falla (F-101, etc.).</li>
+                <li>Consultar incidencias masivas activas (query en tabla de nodos afectados).</li>
+                <li>Si nodo coincide con incidencia masiva activa: vincular ticket a incidencia.</li>
+                <li>Si no hay incidencia masiva: agendar visita técnica respetando SLA (24 h Lima / 48 h regiones).</li>
+                <li>Registrar en CRM: código de falla, nodo, fecha/hora de reporte.</li>
+                <li>Ante escalación a NOC: proporcionar potencia óptica, logs de ONT si están disponibles.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">6</span>Troubleshooting HFC (Cable)</h2>
+
+        <h3>Problema: Sin sincronía de módem (F-301)</h3>
+        <div class="procedure">
+            <ol>
+                <li>Verificar niveles de RF (Radiofrecuencia) en upstream/downstream. Deben estar: downstream −6 a +6 dBmV, upstream +42 a +50 dBmV.</li>
+                <li>Si están fuera de rango: revisar niveles en el segmento HFC. Posible: igualador defectuoso, atenuador mal configurado, o problema de red de distribución.</li>
+                <li>Realizar reinicio remoto del módem. Esperar 2–3 min para re-provisionar.</li>
+                <li>Si persiste: agendar visita técnica (SLA 24 h Lima / 48 h regiones).</li>
+            </ol>
+        </div>
+
+        <h3>Problema: Lentitud en HFC</h3>
+        <div class="procedure">
+            <ol>
+                <li>Test de velocidad remoto. Si < 80% de velocidad contratada: escalar.</li>
+                <li>Revisar cargas por CMTS (agregador de módem). Si &gt; 90% de utilización: informar a NOC para considerar expansión.</li>
+                <li>Sugerir upgrade de plan si el cliente requiere mayor ancho de banda.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">7</span>Troubleshooting Móvil (4G/5G)</h2>
+
+        <h3>Problema: Sin cobertura / caída de datos (M-401)</h3>
+        <div class="procedure">
+            <ol>
+                <li>Preguntar al cliente: ¿El problema es en una zona específica o en todas partes?</li>
+                <li>Si es zonal: consultar mapa de cobertura y verificar si hay celdas caídas reportadas.</li>
+                <li>Si es general: solicitar al cliente: Settings → Reset Network Settings → intentar nuevamente.</li>
+                <li>Escalar a NOC si el problema persiste. NOC revisará telemetría de la celda y BTS.</li>
+            </ol>
+        </div>
+
+        <div class="callout">
+            <strong>Importante:</strong> La caída de datos móvil puede deberse a congestión de celda, problema de backbone, o configuración de APN. NOC tiene visibilidad de todos estos factores.
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">8</span>Escalación a NOC</h2>
+        <p>Escalar a NOC en los siguientes casos:</p>
+        <ul>
+            <li>Ticket F-101: ≥ 10 en el mismo nodo en 24 h → incidencia masiva confirmada.</li>
+            <li>Ticket M-401: cobertura móvil deficiente que afecta múltiples clientes.</li>
+            <li>Cualquier problema que, tras troubleshooting remoto, no se resuelve.</li>
+            <li>Problema de backbone u OLT detectado (verificar en herramientas de diagnóstico).</li>
+        </ul>
+        <p>Al escalar, proporcionar: código de cliente, código de falla, descripción del problema, potencia óptica (fibra), niveles RF (HFC), o detalles de celda (móvil).</p>
+    </section>
+
+    <div class="footer">
+        <p>Documento sintético elaborado para workshop Databricks — no representa políticas reales de Integratel.</p>
+    </div>
+</body>
+</html>

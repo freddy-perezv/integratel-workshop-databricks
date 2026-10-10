@@ -1,0 +1,15 @@
+{
+  "knowledge_assistant": {
+    "name": "knowledge-assistants/1c0409da-1e1c-4a46-b7d8-768b2b715d23",
+    "id": "1c0409da-1e1c-4a46-b7d8-768b2b715d23",
+    "endpoint_name": "ka-1c0409da-endpoint"
+  },
+  "supervisor_agent": {
+    "name": "supervisor-agents/9a907f04-565d-49dd-b9ad-d476d0a2aa98",
+    "endpoint_name": "mas-9a907f04-endpoint",
+    "tools": [
+      "asistente_conocimiento (KA)",
+      "genie (pendiente)"
+    ]
+  }
+}

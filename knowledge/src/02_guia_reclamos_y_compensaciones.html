@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Reclamos y Compensaciones</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @page { size: A4; margin: 20mm 15mm; }
+        @media print {
+            body { margin: 0; padding: 0; }
+            .page-break { page-break-after: always; }
+            .footer { position: fixed; bottom: 15mm; left: 15mm; right: 15mm; }
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .wordmark {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0066cc;
+            letter-spacing: 1px;
+        }
+        .doc-info {
+            text-align: right;
+            font-size: 11px;
+            color: #666;
+        }
+        .doc-info div { margin: 2px 0; }
+        h1 {
+            font-size: 24px;
+            color: #0066cc;
+            margin: 20px 0 10px 0;
+            border-left: 4px solid #0066cc;
+            padding-left: 10px;
+        }
+        h2 {
+            font-size: 16px;
+            color: #0066cc;
+            margin: 18px 0 10px 0;
+            border-left: 3px solid #0066cc;
+            padding-left: 10px;
+        }
+        h3 {
+            font-size: 14px;
+            color: #333;
+            margin: 12px 0 8px 0;
+        }
+        section { margin-bottom: 20px; }
+        .section-num {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 12px;
+        }
+        table th {
+            background: #0066cc;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #0066cc;
+        }
+        table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        table tr:nth-child(even) { background: #f5f5f5; }
+        .callout {
+            background: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        .callout.warning {
+            background: #fff3cd;
+            border-left-color: #ff9800;
+        }
+        .callout.success {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            font-size: 10px;
+            color: #999;
+            text-align: center;
+        }
+        .formula {
+            background: #f0f0f0;
+            border: 1px solid #999;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: monospace;
+            text-align: center;
+            font-weight: bold;
+            font-size: 13px;
+        }
+        .example-box {
+            background: #f9f9f9;
+            border-left: 4px solid #28a745;
+            padding: 12px 15px;
+            margin: 12px 0;
+            font-size: 13px;
+        }
+        .script-box {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 12px;
+            margin: 12px 0;
+            font-size: 12px;
+            font-family: 'Courier New', monospace;
+            line-height: 1.4;
+        }
+        ul, ol { margin-left: 20px; }
+        li { margin: 6px 0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="wordmark">INTEGRATEL</div>
+        <div class="doc-info">
+            <div><strong>GUI-REC-002</strong></div>
+            <div>v2.0</div>
+            <div>2026-10-15</div>
+        </div>
+    </div>
+
+    <h1>Guía de Reclamos y Compensaciones</h1>
+
+    <section>
+        <h2><span class="section-num">1</span>Introducción y Marco Regulatorio</h2>
+        <p>Integratel Perú, como operador de telecomunicaciones, está sujeto a regulaciones de protección al consumidor que establecen plazos, procedimientos y compensaciones ante interrupciones del servicio.</p>
+        <p>Esta guía establece los lineamientos para la gestión de reclamos y el cálculo de compensaciones, garantizando consistencia, transparencia y cumplimiento normativo.</p>
+        <div class="callout">
+            <strong>Principio clave:</strong> Toda interrupción de servicio > 4 horas continuas atribuible a Integratel genera derecho a compensación automática, sin que el cliente la solicite.
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">2</span>Código de Reclamo</h2>
+        <h3>Formato:</h3>
+        <div class="formula">RCL-AAAA-NNNNN</div>
+        <ul>
+            <li><strong>RCL:</strong> Prefijo fijo (Reclamo)</li>
+            <li><strong>AAAA:</strong> Año de apertura (ej: 2026)</li>
+            <li><strong>NNNNN:</strong> Número secuencial (ej: 08812)</li>
+        </ul>
+        <h3>Ejemplo:</h3>
+        <p><strong>RCL-2026-08812</strong> — reclamo #08812 abierto en 2026</p>
+        <p><strong>Asignación:</strong> Sistema automático en CRM. Comunique el código de reclamo al cliente en el primer contacto.</p>
+    </section>
+
+    <section>
+        <h2><span class="section-num">3</span>Plazos de Respuesta</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo de Reclamo</th>
+                    <th>Plazo</th>
+                    <th>Observaciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Interrupción / Calidad del servicio</td>
+                    <td><strong>5 días hábiles</strong></td>
+                    <td>Prioridad alta. Incluye análisis de logs de red.</td>
+                </tr>
+                <tr>
+                    <td>Otros tipos (facturación, errores administrativos)</td>
+                    <td><strong>15 días hábiles</strong></td>
+                    <td>Plazo estándar.</td>
+                </tr>
+                <tr>
+                    <td>Silencio positivo</td>
+                    <td colspan="2">Si Integratel no responde en el plazo: reclamo se considera aceptado automáticamente a favor del cliente.</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="callout warning">
+            <strong>Atención:</strong> El plazo comienza a correr desde la apertura del reclamo (fecha RCL). Exceder el plazo sin respuesta tiene consecuencias regulatorias.
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">4</span>Fórmula de Compensación por Interrupción</h2>
+
+        <p><strong>Condición de aplicación:</strong> Interrupción > 4 horas continuas, comprobada en registros de la red, atribuible a Integratel.</p>
+
+        <div class="formula">
+            Compensación = (Cargo fijo mensual × Días de interrupción) / 30
+        </div>
+
+        <h3>Donde:</h3>
+        <ul>
+            <li><strong>Cargo fijo mensual:</strong> Precio del plan (ej: FIB-400 = S/109.00)</li>
+            <li><strong>Días de interrupción:</strong> Redondear hacia arriba si la interrupción es > 12 horas; contar como 1 día.</li>
+            <li><strong>/30:</strong> Divisor de días en mes (cálculo lineal)</li>
+        </ul>
+
+        <h3>Aplicación:</h3>
+        <ul>
+            <li>Se aplica automáticamente en incidencias masivas (≥ 10 clientes afectados en 24 h).</li>
+            <li>Se deposita en el siguiente recibo del cliente, sin que la solicite.</li>
+            <li>En reclamos individuales: aplicar si el cliente lo solicita o si Integratel lo reconoce.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><span class="section-num">5</span>Ejemplos Trabajados</h2>
+
+        <h3>Ejemplo 1: Cliente en incidencia masiva (Plan FIB-400, 3 días sin servicio)</h3>
+        <div class="example-box">
+            <p><strong>Datos:</strong></p>
+            <ul>
+                <li>Plan: FIB-400 (Fibra 400 Mbps)</li>
+                <li>Cargo fijo: S/109.00</li>
+                <li>Duración de la interrupción: 3 días continuos</li>
+                <li>Incidencia: Masiva (≥ 10 afectados en 24 h)</li>
+            </ul>
+            <p><strong>Cálculo:</strong></p>
+            <p style="margin-left: 20px; font-family: monospace;">Compensación = (S/109.00 × 3) / 30 = S/327.00 / 30 = <strong>S/10.90</strong></p>
+            <p><strong>Resultado:</strong> S/10.90 de crédito automático en el siguiente recibo.</p>
+        </div>
+
+        <h3>Ejemplo 2: Cliente con plan HFC, 2 días sin servicio</h3>
+        <div class="example-box">
+            <p><strong>Datos:</strong></p>
+            <ul>
+                <li>Plan: HFC-200 (Cable 200 Mbps)</li>
+                <li>Cargo fijo: S/95.00</li>
+                <li>Duración: 2 días</li>
+                <li>Tipo: Reclamo individual (no masiva)</li>
+            </ul>
+            <p><strong>Cálculo:</strong></p>
+            <p style="margin-left: 20px; font-family: monospace;">Compensación = (S/95.00 × 2) / 30 = S/190.00 / 30 = <strong>S/6.33</strong></p>
+            <p><strong>Resultado:</strong> S/6.33 de crédito (se aplica si el cliente lo solicita).</p>
+        </div>
+
+        <h3>Ejemplo 3: Cliente móvil en incidencia masiva, 4 horas sin datos</h3>
+        <div class="example-box">
+            <p><strong>Datos:</strong></p>
+            <ul>
+                <li>Plan: MOV-ILI-109 (Max Ilimitado Plus)</li>
+                <li>Cargo fijo: S/109.90</li>
+                <li>Duración: 4 horas (≤ 12 h, redondea a 1 día)</li>
+                <li>Incidencia: Masiva</li>
+            </ul>
+            <p><strong>Cálculo:</strong></p>
+            <p style="margin-left: 20px; font-family: monospace;">Compensación = (S/109.90 × 1) / 30 = <strong>S/3.66</strong></p>
+            <p><strong>Resultado:</strong> S/3.66 de crédito automático.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">6</span>Procedimiento de Primera Contacto</h2>
+
+        <p>Al recibir un reclamo, el agente debe:</p>
+
+        <div class="script-box">
+            <p><strong>Script sugerido:</strong></p>
+            <p style="margin-top: 10px;">
+                "Buenos días/tardes. Gracias por comunicarse con Integratel. He registrado su reclamo con el código <strong>RCL-2026-XXXXX</strong>.
+                Le confirmo que hemos identificado una interrupción en su servicio desde [fecha/hora] hasta [fecha/hora], con una duración de [X días/horas].
+                <br><br>
+                Conforme a nuestra política, este reclamo será respondido en <strong>5 días hábiles</strong> [si es por interrupción]. Se le notificará por [teléfono/email] con la resolución y, de corresponder, el crédito se aplicará en su siguiente factura.
+                <br><br>
+                ¿Tiene alguna pregunta al respecto?"
+            </p>
+        </div>
+
+        <h3>Registro en CRM:</h3>
+        <ul>
+            <li>Código de reclamo (RCL-2026-XXXXX)</li>
+            <li>Tipo: interrupción / calidad / facturación / otro</li>
+            <li>Fecha/hora de apertura</li>
+            <li>Descripción del problema y duración</li>
+            <li>Plazo de respuesta (5 ó 15 días hábiles según tipo)</li>
+            <li>Cliente: nombre, CLI, teléfono, email</li>
+            <li>Si aplica compensación: calcular y registrar monto</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><span class="section-num">7</span>Segunda Instancia</h2>
+
+        <p>Si el cliente no está conforme con la respuesta de Integratel, puede apelar ante el tribunal de reclamos del regulador en un plazo de <strong>10 días hábiles</strong> desde la notificación de la respuesta de primer grado.</p>
+
+        <div class="callout">
+            <strong>Información a proporcionar al cliente:</strong> "Si no está de acuerdo con esta resolución, tiene derecho a presentar una apelación ante el tribunal administrativo del regulador dentro de 10 días hábiles, con los siguientes documentos: copia del reclamo original, copia de esta respuesta, y cualquier documento que sustente su reclamación."
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">8</span>Incidencias Masivas: Protocolo Automático</h2>
+
+        <p>Ante una incidencia masiva (≥ 10 clientes afectados por el mismo problema en 24 h):</p>
+        <ol>
+            <li>El sistema detecta automáticamente la incidencia y genera un ticket de coordinación (INC-...).</li>
+            <li>Se identifica a todos los clientes afectados.</li>
+            <li>Se calcula compensación automáticamente para cada cliente (fórmula: cargo_fijo × días / 30).</li>
+            <li>Crédito se aplica en siguiente factura, <strong>sin que cliente lo solicite</strong>.</li>
+            <li>Se envía comunicado a clientes afectados explicando incidencia, duración, y compensación otorgada.</li>
+            <li>Reclamos individuales de clientes afectados se vinculan a la incidencia, no generan reclamo duplicado.</li>
+        </ol>
+
+        <div class="callout success">
+            <strong>Ventaja:</strong> Las incidencias masivas se resuelven de forma ágil y consistente. El cliente no necesita reclamar; Integratel actúa proactivamente.
+        </div>
+    </section>
+
+    <div class="footer">
+        <p>Documento sintético elaborado para workshop Databricks — no representa políticas reales de Integratel.</p>
+    </div>
+</body>
+</html>

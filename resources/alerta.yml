@@ -1,0 +1,37 @@
+# Alerta SQL: aplica la regla del Manual MAN-TEC-007 (≥10 tickets F-101 del mismo nodo en un día
+# ⇒ posible incidencia masiva). Notifica al equipo antes de que los clientes empiecen a portarse.
+resources:
+  alerts:
+    incidencia_masiva:
+      display_name: Integratel · Posible incidencia masiva (≥10 LOS rojo por nodo en un día)
+      warehouse_id: ${var.warehouse_id}
+      run_as:
+        service_principal_name: ${var.cicd_sp}
+      parent_path: /Workspace/Shared/integratel-workshop
+      custom_summary: "⚠️ {{ALERT_NAME}}: hay nodos con ≥10 tickets F-101 en un día"
+      query_text: |
+        SELECT count(*) AS nodos_en_alerta
+        FROM (
+          SELECT nodo_id, fecha, count(*) AS tickets_los
+          FROM ${var.catalog}.gold.tickets_enriquecidos
+          WHERE codigo_falla = 'F-101' AND fecha >= DATE'2026-10-15' - INTERVAL 14 DAYS
+          GROUP BY nodo_id, fecha
+          HAVING count(*) >= 10
+        )
+      evaluation:
+        source:
+          name: nodos_en_alerta
+          aggregation: MAX
+        comparison_operator: GREATER_THAN
+        threshold:
+          value:
+            double_value: 0
+        empty_result_state: OK
+        notification:
+          notify_on_ok: false
+          subscriptions:
+            - user_email: ${var.notificaciones}
+      schedule:
+        quartz_cron_schedule: "0 0 8 * * ?"
+        timezone_id: America/Lima
+        pause_status: UNPAUSED

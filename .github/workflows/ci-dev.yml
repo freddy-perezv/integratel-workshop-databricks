@@ -1,0 +1,53 @@
+# CI — cada Pull Request a main se despliega en DEV y se prueba con datos reales.
+# Si un test SQL falla, el check queda en rojo y el merge a main se bloquea.
+name: CI · Validar y probar en DEV
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: databricks-dev          # un solo despliegue a dev a la vez
+  cancel-in-progress: false
+
+env:
+  DATABRICKS_HOST: ${{ vars.DATABRICKS_HOST }}
+  DATABRICKS_CLIENT_ID: ${{ vars.DATABRICKS_CLIENT_ID }}
+  DATABRICKS_CLIENT_SECRET: ${{ secrets.DATABRICKS_CLIENT_SECRET }}
+  DATABRICKS_BUNDLE_ENV: dev
+
+jobs:
+  validar-desplegar-probar:
+    name: Validar → desplegar → probar (dev)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: databricks/setup-cli@main
+
+      - name: 1 · Validar el Bundle
+        run: databricks bundle validate -t dev
+
+      - name: 2 · Desplegar a DEV
+        run: databricks bundle deploy -t dev --auto-approve
+
+      - name: 3 · Correr pipeline SQL + tests de calidad
+        id: pipeline
+        run: |
+          set -o pipefail
+          databricks bundle run pipeline_sql -t dev 2>&1 | tee run.log
+
+      - name: Resumen
+        if: always()
+        run: |
+          {
+            echo "## Resultado en DEV (catálogo \`integratel_dev\`)"
+            if [ "${{ steps.pipeline.outcome }}" = "success" ]; then
+              echo "✅ Pipeline y **todos los tests de calidad** pasaron. Listo para revisión y merge."
+            else
+              echo "❌ **El pipeline o un test de calidad falló.** No se puede promover a producción."
+              echo; echo '```'; grep -E "FALLA|Error|FAILED|test_" run.log | head -40 || true; echo '```'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,46 @@
+# CD — al hacer merge a main, se promueve a PRODUCCIÓN.
+# El environment "produccion" exige aprobación manual (approval gate) antes de desplegar.
+name: CD · Promover a PRODUCCIÓN
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: databricks-prod
+  cancel-in-progress: false
+
+env:
+  DATABRICKS_HOST: ${{ vars.DATABRICKS_HOST }}
+  DATABRICKS_CLIENT_ID: ${{ vars.DATABRICKS_CLIENT_ID }}
+  DATABRICKS_CLIENT_SECRET: ${{ secrets.DATABRICKS_CLIENT_SECRET }}
+
+jobs:
+  desplegar-prod:
+    name: Desplegar a PROD (requiere aprobación)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: produccion
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: databricks/setup-cli@main
+
+      - name: 1 · Validar el Bundle (prod)
+        run: databricks bundle validate -t prod
+
+      - name: 2 · Ver qué va a cambiar
+        run: databricks bundle plan -t prod || true
+
+      - name: 3 · Desplegar a PROD
+        run: databricks bundle deploy -t prod --auto-approve
+
+      - name: 4 · Correr pipeline SQL + tests en PROD
+        run: databricks bundle run pipeline_sql -t prod
+
+      - name: Resumen
+        if: always()
+        run: |
+          echo "## Producción (catálogo \`integratel_prod\`) · commit \`${GITHUB_SHA::7}\` · aprobado y desplegado por CI/CD como \`sp-integratel-cicd\`" >> "$GITHUB_STEP_SUMMARY"

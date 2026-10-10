@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunicado de Incidencia INC-AQP-2026-0412</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @page { size: A4; margin: 20mm 15mm; }
+        @media print {
+            body { margin: 0; padding: 0; }
+            .page-break { page-break-after: always; }
+            .footer { position: fixed; bottom: 15mm; left: 15mm; right: 15mm; }
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .wordmark {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0066cc;
+            letter-spacing: 1px;
+        }
+        .doc-info {
+            text-align: right;
+            font-size: 11px;
+            color: #666;
+        }
+        .doc-info div { margin: 2px 0; }
+        h1 {
+            font-size: 24px;
+            color: #d32f2f;
+            margin: 20px 0 10px 0;
+            border-left: 4px solid #d32f2f;
+            padding-left: 10px;
+        }
+        h2 {
+            font-size: 16px;
+            color: #d32f2f;
+            margin: 18px 0 10px 0;
+            border-left: 3px solid #d32f2f;
+            padding-left: 10px;
+        }
+        h3 {
+            font-size: 14px;
+            color: #333;
+            margin: 12px 0 8px 0;
+        }
+        section { margin-bottom: 20px; }
+        .section-num {
+            display: inline-block;
+            background: #d32f2f;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 12px;
+        }
+        table th {
+            background: #d32f2f;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #d32f2f;
+        }
+        table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        table tr:nth-child(even) { background: #f5f5f5; }
+        .alert {
+            background: #ffebee;
+            border-left: 4px solid #d32f2f;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .callout {
+            background: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        .timeline {
+            background: #f9f9f9;
+            border-left: 4px solid #d32f2f;
+            padding: 12px 15px;
+            margin: 12px 0;
+            font-size: 12px;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            font-size: 10px;
+            color: #999;
+            text-align: center;
+        }
+        .script-box {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 12px;
+            margin: 12px 0;
+            font-size: 12px;
+            font-family: 'Courier New', monospace;
+        }
+        ul, ol { margin-left: 20px; }
+        li { margin: 6px 0; }
+        .status {
+            display: inline-block;
+            background: #d32f2f;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 12px;
+            margin-right: 8px;
+        }
+        .status.active {
+            background: #ff9800;
+        }
+        .status.resolved {
+            background: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="wordmark">INTEGRATEL</div>
+        <div class="doc-info">
+            <div><strong>CI-2026-031</strong></div>
+            <div>CONFIDENCIAL INTERNO</div>
+            <div>Emitido: 2026-10-03</div>
+            <div>Actualizado: 2026-10-12</div>
+        </div>
+    </div>
+
+    <h1><span class="status active">INCIDENCIA MASIVA</span>INC-AQP-2026-0412</h1>
+
+    <div class="alert">
+        COMUNICADO URGENTE: Nodo AQP-CAY-03 (Cayma, Arequipa). Tarjeta PON degradada. 1,184 clientes afectados. Compensación automática activada. R2 pre-aprobado. Actualización: 2026-10-12.
+    </div>
+
+    <section>
+        <h2><span class="section-num">1</span>Resumen Ejecutivo</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Parámetro</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Código de Incidencia</strong></td>
+                    <td>INC-AQP-2026-0412</td>
+                </tr>
+                <tr>
+                    <td><strong>Nodo Afectado</strong></td>
+                    <td>AQP-CAY-03 (OLT Cayma, Arequipa)</td>
+                </tr>
+                <tr>
+                    <td><strong>Tecnología</strong></td>
+                    <td>FTTH (Fibra)</td>
+                </tr>
+                <tr>
+                    <td><strong>Causa Raíz</strong></td>
+                    <td>Tarjeta PON degradada en equipo OLT</td>
+                </tr>
+                <tr>
+                    <td><strong>Inicio</strong></td>
+                    <td>2026-10-02 08:15 (hora local)</td>
+                </tr>
+                <tr>
+                    <td><strong>Fin Reportado</strong></td>
+                    <td>2026-10-11 18:40 (hora local)</td>
+                </tr>
+                <tr>
+                    <td><strong>Duración Total</strong></td>
+                    <td>9 días, 10 horas, 25 minutos (intermitencias)</td>
+                </tr>
+                <tr>
+                    <td><strong>Clientes Afectados</strong></td>
+                    <td>1,184</td>
+                </tr>
+                <tr>
+                    <td><strong>Situación Actual</strong></td>
+                    <td><span class="status">Bajo Monitoreo — Se han detectado intermitencias residuales</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2><span class="section-num">2</span>Cronología de la Incidencia</h2>
+
+        <div class="timeline">
+            <p><strong>2026-10-02 08:15:</strong> NOC detecta aumento anómalo de pérdida de conectividad (F-101: LED LOS rojo) en nodo AQP-CAY-03. Inicio de logging intensivo.</p>
+        </div>
+
+        <div class="timeline">
+            <p><strong>2026-10-02 09:30:</strong> Confirmado problema en tarjeta PON del equipo OLT. Degradación de la transmisión óptica. Equipo de ingeniería inicia diagnóstico.</p>
+        </div>
+
+        <div class="timeline">
+            <p><strong>2026-10-02 11:00:</strong> Comunicado a ejecutivos de operaciones. Activado protocolo de incidencia masiva. Compensación automática autorizada.</p>
+        </div>
+
+        <div class="timeline">
+            <p><strong>2026-10-02 a 2026-10-05:</strong> Intentos de reinicio remoto y reconfiguración de tarjeta PON sin éxito. Continuidad del problema: intermitencias frecuentes.</p>
+        </div>
+
+        <div class="timeline">
+            <p><strong>2026-10-06 14:00:</strong> Envío de parte de reemplazo desde Lima. Llegada estimada a Arequipa: 2026-10-08.</p>
+        </div>
+
+        <div class="timeline">
+            <p><strong>2026-10-08 10:30:</strong> Instalación física de tarjeta PON nueva. Pruebas de línea. Recuperación parcial: 60% de clientes retornan a servicio.</p>
+        </div>
+
+        <div class="timeline">
+            <p><strong>2026-10-08 16:00:</strong> Afinamiento de configuración. Recuperación total: 95% de clientes en línea.</p>
+        </div>
+
+        <div class="timeline">
+            <p><strong>2026-10-11 18:40:</strong> Confirmado: 100% de clientes de nodo AQP-CAY-03 con servicio estable. Cierre oficial de incidencia.</p>
+        </div>
+
+        <div class="timeline" style="background: #fff3cd; border-left-color: #ff9800;">
+            <p><strong>2026-10-12 (ACTUALIZACIÓN):</strong> Se detectaron 3 intermitencias menores (3-5 min cada una) en diferentes horas del día. Equipo técnico investigando. Posible: componente relacionado o recalibración de tarjeta. Se mantiene en monitoreo intensivo. Clientes afectados recibirán compensación adicional si persisten.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">3</span>Causa Raíz</h2>
+
+        <p><strong>Análisis Técnico Preliminar:</strong></p>
+        <ul>
+            <li>Tarjeta PON (Passive Optical Network) en equipo OLT Cayma presentaba degradación de transceiver óptico.</li>
+            <li>Síntoma: pérdida de sincronía con ONTs en el nodo (LEDs LOS rojo en múltiples ONTs simultáneamente).</li>
+            <li>Causa probable: envejecimiento de componente óptico (fabricado 2021, 5 años de operación).</li>
+            <li>Factor contribuyente: temperatura ambiente elevada en área de Arequipa, sin aire acondicionado en sala de equipos (revisar SOP de climatización).</li>
+        </ul>
+
+        <p><strong>Acciones Correctivas Permanentes:</strong></p>
+        <ol>
+            <li>Reemplazo de tarjeta PON con modelo mejorado (recibidor óptico más robusto).</li>
+            <li>Instalación de sistema de aire acondicionado en sala de equipos de Cayma (proyecto autorizado para Q4 2026).</li>
+            <li>Plan de mantenimiento preventivo: cambio de tarjetas PON cada 3 años (revisión de política).</li>
+        </ol>
+
+        <div class="callout">
+            <strong>Nota:</strong> Este no fue un error de configuración o de red, sino un fallo de componente hardware. La respuesta fue adecuada (reemplazo físico). Se esperan intermitencias residuales menores mientras se estabiliza la tarjeta nueva.
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">4</span>Protocolo de Retención y Compensación</h2>
+
+        <h3>Compensación Automática (Sin Solicitud del Cliente):</h3>
+        <p><strong>Fórmula:</strong> Cargo fijo del plan × Días de interrupción / 30</p>
+        <p><strong>Aplicación:</strong> Automática en siguiente factura. Clientes NO necesitan reclamar.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Plan Afectado</th>
+                    <th>Cargo Fijo</th>
+                    <th>Días Afectados</th>
+                    <th>Compensación por Cliente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FIB-200</td>
+                    <td>S/89.00</td>
+                    <td>9-10 (variación)</td>
+                    <td>S/26.70 a S/29.67</td>
+                </tr>
+                <tr>
+                    <td>FIB-400</td>
+                    <td>S/109.00</td>
+                    <td>9-10</td>
+                    <td>S/32.70 a S/36.33</td>
+                </tr>
+                <tr>
+                    <td>FIB-600</td>
+                    <td>S/129.00</td>
+                    <td>9-10</td>
+                    <td>S/38.70 a S/43.00</td>
+                </tr>
+                <tr>
+                    <td>FIB-1000</td>
+                    <td>S/169.00</td>
+                    <td>9-10</td>
+                    <td>S/50.70 a S/56.33</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Cálculo Ejemplo (Rosa - FIB-400, 3 días sin servicio):</strong></p>
+        <p style="margin-left: 20px; font-family: monospace;">Compensación = (S/109 × 3) / 30 = <strong>S/10.90</strong></p>
+
+        <h3>Retención Comercial (R2 Pre-aprobado):</h3>
+        <ul>
+            <li><strong>Oferta:</strong> Upgrade de velocidad sin costo por 12 meses (un escalón: 200→400, 400→600, 600→1000).</li>
+            <li><strong>Estado de Aprobación:</strong> PRE-APROBADO para todos los clientes afectados por INC-AQP-2026-0412.</li>
+            <li><strong>NO requiere:</strong> Aprobación adicional del Supervisor de Retención.</li>
+            <li><strong>Aplicación:</strong> Ejecutivo de retención contacta cliente ≤ 24 h desde consulta de portabilidad (si aplica).</li>
+            <li><strong>Aceptación:</strong> Voluntaria. Si cliente rechaza y quiere portabilidad: proceder sin obstáculos.</li>
+        </ul>
+
+        <h3>Combinación con Otros Beneficios (R1):</h3>
+        <ul>
+            <li><strong>R2 + R1:</strong> Permitido (máximo 2 beneficios simultáneos).</li>
+            <li><strong>R1 (Descuento de Fidelización):</strong> Hasta 25% sin aprobación adicional. Si &gt; 25%: requiere Supervisor (Jorge Paredes).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><span class="section-num">5</span>Script para Agentes de Soporte / Retención</h2>
+
+        <div class="script-box">
+            <p><strong>Primer contacto (cliente afectado por incidencia):</strong></p>
+            <br>
+            <p>
+                "Buenos días/tardes [nombre]. Soy [tu nombre] de Integratel. <br><br>
+
+                Lamentamos los problemas de servicio que experimentaste entre el 2 y 11 de octubre. Fue un problema técnico en nuestro nodo de Cayma, que afectó a 1,184 clientes en tu zona. <br><br>
+
+                Como reconocimiento, hemos aplicado un crédito de S/[X] en tu próxima factura. Esto es automático; no necesitabas reclamarlo. <br><br>
+
+                Además, quiero ofrecerte un upgrade de velocidad sin costo por 12 meses como compensación por lo ocurrido. Por ejemplo: si tienes Fibra 400, puedes subir a Fibra 600 sin pagar la diferencia durante un año. ¿Te interesa? <br><br>
+
+                Si además consultaste cambiar de operador, entiendo. Pero primero: ¿podemos resolver esto contigo?"
+            </p>
+        </div>
+
+        <div class="script-box">
+            <p><strong>Si cliente consulta portabilidad (después de incidencia):</strong></p>
+            <br>
+            <p>
+                "Entiendo tu preocupación por la calidad. La incidencia fue un fallo de componente hardware que ya reemplazamos. El servicio ahora es estable. <br><br>
+
+                Aquí está lo que ofrecemos para reteneRTe: <br>
+                - Compensación de S/[X] en tu próxima factura (ya aplicada). <br>
+                - Upgrade gratuito a un plan más rápido por 12 meses. <br>
+                - [Si aplica] Descuento adicional en tu plan base de hasta [X]%. <br><br>
+
+                Tú decides: ¿quieres darle una segunda oportunidad a Integratel? O si prefieres cambiar de operador, lo respetamos. No condiciono ni demoro tu portabilidad. ¿Cuál es tu decisión?"
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">6</span>FAQ para Agentes</h2>
+
+        <div class="callout">
+            <p><strong>P: ¿Quiénes son los clientes afectados?</strong><br>
+            R: Todos los clientes con servicio FTTH en el nodo AQP-CAY-03 (Cayma, Arequipa) entre 2026-10-02 08:15 y 2026-10-11 18:40. Total: 1,184 clientes.</p>
+        </div>
+
+        <div class="callout">
+            <p><strong>P: ¿La compensación es automática o debo solicitarla?</strong><br>
+            R: Automática. Se aplica en la siguiente factura del cliente. NO precisa que lo pida.</p>
+        </div>
+
+        <div class="callout">
+            <p><strong>P: ¿Cuánto es el crédito?</strong><br>
+            R: Cargo fijo del plan × (días afectados / 30). Ej: FIB-400 (S/109) × 3 días / 30 = S/10.90. Varía según plan y días exactos que estuvo sin servicio.</p>
+        </div>
+
+        <div class="callout">
+            <p><strong>P: ¿El R2 (upgrade) necesita aprobación?</strong><br>
+            R: NO. Para esta incidencia, R2 está PRE-APROBADO. No necesitas consultar a supervisor.</p>
+        </div>
+
+        <div class="callout">
+            <p><strong>P: ¿Puedo ofrecer R2 + R1 (descuento)?</strong><br>
+            R: Sí, son máximo 2 beneficios simultáneos. R1 ≤ 25% es automático. Si > 25%, requiere aprobación de Jorge Paredes.</p>
+        </div>
+
+        <div class="callout">
+            <p><strong>P: ¿Si el cliente quiere portabilidad después de ofrecer retención?</strong><br>
+            R: Respeta su decisión. Procesa la portabilidad sin demoras ni obstáculos. No condiciones. Registra en CRM que consultó portabilidad y se le ofreció retención.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">7</span>Monitoreo Continuo</h2>
+
+        <p><strong>Estado Actual:</strong> <span class="status">Bajo Monitoreo — Intermitencias Residuales Detectadas</span></p>
+
+        <p>A partir de 2026-10-12, se han reportado 3 eventos de caída breve (3-5 minutos cada uno) en horas diferentes:</p>
+        <ul>
+            <li>2026-10-12 06:45 — 3 min de corte</li>
+            <li>2026-10-12 14:20 — 4 min de corte</li>
+            <li>2026-10-12 21:10 — 5 min de corte</li>
+        </ul>
+
+        <p><strong>Investigación en Curso:</strong></p>
+        <ul>
+            <li>¿Recalibración de transceiver óptico no estabilizada?</li>
+            <li>¿Componente relacionado (amplificador óptico) con fallo incipiente?</li>
+            <li>¿Fluctuaciones de alimentación en sala de equipos?</li>
+        </ul>
+
+        <p><strong>Próximas Acciones:</strong></p>
+        <ol>
+            <li>Monitoreo 24/7 de nodo AQP-CAY-03 hasta 2026-10-20.</li>
+            <li>Si persisten intermitencias: visita técnica presencial con analizador óptico avanzado.</li>
+            <li>Si se resuelven: cierre de incidencia el 2026-10-20.</li>
+            <li>Clientes con cortes después del 2026-10-11: compensación adicional.</li>
+        </ol>
+
+        <div class="alert">
+            <strong>IMPORTANTE:</strong> Comunica a clientes afectados: "Seguimos monitoreando tu nodo. Si experimentas más caídas, reporta inmediatamente. Cada nueva caída genera compensación automática."
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">8</span>Contactos de Escalación</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Rol</th>
+                    <th>Nombre (Ejemplo)</th>
+                    <th>Contacto</th>
+                    <th>Para Qué</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gerente de Operaciones</td>
+                    <td>Disponible</td>
+                    <td>NOC: +51-1-XXX-8888</td>
+                    <td>Decisiones de protocolo, comunicados</td>
+                </tr>
+                <tr>
+                    <td>Supervisor Retención</td>
+                    <td>Jorge Paredes</td>
+                    <td>+51-1-XXX-5555</td>
+                    <td>Aprobación R1 > 25%, decisiones difíciles</td>
+                </tr>
+                <tr>
+                    <td>Ingeniería (Nodo AQP)</td>
+                    <td>Disponible</td>
+                    <td>+51-54-XXX-1212</td>
+                    <td>Consultas técnicas, monitoreo</td>
+                </tr>
+                <tr>
+                    <td>Soporte al Cliente</td>
+                    <td>Centro de Contacto</td>
+                    <td>+51-1-XXXXX (general)</td>
+                    <td>Llamadas de clientes, reclamos</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <div class="footer">
+        <p>Documento sintético elaborado para workshop Databricks — no representa políticas reales de Integratel.</p>
+        <p style="margin-top: 10px; color: #999;"><em>Confidencial Interno. Circulación restringida a personal de Integratel autorizado.</em></p>
+    </div>
+</body>
+</html>

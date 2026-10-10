@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedimiento de Portabilidad Numérica</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @page { size: A4; margin: 20mm 15mm; }
+        @media print {
+            body { margin: 0; padding: 0; }
+            .page-break { page-break-after: always; }
+            .footer { position: fixed; bottom: 15mm; left: 15mm; right: 15mm; }
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .wordmark {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0066cc;
+            letter-spacing: 1px;
+        }
+        .doc-info {
+            text-align: right;
+            font-size: 11px;
+            color: #666;
+        }
+        .doc-info div { margin: 2px 0; }
+        h1 {
+            font-size: 24px;
+            color: #0066cc;
+            margin: 20px 0 10px 0;
+            border-left: 4px solid #0066cc;
+            padding-left: 10px;
+        }
+        h2 {
+            font-size: 16px;
+            color: #0066cc;
+            margin: 18px 0 10px 0;
+            border-left: 3px solid #0066cc;
+            padding-left: 10px;
+        }
+        h3 {
+            font-size: 14px;
+            color: #333;
+            margin: 12px 0 8px 0;
+        }
+        section { margin-bottom: 20px; }
+        .section-num {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 12px;
+        }
+        table th {
+            background: #0066cc;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #0066cc;
+        }
+        table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        table tr:nth-child(even) { background: #f5f5f5; }
+        .callout {
+            background: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        .callout.warning {
+            background: #fff3cd;
+            border-left-color: #ff9800;
+        }
+        .prohibited {
+            background: #ffe8e8;
+            border-left: 4px solid #d32f2f;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            font-size: 10px;
+            color: #999;
+            text-align: center;
+        }
+        .flowchart {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 12px;
+            margin: 12px 0;
+            font-size: 12px;
+            font-family: monospace;
+            line-height: 1.8;
+        }
+        .script-box {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 12px;
+            margin: 12px 0;
+            font-size: 12px;
+            font-family: 'Courier New', monospace;
+        }
+        ul, ol { margin-left: 20px; }
+        li { margin: 6px 0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="wordmark">INTEGRATEL</div>
+        <div class="doc-info">
+            <div><strong>PRO-POR-004</strong></div>
+            <div>v1.3</div>
+            <div>2026-10-15</div>
+        </div>
+    </div>
+
+    <h1>Procedimiento de Portabilidad Numérica</h1>
+
+    <section>
+        <h2><span class="section-num">1</span>Introducción y Definiciones</h2>
+        <p>La <strong>Portabilidad Numérica</strong> es el derecho del cliente a cambiar de operador de telecomunicaciones conservando su número telefónico (móvil o fijo). Es un derecho regulado y Integratel Perú debe facilitar este proceso de manera ética y sin obstáculos.</p>
+
+        <h3>Roles:</h3>
+        <ul>
+            <li><strong>Operador Cedente:</strong> Integratel Perú (al que el cliente está actualmente suscrito).</li>
+            <li><strong>Operador Receptor:</strong> El operador al que el cliente desea migrar ("Operador A", "Operador B", "Operador C").</li>
+            <li><strong>Regulador:</strong> Organismo regulador de telecomunicaciones (responsable de supervisar la portabilidad).</li>
+        </ul>
+
+        <div class="callout">
+            <strong>Marco regulatorio:</strong> La portabilidad numérica es un derecho del cliente. Integratel Perú está obligado a procesarla dentro de plazos establecidos, sin condicionar, obstaculizar ni demorar.
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">2</span>Flujo de Portabilidad Numérica</h2>
+
+        <div class="flowchart">
+            CLIENTE inicia consulta/solicitud de portabilidad
+                ↓
+            Integratel detecta (CRM, ticket de portabilidad)
+                ↓
+            Contactar cliente en ≤ 24 h [PLAZO CRÍTICO]
+                ↓
+            Presentar oferta de retención (voluntaria, sin presión)
+                ↓
+            Cliente decide: ¿Mantiene portabilidad?
+                ├─ SÍ → Proceder sin obstáculos
+                └─ NO → Retiene cliente (fin de proceso)
+                ↓
+            Cliente solicita portabilidad a operador receptor
+                ↓
+            Integratel procesa: remite datos, confirma disponibilidad
+                ↓
+            Operador receptor ejecuta: cambio de red
+                ↓
+            Confirmación a cliente: portabilidad completada
+                ↓
+            Cerrar en CRM: registro de portabilidad realizada
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">3</span>Etapas del Proceso</h2>
+
+        <h3>Etapa 1: Consulta de Portabilidad</h3>
+        <p><strong>Qué es:</strong> Cliente expresa interés en cambiar de operador, pero no ha tomado decisión final.</p>
+        <div class="script-box">
+            <p><strong>Registro en CRM:</strong></p>
+            <p>"Evento de portabilidad: Consulta registrada"</p>
+            <p>"Tipo: Consulta"</p>
+            <p>"Operador destino (conocido): [especificar]"</p>
+            <p>"Fecha: [YYYY-MM-DD]"</p>
+            <p>"Hora: [HH:MM]"</p>
+        </div>
+
+        <h3>Etapa 2: Solicitud de Portabilidad</h3>
+        <p><strong>Qué es:</strong> Cliente ha decidido formalmente y solicita a operador receptor el proceso.</p>
+        <p>En este punto:</p>
+        <ol>
+            <li>Operador receptor inicia proceso administrativo.</li>
+            <li>Notifica a Integratel: solicitud de portabilidad para número [XXX].</li>
+            <li>Integratel debe responder en plazo regulatorio (típicamente 1-3 días hábiles).</li>
+        </ol>
+
+        <h3>Etapa 3: Ejecución (Cambio de Red)</h3>
+        <p><strong>Qué es:</strong> La portabilidad se ejecuta técnicamente. El cliente pasa a red de operador receptor.</p>
+        <ul>
+            <li>Fecha/hora exacta de ejecución se coordina con cliente y operadores.</li>
+            <li>Integratel entrega número al regulador para que sea "liberado".</li>
+            <li>Operador receptor recibe número en su red.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><span class="section-num">4</span>Procedimiento Operativo de Retención (Primeras 24 Horas)</h2>
+
+        <p><strong>Desencadenante:</strong> Se registra "Consulta de portabilidad" en CRM de cliente.</p>
+
+        <div class="callout warning">
+            <strong>PLAZO CRÍTICO: Contactar en ≤ 24 h desde registro de consulta.</strong>
+        </div>
+
+        <div class="script-box">
+            <p><strong>Script de contacto (teléfono/presencial):</strong></p>
+            <p style="margin-top: 10px;">
+                "Buenos días/tardes [nombre cliente]. Noto que consultó portabilidad a otro operador.
+                <br><br>
+                Queremos ofrecerle alternativas para que continúe con Integratel, porque valoramos tu cliente desde [año de suscripción].
+                <br><br>
+                Tengo propuestas especiales: [describir R1, R2, R3, R4 según elegibilidad].
+                <br><br>
+                ¿Puedo dedicar 5 minutos a explicarte qué podemos hacer por ti? No hay obligación; es tu decisión."
+            </p>
+        </div>
+
+        <p><strong>Acciones después del contacto:</strong></p>
+        <ol>
+            <li>Si cliente acepta retención: registrar beneficios aceptados en CRM, cerrar ticket de portabilidad.</li>
+            <li>Si cliente rechaza retención: registrar "Portabilidad confirmada por cliente", proceder sin obstáculos.</li>
+            <li>Si cliente no responde: reintente 1 vez más en 24 h adicionales.</li>
+        </ol>
+
+        <h3>Documentación en CRM:</h3>
+        <ul>
+            <li>Fecha/hora de primer contacto.</li>
+            <li>Resultado: retención aceptada / rechazada / no contactado.</li>
+            <li>Si retención: beneficios otorgados (R1, R2, R3, R4).</li>
+            <li>Si portabilidad confirmada: fecha esperada de ejecución (si es conocida).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><span class="section-num">5</span>Prohibiciones Explícitas</h2>
+
+        <div class="prohibited">
+            <h3>Prohibido:</h3>
+            <ul>
+                <li><strong>Condicionar:</strong> "Puedo ayudarte, pero primero tienes que cancelar toda tu deuda" (si no es restricción real de política).</li>
+                <li><strong>Demorar:</strong> No responder solicitudes, "perder" documentación, alargar tiempos innecesariamente.</li>
+                <li><strong>Obstaculizar:</strong> "Tu número no es portable" (sin verificar realmente), exigir papelería adicional no reglamentaria.</li>
+                <li><strong>Combinar retención con portabilidad:</strong> "Primero te doy el descuento, luego te proceso la portabilidad" (el cliente decide ambas cosas de forma independiente).</li>
+                <li><strong>Usar información como presión:</strong> "Si te vas, tu línea va a tener problemas" (amenaza implícita).</li>
+                <li><strong>Retenciones repetidas:</strong> Cliente rechazó una vez → no insistir obsesivamente (máximo 2-3 contactos, después respetar).</li>
+            </ul>
+        </div>
+
+        <h3>Permitido:</h3>
+        <div class="callout">
+            <ul>
+                <li>Contactar al cliente 1 vez en las primeras 24 h desde consulta de portabilidad, con oferta clara.</li>
+                <li>Reintentarlo 1 vez más en 24 h adicionales si no contacta.</li>
+                <li>Presentar oferta de retención de forma honesta y clara.</li>
+                <li>Aclarar beneficios sin presionar ("tienes derecho a estos beneficios, pero tú decides").</li>
+                <li>Responder preguntas del cliente sobre su plan/servicio de forma honesta.</li>
+                <li>Procesar portabilidad sin demoras si cliente la solicita formalmente.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">6</span>Ejemplos de Frases (Permitidas vs. Prohibidas)</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Permitido ✓</th>
+                    <th>Prohibido ✗</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>"Tengo una oferta especial de upgrade gratuito por 12 meses. ¿Te gustaría escucharla?"</td>
+                    <td>"Si te vas a otro operador, tu servicio va a ser peor y te vas a arrepentir."</td>
+                </tr>
+                <tr>
+                    <td>"El otro operador no te puede ofrecer lo que Integratel. Aquí hay beneficios exclusivos."</td>
+                    <td>"Si quieres portabilidad, tienes que pagar una penalidad de S/100."</td>
+                </tr>
+                <tr>
+                    <td>"Tu decisión es 100% válida. Respetamos lo que elijas. ¿Quieres escuchar nuestras opciones?"</td>
+                    <td>"Espera, antes de irte, necesito que apruebes esto..." (demorar procedimiento).</td>
+                </tr>
+                <tr>
+                    <td>"Tenemos atención al cliente 24/7. ¿Hay algo que no esté funcionando bien?"</td>
+                    <td>"Tu portabilidad va a tomar 3 semanas porque estamos muy ocupados."</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2><span class="section-num">7</span>Tratamiento de Clientes Afectados por Incidencia Masiva</h2>
+
+        <p>Si cliente afectado por incidencia masiva (ej: INC-AQP-2026-0412) solicita portabilidad:</p>
+        <ol>
+            <li>Contactar de inmediato (dentro de 4 h si es posible, máximo 24 h).</li>
+            <li>Reconocer la incidencia: "Lamentamos el servicio deficiente en los últimos días. Fue un problema técnico en nuestro nodo."</li>
+            <li>Informar compensación automática: "Hemos acreditado S/[X] en tu próxima factura por los días sin servicio."</li>
+            <li>Ofrecer R2 (upgrade pre-aprobado, sin costo 12 meses).</li>
+            <li>Ofrecer R1 (si aplica, con descuento).</li>
+            <li>Ser honesto: "Entiendo que hayas considerado cambiar. Qué necesitas de nosotros para mantener tu confianza?"</li>
+            <li>Si cliente mantiene portabilidad, proceder sin demoras ni presión adicional.</li>
+        </ol>
+
+        <div class="callout">
+            <strong>Nota:</strong> La compensación regulatoria es separada de la retención. El cliente recibe ambas si aplican (compensación es derecho, retención es oferta comercial).
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">8</span>Registro de Evento en CRM</h2>
+
+        <p>Todo evento de portabilidad debe registrarse en CRM con los siguientes campos:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Valor Ejemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Tipo Evento</strong></td>
+                    <td>Portabilidad: Consulta / Solicitud / Ejecución</td>
+                </tr>
+                <tr>
+                    <td><strong>Cliente</strong></td>
+                    <td>CLI-104217 (Rosa Huamán Torres)</td>
+                </tr>
+                <tr>
+                    <td><strong>Número (móvil o fijo)</strong></td>
+                    <td>+51 XXXXXXXXX</td>
+                </tr>
+                <tr>
+                    <td><strong>Operador Destino</strong></td>
+                    <td>Operador B</td>
+                </tr>
+                <tr>
+                    <td><strong>Fecha Registro</strong></td>
+                    <td>2026-10-13</td>
+                </tr>
+                <tr>
+                    <td><strong>Hora Registro</strong></td>
+                    <td>14:30 (hora local cliente)</td>
+                </tr>
+                <tr>
+                    <td><strong>Contacto Retención</strong></td>
+                    <td>2026-10-14 10:00 / Aceptó: R2 + R1</td>
+                </tr>
+                <tr>
+                    <td><strong>Fecha Ejecución Portabilidad</strong></td>
+                    <td>2026-10-XX (si se ejecuta)</td>
+                </tr>
+                <tr>
+                    <td><strong>Notas</strong></td>
+                    <td>Cliente afectado por INC-AQP-2026-0412. Compensación S/10.90 aplicada. Ofreció R2 pre-aprobado + R1.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2><span class="section-num">9</span>Supervisión y Cumplimiento</h2>
+
+        <ul>
+            <li><strong>Supervisor de Retención:</strong> Revisa diariamente eventos de portabilidad. Verifica que contacto se haya hecho en ≤ 24 h.</li>
+            <li><strong>Auditoría:</strong> Mensualmente se revisan registros de portabilidad para asegurar no hay obstaculización.</li>
+            <li><strong>Sanciones internas:</strong> Agentes que obstaculicen portabilidad pueden recibir advertencias o despido.</li>
+            <li><strong>Sanciones regulatorias:</strong> Integratel Perú puede recibir multas del regulador por violaciones de portabilidad.</li>
+        </ul>
+    </section>
+
+    <div class="footer">
+        <p>Documento sintético elaborado para workshop Databricks — no representa políticas reales de Integratel.</p>
+    </div>
+</body>
+</html>

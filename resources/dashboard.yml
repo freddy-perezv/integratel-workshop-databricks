@@ -1,0 +1,11 @@
+# Dashboard AI/BI como código. dataset_catalog hace que las consultas (gold.x) apunten
+# al catálogo del entorno: el mismo archivo .lvdash.json sirve en dev y en prod.
+resources:
+  dashboards:
+    retencion:
+      display_name: Integratel · Retención y Soporte
+      file_path: ../dashboards/retencion.lvdash.json
+      warehouse_id: ${var.warehouse_id}
+      dataset_catalog: ${var.catalog}
+      parent_path: /Workspace/Shared/integratel-workshop
+      embed_credentials: false

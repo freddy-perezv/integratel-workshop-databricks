@@ -1,0 +1,72 @@
+{
+  // Centro de Retención 360 · Integratel — app config (JSONC). Loaded by server/server.ts.
+  //
+  // ${VAR} / ${VAR:default} placeholders are substituted against process.env
+  // BEFORE JSON parsing, so catalog/schema/resource-IDs live in env (one
+  // source of truth), NOT as literals here — set them in `.env` (local dev +
+  // preview) or via the DAB (deployed; finalize_app.sh writes app.yaml's env).
+  //   - `${VAR}`           → empty string if unset
+  //   - `${VAR:default}`   → `default` if unset
+  // Empty values degrade gracefully; the app still boots.
+
+  // ── Agent data backend: the `ask_mas` tool. Config-driven for Supervisor Agent (MAS).
+  //   Set MAS_ENDPOINT_NAME via env. The Supervisor Agent provides policy + data access.
+  //   Knowledge Assistant endpoint for document reasoning (optional, can be empty).
+  "masEndpointName": "${MAS_ENDPOINT_NAME:mas-9a907f04-endpoint}",
+  "genieSpaceId":    "",
+
+  // Agent LLM. CRITICAL: This workspace has NO GPT-5 models and does NOT support
+  // the Responses API. Use Chat Completions: databricks-claude-sonnet-5-5 (or fallback
+  // databricks-claude-sonnet-4-6). Agent setup uses setOpenAIAPI('chat_completions').
+  "agentModel": "databricks-claude-sonnet-5-5",
+
+  // MLflow trace path. Empty → auto-created at boot as /Shared/solution_builder/<app_name>-agent-traces
+  "mlflowExperimentId": "",
+  "agentMlflowExperimentPath": "${AGENT_MLFLOW_EXPERIMENT_PATH:}",
+
+  // Embedded AI/BI dashboard (UUID). Will be provided later.
+  "dashboardId": "${DASHBOARD_ID:}",
+
+  // Workspace resource IDs → deep-link URLs via /api/resources.
+  "pipelineId":        "${PIPELINE_ID:}",
+  "warehouseId":       "${WAREHOUSE_ID:5060ebc0c46f84b1}",
+  "kaEndpointName":    "${KA_ENDPOINT_NAME:ka-1c0409da-endpoint}",
+  "lakebaseProjectId": "${LAKEBASE_PROJECT_ID:}",
+  "appUrl":            "${APP_URL:}",
+
+  // Delta source for boot-time Lakebase mirror (server/db/sync.ts).
+  // Integratel: integratel_dev.gold for now (will be integratel_prod in production).
+  "data": {
+    "catalog": "${DEMO_CATALOG:integratel_dev}",
+    "schema":  "${DEMO_SCHEMA:gold}",
+    "tables": {
+      "cliente360": "cliente_360"
+    }
+  },
+
+  // Surfaces in dock header + page titles.
+  "branding": {
+    "appName": "Centro de Retención 360 · Integratel"
+  },
+
+  // Dock's "Suggested next" chip walks this list. Step N unlocks once the
+  // previous assistant message contains any triggerAfter[] substring.
+  // Retention investigate → draft → approve flow (Spanish).
+  "assistantScript": [
+    {
+      "prompt": "¿Por qué Rosa Huamán (CLI-104217) está en riesgo crítico y qué dice la política que le puedo ofrecer?"
+    },
+    {
+      "prompt": "Prepara el plan de retención para Rosa con el guion de llamada.",
+      "triggerAfter": ["riesgo crítico", "política", "oferta", "compensación", "Rosa"]
+    },
+    {
+      "prompt": "Sí, registra el plan con 25% de descuento.",
+      "triggerAfter": ["Apruebas", "apruebas", "registre"]
+    },
+    {
+      "prompt": "Mejor ofrécele 30% de descuento: es clienta Oro desde 2019.",
+      "triggerAfter": ["Aprobada", "registrado", "registré"]
+    }
+  ]
+}

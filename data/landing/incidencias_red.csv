@@ -1,0 +1,6 @@
+incidencia_id,nodo_id,inicio,fin,tipo,severidad,clientes_afectados,descripcion
+INC-AQP-2026-0412,AQP-CAY-03,2026-10-02 08:15,2026-10-11 18:40,Degradación de tarjeta PON en OLT,Crítica,1184,Tarjeta PON degradada en OLT Cayma: cortes intermitentes de fibra (LOS) en el distrito de Cayma.
+INC-LIM-2026-0398,LIM-SJL-04,2026-09-12 21:05,2026-09-13 03:05,Corte de fibra troncal,Alta,456,Corte de fibra troncal por obra municipal en Av. Próceres.
+INC-PIU-2026-0405,PIU-CAS-01,2026-09-27 14:30,2026-09-27 23:30,Falla de energía en nodo,Media,275,Caída de energía comercial y falla de UPS en el nodo Castilla.
+INC-TRU-2026-0379,TRU-CEN-02,2026-08-18 03:10,2026-08-18 08:10,Falla de amplificador HFC,Media,361,Amplificador de red HFC averiado en sector centro.
+INC-CUS-2026-0360,CUS-WAN-01,2026-07-29 10:00,2026-07-29 14:00,Mantenimiento correctivo,Baja,242,Reemplazo de tarjeta OLT con ventana extendida.

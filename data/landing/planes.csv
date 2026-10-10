@@ -1,0 +1,12 @@
+plan_codigo,nombre,tipo,tecnologia,precio_mensual,velocidad_mbps,datos_gb
+MOV-MAX-39,Max 39.90,Movil postpago,MOVIL,39.9,,25
+MOV-MAX-59,Max 59.90,Movil postpago,MOVIL,59.9,,60
+MOV-ILI-79,Max Ilimitado 79.90,Movil postpago,MOVIL,79.9,,120
+MOV-ILI-109,Max Ilimitado Plus 109.90,Movil postpago,MOVIL,109.9,,250
+PRE-REC,Prepago Recarga,Movil prepago,MOVIL,0.0,,
+FIB-200,Fibra 200 Mbps,Hogar,FTTH,89.0,200,
+FIB-400,Fibra 400 Mbps,Hogar,FTTH,109.0,400,
+FIB-600,Fibra 600 Mbps,Hogar,FTTH,129.0,600,
+FIB-1000,Fibra 1 Gbps,Hogar,FTTH,169.0,1000,
+HFC-100,Cable 100 Mbps,Hogar,HFC,79.0,100,
+HFC-200,Cable 200 Mbps,Hogar,HFC,95.0,200,

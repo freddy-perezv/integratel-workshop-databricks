@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Planes y Tarifas 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @page { size: A4; margin: 20mm 15mm; }
+        @media print {
+            body { margin: 0; padding: 0; }
+            .page-break { page-break-after: always; }
+            .footer { position: fixed; bottom: 15mm; left: 15mm; right: 15mm; }
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .wordmark {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0066cc;
+            letter-spacing: 1px;
+        }
+        .doc-info {
+            text-align: right;
+            font-size: 11px;
+            color: #666;
+        }
+        .doc-info div { margin: 2px 0; }
+        h1 {
+            font-size: 24px;
+            color: #0066cc;
+            margin: 20px 0 10px 0;
+            border-left: 4px solid #0066cc;
+            padding-left: 10px;
+        }
+        h2 {
+            font-size: 16px;
+            color: #0066cc;
+            margin: 18px 0 10px 0;
+            border-left: 3px solid #0066cc;
+            padding-left: 10px;
+        }
+        h3 {
+            font-size: 14px;
+            color: #333;
+            margin: 12px 0 8px 0;
+        }
+        section { margin-bottom: 20px; }
+        .section-num {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 12px;
+        }
+        table th {
+            background: #0066cc;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #0066cc;
+        }
+        table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        table tr:nth-child(even) { background: #f5f5f5; }
+        .callout {
+            background: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        .callout.success {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            font-size: 10px;
+            color: #999;
+            text-align: center;
+        }
+        .offer-card {
+            background: #f0f7ff;
+            border: 1px solid #0066cc;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .price-highlight {
+            font-size: 18px;
+            color: #0066cc;
+            font-weight: bold;
+        }
+        ul, ol { margin-left: 20px; }
+        li { margin: 6px 0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="wordmark">INTEGRATEL</div>
+        <div class="doc-info">
+            <div><strong>CAT-PLN-2026-10</strong></div>
+            <div>v1.0</div>
+            <div>2026-10-15</div>
+        </div>
+    </div>
+
+    <h1>Catálogo de Planes y Tarifas Octubre 2026</h1>
+
+    <section>
+        <h2><span class="section-num">1</span>Vigencia y Condiciones Generales</h2>
+        <p>Este catálogo es válido desde el <strong>1 de octubre de 2026</strong> hasta el <strong>30 de septiembre de 2027</strong>, salvo variaciones regulatorias.</p>
+        <div class="callout">
+            <strong>Nota importante:</strong> Todos los precios son en Nuevos Soles (S/), no incluyen impuestos adicionales (IGV se aplica según legislación vigente). Los planes están disponibles en regiones: Lima, Arequipa, La Libertad, Piura, Cusco, Lambayeque y Junín, sujeto a cobertura técnica.
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">2</span>Planes de Internet Fijo - Fibra (FTTH)</h2>
+        <p>Tecnología: Fibra óptica hasta el domicilio. Requiere instalación técnica e instalación de ONT (sin costo inicial).</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Velocidad</th>
+                    <th>Precio Mensual</th>
+                    <th>Incluye</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>FIB-200</strong></td>
+                    <td>Fibra 200 Mbps</td>
+                    <td>200 Mbps</td>
+                    <td class="price-highlight">S/ 89.00</td>
+                    <td>ONT, router, 500 GB almacenamiento nube (6 meses)</td>
+                </tr>
+                <tr>
+                    <td><strong>FIB-400</strong></td>
+                    <td>Fibra 400 Mbps</td>
+                    <td>400 Mbps</td>
+                    <td class="price-highlight">S/ 109.00</td>
+                    <td>ONT, router dual-band, 1 TB almacenamiento nube (12 meses)</td>
+                </tr>
+                <tr>
+                    <td><strong>FIB-600</strong></td>
+                    <td>Fibra 600 Mbps</td>
+                    <td>600 Mbps</td>
+                    <td class="price-highlight">S/ 129.00</td>
+                    <td>ONT, router Wi-Fi 6, 2 TB almacenamiento nube (12 meses)</td>
+                </tr>
+                <tr>
+                    <td><strong>FIB-1000</strong></td>
+                    <td>Fibra 1 Gbps</td>
+                    <td>1000 Mbps</td>
+                    <td class="price-highlight">S/ 169.00</td>
+                    <td>ONT, router Wi-Fi 6, 3 TB almacenamiento nube (24 meses), prioridad NOC</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2><span class="section-num">3</span>Planes de Internet Fijo - HFC (Cable)</h2>
+        <p>Tecnología: Cables coaxiales de distribución. Requiere instalación técnica e instalación de módem (sin costo inicial).</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Velocidad</th>
+                    <th>Precio Mensual</th>
+                    <th>Incluye</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>HFC-100</strong></td>
+                    <td>Cable 100 Mbps</td>
+                    <td>100 Mbps</td>
+                    <td class="price-highlight">S/ 79.00</td>
+                    <td>Módem DOCSIS 3.1, router, 250 GB nube (6 meses)</td>
+                </tr>
+                <tr>
+                    <td><strong>HFC-200</strong></td>
+                    <td>Cable 200 Mbps</td>
+                    <td>200 Mbps</td>
+                    <td class="price-highlight">S/ 95.00</td>
+                    <td>Módem DOCSIS 3.1, router dual-band, 500 GB nube (12 meses)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout">
+            <strong>Nota:</strong> Planes HFC disponibles en zonas de cobertura específicas. Consultar cobertura antes de contratar.
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">4</span>Planes Móviles - Postpago</h2>
+        <p>Planes de telefonía móvil postpago en redes 4G/5G. Incluye llamadas y SMS ilimitados en Perú.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Datos</th>
+                    <th>Precio Mensual</th>
+                    <th>Observaciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>MOV-MAX-39</strong></td>
+                    <td>Max 39.90</td>
+                    <td>25 GB</td>
+                    <td class="price-highlight">S/ 39.90</td>
+                    <td>Llamadas y SMS ilimitados</td>
+                </tr>
+                <tr>
+                    <td><strong>MOV-MAX-59</strong></td>
+                    <td>Max 59.90</td>
+                    <td>60 GB</td>
+                    <td class="price-highlight">S/ 59.90</td>
+                    <td>Llamadas y SMS ilimitados</td>
+                </tr>
+                <tr>
+                    <td><strong>MOV-ILI-79</strong></td>
+                    <td>Max Ilimitado 79.90</td>
+                    <td>Ilimitado (120 GB alta velocidad)</td>
+                    <td class="price-highlight">S/ 79.90</td>
+                    <td>Llamadas y SMS ilimitados; datos ultra rápidos hasta 120 GB, después reducción de velocidad</td>
+                </tr>
+                <tr>
+                    <td><strong>MOV-ILI-109</strong></td>
+                    <td>Max Ilimitado Plus 109.90</td>
+                    <td>Ilimitado (250 GB alta velocidad)</td>
+                    <td class="price-highlight">S/ 109.90</td>
+                    <td>Llamadas y SMS ilimitados; datos ultra rápidos hasta 250 GB; roaming en América Latina sin cargo</td>
+                </tr>
+                <tr>
+                    <td><strong>PRE-REC</strong></td>
+                    <td>Prepago Recarga</td>
+                    <td>Según recarga</td>
+                    <td class="price-highlight">Variable</td>
+                    <td>Prepago flexible; carga según necesidad</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout success">
+            <strong>Beneficio Dúo:</strong> Si contratas un plan móvil postpago + servicio de hogar (Fibra o HFC) del mismo titular, obtén <strong>15% de descuento en el plan móvil</strong>. (Ej: MOV-ILI-79 normal S/79.90 → con dúo S/67.92)
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">5</span>Equipamiento y Costos de Instalación</h2>
+
+        <h3>Equipamiento Incluido (sin costo inicial):</h3>
+        <ul>
+            <li><strong>Fibra (FTTH):</strong> ONT (Optical Network Terminal) + router + cableado interno.</li>
+            <li><strong>HFC (Cable):</strong> Módem DOCSIS + router + cableado interno.</li>
+            <li><strong>Móvil:</strong> Chip SIM (sin costo en nuevos clientes).</li>
+        </ul>
+
+        <h3>Costos de Instalación (aplicable si no hay promoción):</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Servicio</th>
+                    <th>Costo</th>
+                    <th>Condiciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Instalación Fibra (FTTH)</td>
+                    <td>S/ 0.00 (promoción vigente)</td>
+                    <td>Válido para nuevos clientes hasta 31-dic-2026</td>
+                </tr>
+                <tr>
+                    <td>Instalación HFC (Cable)</td>
+                    <td>S/ 0.00 (promoción vigente)</td>
+                    <td>Válido para nuevos clientes hasta 31-dic-2026</td>
+                </tr>
+                <tr>
+                    <td>Reemplazo de ONT/Módem (fuera de garantía)</td>
+                    <td>S/ 45.00</td>
+                    <td>Garantía: 24 meses desde instalación</td>
+                </tr>
+                <tr>
+                    <td>Cambio de plan (upgrade/downgrade)</td>
+                    <td>S/ 0.00</td>
+                    <td>Sin costo; efectivo en ciclo siguiente</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2><span class="section-num">6</span>Ladder de Upgrade (Recomendaciones)</h2>
+
+        <h3>Fibra:</h3>
+        <p>Para clientes que requieren mayor velocidad, recomendamos escalar:</p>
+        <ul>
+            <li><strong>FIB-200 → FIB-400:</strong> Ideal para familias con múltiples dispositivos y video streaming.</li>
+            <li><strong>FIB-400 → FIB-600:</strong> Recomendado si hay teletrabajo + streaming simultáneo.</li>
+            <li><strong>FIB-600 → FIB-1000:</strong> Empresas u oficinas con alto ancho de banda.</li>
+        </ul>
+
+        <h3>HFC:</h3>
+        <ul>
+            <li><strong>HFC-100 → HFC-200:</strong> Ideal si hay 4+ dispositivos conectados.</li>
+        </ul>
+
+        <h3>Durante promoción R2 (Upgrade por retención):</h3>
+        <div class="offer-card">
+            <p><strong>Upgrade sin costo por 12 meses:</strong> Sube un escalón, sin cargo diferencial durante 12 meses. Tras vencer, cliente decide mantener (pagando diferencia) o retornar al plan anterior.</p>
+            <ul>
+                <li>FIB-200 → FIB-400 (ahorro: S/20/mes × 12 = S/240)</li>
+                <li>FIB-400 → FIB-600 (ahorro: S/20/mes × 12 = S/240)</li>
+                <li>FIB-600 → FIB-1000 (ahorro: S/40/mes × 12 = S/480)</li>
+                <li>HFC-100 → HFC-200 (ahorro: S/16/mes × 12 = S/192)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">7</span>Promociones y Ofertas Vigentes</h2>
+
+        <h3>Clientes Nuevos (Hasta 31-dic-2026):</h3>
+        <ul>
+            <li>Instalación sin costo (Fibra y HFC).</li>
+            <li>Primer mes 50% de descuento si contratas antes de 15-oct-2026.</li>
+        </ul>
+
+        <h3>Clientes Existentes (Portabilidad/Retención):</h3>
+        <ul>
+            <li><strong>R2 Upgrade:</strong> Sube un escalón de velocidad, sin costo por 12 meses (solo si estás afectado por incidencia masiva vigente o con aprobación).</li>
+            <li><strong>R1 Descuento:</strong> Hasta 30% de descuento en fijo hogar por 6 meses (requiere aprobación si &gt; 25%).</li>
+            <li><strong>R3 Bono Móvil:</strong> +20 GB/mes por 3 meses en plan móvil postpago.</li>
+        </ul>
+
+        <div class="callout">
+            <strong>Cambios de plan:</strong> Puedes cambiar tu plan mensualmente sin penalidad. El nuevo precio se aplica en el siguiente ciclo de facturación.
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="section-num">8</span>Contacto y Contratación</h2>
+        <ul>
+            <li><strong>Web:</strong> integratel.pe (consultar cobertura, planes disponibles en tu zona)</li>
+            <li><strong>Teléfono:</strong> +51-1-XXXXX (soporte técnico y ventas)</li>
+            <li><strong>Presencial:</strong> Sucursales en Lima, Arequipa, Piura, Cusco, Lambayeque, Junín, La Libertad.</li>
+        </ul>
+    </section>
+
+    <div class="footer">
+        <p>Documento sintético elaborado para workshop Databricks — no representa políticas reales de Integratel.</p>
+    </div>
+</body>
+</html>

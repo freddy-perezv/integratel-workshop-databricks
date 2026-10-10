@@ -1,0 +1,69 @@
+# Espacio Genie como código: mismas instrucciones y preguntas de ejemplo en dev y prod;
+# solo cambia el catálogo (${var.catalog}). El Supervisor Agent lo usa como herramienta de datos.
+resources:
+  genie_spaces:
+    genie_retencion:
+      title: Integratel · Genie de Retención y Soporte
+      description: Pregunta en español sobre riesgo de fuga, churn, tickets, reclamos y salud de red. Usa las métricas gobernadas (metric views) de Unity Catalog.
+      warehouse_id: ${var.warehouse_id}
+      parent_path: /Workspace/Shared/integratel-workshop
+      serialized_space:
+        version: 2
+        config:
+          sample_questions:
+            - id: "a1000000000000000000000000000001"
+              question: ["¿Cuántos clientes en riesgo crítico o alto hay por distrito en Arequipa y cuánta renta mensual representan?"]
+            - id: "a1000000000000000000000000000002"
+              question: ["¿Cuál es la tasa de churn mensual por región en los últimos 6 meses?"]
+            - id: "a1000000000000000000000000000003"
+              question: ["¿Qué nodos tienen más fallas de red en los últimos 7 días?"]
+            - id: "a1000000000000000000000000000004"
+              question: ["Muéstrame la ficha de la clienta CLI-104217 y sus tickets de los últimos 30 días"]
+        data_sources:
+          tables:
+            - identifier: ${var.catalog}.gold.cliente_360
+              description: ["Una fila por cliente con servicios, renta, segmento, señales de soporte/portabilidad y score de riesgo de fuga."]
+            - identifier: ${var.catalog}.gold.mv_churn
+            - identifier: ${var.catalog}.gold.mv_reclamos
+            - identifier: ${var.catalog}.gold.mv_riesgo_clientes
+            - identifier: ${var.catalog}.gold.mv_soporte
+            - identifier: ${var.catalog}.gold.nodos_salud
+              description: ["Salud de cada nodo de red fija: fallas, incidencias y clientes en riesgo."]
+            - identifier: ${var.catalog}.gold.tickets_enriquecidos
+              description: ["Detalle de tickets de soporte con nodo, código de falla e incidencia vinculada."]
+        instructions:
+          text_instructions:
+            - id: "b1000000000000000000000000000001"
+              content:
+                - "Eres el analista de datos de Integratel (telco, Perú). Responde SIEMPRE en español, claro y conciso, con montos en soles (S/).\n"
+                - "Para KPIs agregados (clientes en riesgo, renta en riesgo, churn, tickets, reclamos) usa las metric views mv_* con MEASURE().\n"
+                - "'Riesgo alto' significa nivel_riesgo IN ('Crítico','Alto'). 'Cartera' o 'clientes' significa estado = 'Activo' salvo que se pida lo contrario.\n"
+                - "La fecha de corte de los datos es 2026-10-15: interpreta 'hoy', 'últimos 7/30 días' respecto de esa fecha.\n"
+                - "Para un cliente específico usa cliente_360 y tickets_enriquecidos filtrando por cliente_id.\n"
+                - "Eres de solo lectura: no ejecutes ni sugieras INSERT/UPDATE/DELETE.\n"
+          example_question_sqls:
+            - id: "c1000000000000000000000000000001"
+              question: ["¿Cuántos clientes en riesgo alto hay por distrito en Arequipa?"]
+              sql:
+                - "SELECT distrito, MEASURE(clientes_riesgo_alto) AS clientes_riesgo_alto, MEASURE(renta_en_riesgo) AS renta_en_riesgo\n"
+                - "FROM ${var.catalog}.gold.mv_riesgo_clientes\n"
+                - "WHERE region = 'Arequipa'\n"
+                - "GROUP BY ALL ORDER BY clientes_riesgo_alto DESC"
+            - id: "c1000000000000000000000000000002"
+              question: ["Tasa de churn mensual por región"]
+              sql:
+                - "SELECT mes, region, MEASURE(tasa_churn) AS tasa_churn, MEASURE(bajas) AS bajas\n"
+                - "FROM ${var.catalog}.gold.mv_churn\n"
+                - "GROUP BY ALL ORDER BY mes, region"
+        benchmarks:
+          questions:
+            - id: "d1000000000000000000000000000001"
+              question: ["¿Cuántos clientes están en riesgo crítico?"]
+              answer:
+                - format: SQL
+                  content: ["SELECT MEASURE(clientes) FROM ${var.catalog}.gold.mv_riesgo_clientes WHERE nivel_riesgo = 'Crítico'"]
+            - id: "d1000000000000000000000000000002"
+              question: ["¿Cuál es el nivel de riesgo y la renta mensual de CLI-104217?"]
+              answer:
+                - format: SQL
+                  content: ["SELECT nivel_riesgo, score_riesgo, renta_mensual FROM ${var.catalog}.gold.cliente_360 WHERE cliente_id = 'CLI-104217'"]

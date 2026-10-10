@@ -1,0 +1,10 @@
+.databricks/
+.venv/
+node_modules/
+.env
+*.pyc
+__pycache__/
+.DS_Store
+app/dist/
+app/client/dist/
+app/app.yaml
