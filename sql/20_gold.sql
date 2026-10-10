@@ -45,7 +45,9 @@ tck AS (
   GROUP BY cliente_id
 ),
 rcl AS (
-  SELECT cliente_id, count_if(estado = 'Abierto') AS reclamos_abiertos, count(*) AS reclamos_90d
+  SELECT cliente_id, count_if(estado = 'Abierto') AS reclamos_abiertos, count(*) AS reclamos_90d,
+         max_by(CASE WHEN estado = 'Abierto' THEN reclamo_id END, CASE WHEN estado = 'Abierto' THEN fecha_registro END) AS reclamo_abierto_id,
+         max_by(CASE WHEN estado = 'Abierto' THEN descripcion END, CASE WHEN estado = 'Abierto' THEN fecha_registro END) AS reclamo_abierto_detalle
   FROM silver.reclamos
   WHERE fecha_registro >= fecha_corte - INTERVAL 90 DAYS
   GROUP BY cliente_id
@@ -83,6 +85,7 @@ base AS (
          coalesce(t.tickets_30d, 0) AS tickets_30d, coalesce(t.fallas_red_30d, 0) AS fallas_red_30d,
          coalesce(t.tickets_abiertos, 0) AS tickets_abiertos,
          coalesce(r.reclamos_abiertos, 0) AS reclamos_abiertos, coalesce(r.reclamos_90d, 0) AS reclamos_90d,
+         r.reclamo_abierto_id, r.reclamo_abierto_detalle,
          p.fecha_ultima_consulta_portabilidad IS NOT NULL AND ro.cliente_id IS NULL AS consulta_portabilidad_30d,
          p.fecha_ultima_consulta_portabilidad, p.operador_consultado,
          i.incidencia_masiva_id, i.incidencia_masiva_id IS NOT NULL AS afectado_incidencia_masiva,
@@ -124,6 +127,7 @@ ALTER TABLE gold.cliente_360 ALTER COLUMN segmento_valor COMMENT 'Oro ≥ S/150 
 ALTER TABLE gold.cliente_360 ALTER COLUMN renta_mensual COMMENT 'Renta mensual total del cliente en soles (precio efectivo, incluye dúo)';
 ALTER TABLE gold.cliente_360 ALTER COLUMN consulta_portabilidad_30d COMMENT 'TRUE si otro operador hizo consulta previa de portabilidad en los últimos 30 días y no fue retenido';
 ALTER TABLE gold.cliente_360 ALTER COLUMN afectado_incidencia_masiva COMMENT 'TRUE si su nodo tuvo una incidencia crítica en los últimos 30 días';
+ALTER TABLE gold.cliente_360 ALTER COLUMN reclamo_abierto_detalle COMMENT 'Descripción del reclamo abierto más reciente (ej. días sin servicio que reclama el cliente)';
 ALTER TABLE gold.cliente_360 ALTER COLUMN elegible_retencion COMMENT 'Sin deuda vencida > 60 días y sin retención en los últimos 6 meses (Política POL-RET-2026)';
 
 -- ── Tickets enriquecidos (base de la métrica de soporte) ───────────────────

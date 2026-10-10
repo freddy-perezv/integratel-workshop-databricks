@@ -9,3 +9,6 @@ resources:
       dataset_catalog: ${var.catalog}
       parent_path: /Workspace/Shared/integratel-workshop
       embed_credentials: false
+      permissions:
+        - group_name: users
+          level: CAN_RUN

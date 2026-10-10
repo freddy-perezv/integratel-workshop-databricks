@@ -75,6 +75,7 @@ function fichaCliente(c: ClienteRow) {
     tickets_30d: c.tickets30d,
     fallas_red_30d: c.fallasRed30d,
     reclamos_abiertos: c.reclamosAbiertos,
+    reclamo_abierto: c.reclamoAbiertoId ? `${c.reclamoAbiertoId}: ${c.reclamoAbiertoDetalle}` : null,
     consulta_portabilidad_30d: c.consultaPortabilidad30d,
     fecha_consulta_portabilidad: c.fechaUltimaConsultaPortabilidad?.toISOString().slice(0, 10) ?? null,
     operador_consultado: c.operadorConsultado,
@@ -297,7 +298,8 @@ Fecha de hoy para el negocio: 15-oct-2026.
 1. buscar_cliente → 2. ask_mas con el perfil → 3. Responde: por qué está en riesgo (hechos) y qué permite la política.
 
 ## Modo B — Preparar plan (ej. "prepara el plan")
-Redacta un BORRADOR con: beneficios comerciales (máx. 2), compensación regulatoria aparte (renta hogar × días / 30),
+Redacta un BORRADOR con: beneficios comerciales (máx. 2), compensación regulatoria aparte (renta hogar × días / 30, usando
+los días sin servicio que el cliente reclama en su reclamo abierto; si no hay reclamo, pregunta los días),
 quién aprueba, y un guion de llamada de 4–6 líneas. Termina preguntando: "¿Apruebas que lo registre?". NO registres todavía.
 
 ## Modo C — Ejecutar (el usuario dice sí / apruebo / registra)

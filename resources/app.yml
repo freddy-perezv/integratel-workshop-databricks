@@ -21,8 +21,8 @@ resources:
           sql_warehouse: { id: "${var.warehouse_id}", permission: CAN_USE }
         - name: postgres
           postgres:
-            branch: projects/integratel-retencion/branches/production
-            database: projects/integratel-retencion/branches/production/databases/db-integratel-retencion
+            branch: projects/integratel-retencion/branches/${var.lakebase_branch}
+            database: projects/integratel-retencion/branches/${var.lakebase_branch}/databases/db-integratel-retencion
             permission: CAN_CONNECT_AND_CREATE
         - name: cliente-360
           uc_securable: { securable_type: TABLE, securable_full_name: "${var.catalog}.gold.cliente_360", permission: SELECT }

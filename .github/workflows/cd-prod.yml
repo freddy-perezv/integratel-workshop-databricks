@@ -28,14 +28,18 @@ jobs:
 
       - uses: databricks/setup-cli@main
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
       - name: 1 · Validar el Bundle (prod)
         run: databricks bundle validate -t prod
 
       - name: 2 · Ver qué va a cambiar
         run: databricks bundle plan -t prod || true
 
-      - name: 3 · Desplegar a PROD
-        run: databricks bundle deploy -t prod --auto-approve
+      - name: 3 · Desplegar a PROD (Bundle + App)
+        run: ./tools/deploy.sh prod
 
       - name: 4 · Correr pipeline SQL + tests en PROD
         run: databricks bundle run pipeline_sql -t prod

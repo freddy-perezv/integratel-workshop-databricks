@@ -1,7 +1,15 @@
 import { sql } from 'drizzle-orm';
 import { getExecutionContext } from '@databricks/appkit';
 import type { AppDb } from './index.js';
+import { getTableColumns } from 'drizzle-orm';
 import { cliente360Mirror } from './schema.js';
+
+// SET col = excluded.col para todas las columnas salvo la clave primaria.
+const UPSERT_SET = Object.fromEntries(
+  Object.entries(getTableColumns(cliente360Mirror))
+    .filter(([key]) => key !== 'clienteId')
+    .map(([key, col]) => [key, sql.raw(`excluded."${col.name}"`)]),
+);
 
 /**
  * One-shot Delta → Lakebase sync — Centro de Retención 360 · Integratel.
@@ -33,11 +41,9 @@ export async function syncFromDelta(
   cfg: DataConfig,
   opts: { forceIfAnyEmpty?: boolean } = {},
 ): Promise<void> {
-  const exists = await db.execute(
-    sql`SELECT COUNT(*)::int AS n FROM app.cliente_360`,
-  );
-  const n = (exists.rows[0] as { n: number } | undefined)?.n ?? 0;
-  if (n > 0 && !opts.forceIfAnyEmpty) return;
+  // El espejo se refresca (upsert) en CADA arranque: tras correr el pipeline SQL basta
+  // reiniciar la App para que Lakebase refleje la última versión de gold.cliente_360.
+  void opts;
 
   const warehouseId = process.env.DATABRICKS_WAREHOUSE_ID;
   if (!warehouseId) {
@@ -65,7 +71,7 @@ export async function syncFromDelta(
          fecha_alta, antiguedad_anios, motivo_baja, servicios_activos, planes,
          tiene_hogar, tecnologia_hogar, plan_hogar, renta_hogar, nodo_hogar, renta_mensual,
          segmento_valor, arpu_6m, dias_atraso, deuda_vencida_60d, tickets_30d,
-         fallas_red_30d, tickets_abiertos, reclamos_abiertos, reclamos_90d,
+         fallas_red_30d, tickets_abiertos, reclamos_abiertos, reclamos_90d, reclamo_abierto_id, reclamo_abierto_detalle,
          consulta_portabilidad_30d, fecha_ultima_consulta_portabilidad,
          operador_consultado, incidencia_masiva_id, afectado_incidencia_masiva,
          fecha_ultima_retencion, elegible_retencion, score_riesgo, nivel_riesgo
@@ -108,6 +114,8 @@ export async function syncFromDelta(
             ticketsAbiertos: num(r.tickets_abiertos),
             reclamosAbiertos: num(r.reclamos_abiertos),
             reclamos90d: num(r.reclamos_90d),
+            reclamoAbiertoId: r.reclamo_abierto_id,
+            reclamoAbiertoDetalle: r.reclamo_abierto_detalle,
             consultaPortabilidad30d: bool(r.consulta_portabilidad_30d),
             fechaUltimaConsultaPortabilidad: date(r.fecha_ultima_consulta_portabilidad),
             operadorConsultado: r.operador_consultado,
@@ -119,7 +127,7 @@ export async function syncFromDelta(
             nivelRiesgo: r.nivel_riesgo,
           })),
         )
-        .onConflictDoNothing(),
+        .onConflictDoUpdate({ target: cliente360Mirror.clienteId, set: UPSERT_SET }),
     );
 
     totalInserted += page.length;

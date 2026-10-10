@@ -27,11 +27,15 @@ jobs:
 
       - uses: databricks/setup-cli@main
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
       - name: 1 · Validar el Bundle
         run: databricks bundle validate -t dev
 
-      - name: 2 · Desplegar a DEV
-        run: databricks bundle deploy -t dev --auto-approve
+      - name: 2 · Desplegar a DEV (Bundle + App)
+        run: ./tools/deploy.sh dev
 
       - name: 3 · Correr pipeline SQL + tests de calidad
         id: pipeline

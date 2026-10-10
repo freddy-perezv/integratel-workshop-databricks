@@ -152,6 +152,8 @@ export const cliente360Mirror = appSchema.table(
     ticketsAbiertos: integer('tickets_abiertos'),
     reclamosAbiertos: integer('reclamos_abiertos'),
     reclamos90d: integer('reclamos_90d'),
+    reclamoAbiertoId: text('reclamo_abierto_id'),
+    reclamoAbiertoDetalle: text('reclamo_abierto_detalle'),
     consultaPortabilidad30d: boolean('consulta_portabilidad_30d'),
     fechaUltimaConsultaPortabilidad: timestamp('fecha_ultima_consulta_portabilidad', {
       withTimezone: true,
