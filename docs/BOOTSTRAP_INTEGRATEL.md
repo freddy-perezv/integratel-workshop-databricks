@@ -17,6 +17,8 @@ Todo el contenido es **sintético**: no se usan ni se tocan datos de Integratel.
 
 ## 2. Preparación (5 min)
 
+Todo se corre en una **terminal de la laptop del admin**, no dentro de Databricks: *Terminal* en macOS, o **WSL / Git Bash** en Windows (PowerShell y CMD no sirven, el script es bash). `auth login` abre el navegador una vez para iniciar sesión; el resto se ejecuta desde la carpeta del repo clonado.
+
 ```bash
 git clone https://github.com/freddy-perezv/integratel-workshop-databricks.git
 cd integratel-workshop-databricks
