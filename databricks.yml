@@ -42,14 +42,10 @@ variables:
     description: Correo que recibe fallas del pipeline y alertas
     default: freddyalan.perezvelazquez@databricks.com
 
-# Quién administra lo que despliega el Bundle (en ambos entornos). La App, el dashboard y
-# Genie agregan además permisos de uso para todos los usuarios.
-permissions:
-  - service_principal_name: ${var.cicd_sp}
-    level: CAN_MANAGE
-  - user_name: freddyalan.perezvelazquez@databricks.com
-    level: CAN_MANAGE
-
+# Quién administra lo que despliega el Bundle y con qué identidad corren el job y la alerta:
+# se define por target. En dev/prod (workspace del workshop) todo es del service principal
+# de CI/CD; en `integratel` (workspace del cliente) corre como quien despliega.
+# La App, el dashboard y Genie agregan además permisos de uso para todos los usuarios.
 targets:
   dev:
     default: true
@@ -62,6 +58,20 @@ targets:
       name_prefix: "[dev] "
       tags:
         entorno: dev
+    permissions: &permisos_cicd
+      - service_principal_name: ${var.cicd_sp}
+        level: CAN_MANAGE
+      - user_name: freddyalan.perezvelazquez@databricks.com
+        level: CAN_MANAGE
+    resources: &run_as_cicd
+      jobs:
+        pipeline_sql:
+          run_as:
+            service_principal_name: ${var.cicd_sp}
+      alerts:
+        incidencia_masiva:
+          run_as:
+            service_principal_name: ${var.cicd_sp}
 
   prod:
     mode: production
@@ -74,3 +84,23 @@ targets:
     presets:
       tags:
         entorno: prod
+    permissions: *permisos_cicd
+    resources: *run_as_cicd
+
+  # Workspace propio del cliente (despliegue compartido del workshop, lo hace su admin).
+  # Sin host fijo: usa el profile con el que se autentica (-p <profile>). Mismo catálogo
+  # `integratel_prod` para que los SQL de las guías funcionen sin cambios.
+  #   ./tools/bootstrap_integratel.sh <profile>
+  integratel:
+    workspace:
+      root_path: /Workspace/Shared/integratel-workshop/.bundle/${bundle.target}
+    variables:
+      catalog: integratel_prod
+      lakebase_branch: production
+      notificaciones: ${workspace.current_user.userName}
+    presets:
+      tags:
+        entorno: integratel
+    permissions:
+      - user_name: ${workspace.current_user.userName}
+        level: CAN_MANAGE

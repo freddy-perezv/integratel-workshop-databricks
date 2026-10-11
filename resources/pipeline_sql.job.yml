@@ -5,9 +5,7 @@ resources:
   jobs:
     pipeline_sql:
       name: Integratel · Pipeline SQL retención
-      # Siempre corre como el service principal de CI/CD (dev y prod), no como la persona que despliega.
-      run_as:
-        service_principal_name: ${var.cicd_sp}
+      # run_as se define por target en databricks.yml (SP de CI/CD en dev/prod).
       description: Construye cliente 360, métricas de soporte/churn y metric views; luego valida la calidad. Si un test falla, el despliegue a prod se detiene.
       email_notifications:
         on_failure: [ "${var.notificaciones}" ]
