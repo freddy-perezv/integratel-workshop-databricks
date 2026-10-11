@@ -8,3 +8,6 @@ __pycache__/
 app/dist/
 app/client/dist/
 app/app.yaml
+
+# alias de python3 que crea tools/bootstrap_integratel.sh en Windows
+.bootstrap-bin/

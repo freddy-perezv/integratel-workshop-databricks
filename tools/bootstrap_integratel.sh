@@ -13,12 +13,39 @@
 #   WAREHOUSE_ID   SQL Warehouse a usar (por defecto busca "Serverless Starter Warehouse")
 #   STORAGE_ROOT   ubicación (abfss://, s3://, gs://) para crear el catálogo, si el metastore la exige
 #   AGENT_MODEL    endpoint del LLM de la App (por defecto databricks-claude-sonnet-5-5)
+#
+# Windows: correr en Git Bash (viene con Git for Windows) o WSL; PowerShell/CMD no sirven.
 set -euo pipefail
 
 PROFILE="${1:?Uso: $0 <profile> [1|2|3]}"
 NIVEL="${2:-todo}"
 cd "$(dirname "$0")/.."
 export DATABRICKS_CONFIG_PROFILE="$PROFILE"
+
+# ── Windows (Git Bash / MSYS): ajustes que heredan todos los scripts que se llaman ─────
+case "$(uname -s)" in
+    MINGW*|MSYS*|CYGWIN*)
+        # Sin esto Git Bash convierte /Workspace/... en C:/Program Files/Git/Workspace/...
+        export MSYS_NO_PATHCONV=1 MSYS2_ARG_CONV_EXCL='*'
+        # Python en Windows usa cp1252 por defecto: los acentos de recursos.json lo rompen.
+        export PYTHONUTF8=1 PYTHONIOENCODING=utf-8
+        # `python3` suele no existir (o abre la Microsoft Store): se crea un alias a python / py -3.
+        if ! python3 -c 'import sys' >/dev/null 2>&1; then
+            mkdir -p .bootstrap-bin
+            if python -c 'import sys; assert sys.version_info >= (3, 8)' >/dev/null 2>&1; then
+                printf '#!/usr/bin/env bash\nexec python "$@"\n' > .bootstrap-bin/python3
+            elif py -3 -c 'import sys' >/dev/null 2>&1; then
+                printf '#!/usr/bin/env bash\nexec py -3 "$@"\n' > .bootstrap-bin/python3
+            fi
+            chmod +x .bootstrap-bin/python3 2>/dev/null || true
+            export PATH="$PWD/.bootstrap-bin:$PATH"
+        fi
+        # El instalador de PostgreSQL no agrega psql al PATH.
+        if ! command -v psql >/dev/null; then
+            for d in "/c/Program Files/PostgreSQL"/*/bin; do [[ -x "$d/psql.exe" ]] && export PATH="$PATH:$d"; done
+        fi
+        ;;
+esac
 TARGET=integratel
 CATALOG=integratel_prod
 APP_NAME="integratel-retencion-$TARGET"
@@ -30,8 +57,8 @@ existe() { "$@" >/dev/null 2>&1; }
 
 # ── Comprobaciones comunes ──────────────────────────────────────────────────
 paso "Comprobando herramientas y acceso ($PROFILE)"
-command -v databricks >/dev/null || falla "falta la Databricks CLI: https://docs.databricks.com/dev-tools/cli/install.html"
-command -v python3 >/dev/null || falla "falta python3"
+command -v databricks >/dev/null || falla "falta la Databricks CLI (Windows: winget install Databricks.DatabricksCLI, y reabre Git Bash)"
+python3 -c "import sys" >/dev/null 2>&1 || falla "falta Python 3 (Windows: winget install Python.Python.3.12, y reabre Git Bash)"
 YO="$(databricks current-user me -o json | python3 -c 'import sys,json; print(json.load(sys.stdin)["userName"])')" \
     || falla "no pude autenticar con el profile '$PROFILE': databricks auth login --profile $PROFILE"
 ok "usuario: $YO · CLI $(databricks version 2>/dev/null | tr -d '\n')"
@@ -101,8 +128,8 @@ nivel2() {
 # ── Nivel 3 ─────────────────────────────────────────────────────────────────
 nivel3() {
     paso "Nivel 3 · Comprobando node y psql"
-    command -v node >/dev/null || falla "falta Node.js 20+ (https://nodejs.org) para compilar la App"
-    command -v psql >/dev/null || falla "falta psql (macOS: brew install libpq && brew link --force libpq)"
+    command -v node >/dev/null || falla "falta Node.js 20+ para compilar la App (Windows: winget install OpenJS.NodeJS.LTS)"
+    command -v psql >/dev/null || falla "falta psql (Windows: winget install PostgreSQL.PostgreSQL.17 · macOS: brew install libpq && brew link --force libpq)"
     ok "node $(node --version) · $(psql --version | head -1)"
     # La App crea y es dueña de sus schemas en Lakebase al primer arranque: no conectes tu usuario
     # a la base integratel_retencion antes de este paso (si no, los schemas quedan a tu nombre).

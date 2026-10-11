@@ -13,17 +13,29 @@ Todo el contenido es **sintético**: no se usan ni se tocan datos de Integratel.
 | Endpoint de modelo `databricks-claude-sonnet-5-5` (u otro Claude) en *Serving* | El copiloto de la App | *Serving* |
 | [Databricks CLI](https://docs.databricks.com/dev-tools/cli/install.html) v1.x (probado con v1.20), `git`, `python3` | Niveles 1 y 2 | `databricks version` |
 | Node.js 20+ y `psql` | Solo nivel 3 (la App) | `node --version`, `psql --version` |
-| macOS, Linux o Windows con **WSL / Git Bash** | El script es bash | — |
+| macOS, Linux o **Windows con Git Bash** (viene con Git for Windows) | El script es bash | — |
 
-## 2. Preparación (5 min)
+## 2. Preparación (10 min)
 
-Todo se corre en una **terminal de la laptop del admin**, no dentro de Databricks: *Terminal* en macOS, o **WSL / Git Bash** en Windows (PowerShell y CMD no sirven, el script es bash). `auth login` abre el navegador una vez para iniciar sesión; el resto se ejecuta desde la carpeta del repo clonado.
+Todo se corre en una **terminal de la laptop del admin**, no dentro de Databricks.
+
+**Windows** — instalar una vez desde **PowerShell** (después ya no se usa PowerShell):
+```powershell
+winget install Git.Git
+winget install Databricks.DatabricksCLI
+winget install Python.Python.3.12
+winget install OpenJS.NodeJS.LTS          # solo nivel 3 (App)
+winget install PostgreSQL.PostgreSQL.17   # solo nivel 3 (trae psql; el servicio de PostgreSQL no se usa)
+```
+Luego abrir **Git Bash** (menú Inicio → *Git Bash*) y correr **ahí** todo lo que sigue. PowerShell y CMD no sirven: el script es bash. El script detecta Windows y ajusta solo `python3`, las rutas `/Workspace/...`, la codificación UTF-8 y el `psql`.
+
+**macOS:** *Terminal* (`brew install databricks node libpq` si faltan).
 
 ```bash
 git clone https://github.com/freddy-perezv/integratel-workshop-databricks.git
 cd integratel-workshop-databricks
-databricks auth login --host https://<su-workspace> --profile integratel
-databricks current-user me -p integratel          # debe mostrar su usuario
+databricks auth login --host https://<su-workspace> --profile integratel   # abre el navegador una vez
+databricks current-user me -p integratel                                   # debe mostrar su usuario
 ```
 
 ## 3. Despliegue por niveles
