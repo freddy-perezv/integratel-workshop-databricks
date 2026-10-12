@@ -5,8 +5,7 @@ resources:
     incidencia_masiva:
       display_name: Integratel · Posible incidencia masiva (≥10 LOS rojo por nodo en un día)
       warehouse_id: ${var.warehouse_id}
-      run_as:
-        service_principal_name: ${var.cicd_sp}
+      # run_as se define por target en databricks.yml (SP de CI/CD en dev/prod).
       parent_path: /Workspace/Shared/integratel-workshop
       custom_summary: "⚠️ {{ALERT_NAME}}: hay nodos con ≥10 tickets F-101 en un día"
       query_text: |

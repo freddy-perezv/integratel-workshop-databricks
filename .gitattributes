@@ -1,0 +1,7 @@
+# Scripts siempre con LF: en Windows (Git Bash / WSL) un .sh con CRLF falla con "\r: command not found".
+*.sh   text eol=lf
+*.py   text eol=lf
+*.sql  text eol=lf
+*.yml  text eol=lf
+*.json text eol=lf
+*.tmpl text eol=lf
